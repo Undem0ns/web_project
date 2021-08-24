@@ -19,10 +19,10 @@ if (!isset($_SESSION["user_email"])) {
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <h5 class="nav" id="offcanvasExampleLabel">PTP-MS</h5>
-    <a class="nav-link active" aria-current="page" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+    <a class="nav-link active" aria-current="page" href="add_project.php"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
         <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
       </svg> เพิ่มโครงการ</a>
-    <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-diamond" viewBox="0 0 16 16">
+    <a class="nav-link" href="index.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-diamond" viewBox="0 0 16 16">
         <path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z" />
       </svg> รายชื่อโครงการ</a>
   </div>
@@ -38,7 +38,7 @@ if (!isset($_SESSION["user_email"])) {
         </ul>
         <ul class="nav justify-content-end">
           <!-- <li class="nav-item">
-          <a class=nav-link active" aria-current="page" href="#"><?php echo $row['username']; ?></a>
+          <a class=nav-link active" aria-current="page" href="#"><?php echo $row['user_name']; ?></a>
         </li> -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">ออกจากระบบ</a>
@@ -48,10 +48,10 @@ if (!isset($_SESSION["user_email"])) {
 
   <div id="main" class="bd-main order-1">
     <div class="d-md-flex flex-md-row align-items-center justify-content-around">
-      <span class="bd-title" id="part1">1.ความเชื่อมโยงกับแผนกลุ่มจังหวัด</span>
-      <span class="bd-title" id="part2">2.รายละเอียด</span>
-      <span class="bd-title" id="part3">3.งบประมาณ</span>
-      <span class="bd-title" id="part4">4.เพิ่มเติมอื่น ๆ</span>
+      <span class="bd-title" id="part1">1. ความเชื่อมโยงกับแผนกลุ่มจังหวัด</span>
+      <span class="bd-title" id="part2">2. รายละเอียด</span>
+      <span class="bd-title" id="part3">3. งบประมาณ</span>
+      <span class="bd-title" id="part4">4. เพิ่มเติมอื่น ๆ</span>
     </div>
     <br>
 
@@ -155,16 +155,113 @@ if (!isset($_SESSION["user_email"])) {
     </div>
 
     <div class="flex-md-row align-items-center justify-content-around part" id="p3">
-      <span>P3</span>
-      <span>P3</span>
-      <span>P3</span>
-      <span>P3</span>
+      <div>
+        <label>แหล่งงบประมาณตามแผน</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณขององค์กรปกครองส่วนท้องถิ่น </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของภาคเอกชน/ชุมชน </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+      </div>
+      <div>
+        <label>งบประมาณที่ได้รับจัดสรร</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณขององค์กรปกครองส่วนท้องถิ่น </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของภาคเอกชน/ชุมชน </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+      </div>
+      <div>
+        <label>งบประมาณตามที่ใช้จ่ายจริง</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณขององค์กรปกครองส่วนท้องถิ่น </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของภาคเอกชน/ชุมชน </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+      </div>
     </div>
     <div class="flex-md-row align-items-center justify-content-around part" id="p4">
-      <span>P4</span>
-      <span>P4</span>
-      <span>P4</span>
-      <span>P4</span>
+      <div>
+        <label>รายละเอียดอื่น ๆ เพิ่มเติม</label>
+        <div>
+          <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
+          <input type="text" class="form-control" id="addition">
+        </div>
+        <div>
+          <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
+          <input type="text" class="form-control" id="addition">
+          <button type="submit">แนบไฟล์</button>
+        </div>
+      </div>
     </div>
 
     <div class="d-md-flex flex-md-row align-items-center justify-content-end fixed-bottom" style="margin-bottom: 100px; margin-right: 50px;">
