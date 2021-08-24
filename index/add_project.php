@@ -48,18 +48,106 @@
       <span class="bd-title" id="part4">4.เพิ่มเติมอื่น ๆ</span>
     </div>
     <br>
+
     <div class="flex-md-row align-items-center justify-content-around part" id="p1">
-      <span>P1</span>
-      <span>P1</span>
-      <span>P1</span>
-      <span>P1</span>
+      <div class="bd-example">
+        <form>
+          <div class="form-group">
+            <label for="project_name">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
+            <input type="text" class="form-control" id="project_name">
+          </div>
+          <div class="form-group">
+            <label>เลือกความเชื่อมโยงของโครงการกับแผนกลุ่มจังหวัด</label>
+            <div class="flex-md-row">
+              <label for="development_subject">ประเด็นการพัฒนา</label>
+              <select class="form-control" id="development_subject">
+                <option>ประเด็นการพัฒนาที่ 1</option>
+                <option>ประเด็นการพัฒนาที่ 2</option>
+                <option>ประเด็นการพัฒนาที่ 3</option>
+                <option>ประเด็นการพัฒนาที่ 4</option>
+                <option>ประเด็นการพัฒนาที่ 5</option>
+              </select>
+            </div>
+            <div class="flex-md-row">
+              <label for="project_roadmap">แผนงาน</label>
+              <input type="text" class="form-control" id="project_roadmap">
+            </div>
+            <div class="flex-md-row">
+              <label for="project_main">โครงการหลัก (ตามแผน)</label>
+              <input type="text" class="form-control" id="project_main">
+            </div>
+            <div class="flex-md-row">
+              <label for="project_sub">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
+              <input type="text" class="form-control" id="project_sub">
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+
     <div class="flex-md-row align-items-center justify-content-around part" id="p2">
-      <span>P2</span>
-      <span>P2</span>
-      <span>P2</span>
-      <span>P2</span>
+      <div class="bd-example">
+        <form>
+          <div class="form-group">
+            <label>ภาพรวมการดำเนินงาน</label>
+            <div class="flex-md-row">
+              <label for="development_subject">ลักษณะการดำเนินงาน</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="operation_type" id="operation_type1" value="option1" checked>
+                <label class="form-check-label" for="operation_type1"> โครงการ </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="operation_type" id="operation_type2" value="option2">
+                <label class="form-check-label" for="operation_type2"> การดำเนินงาน </label>
+              </div>
+            </div>
+            <div class="flex-md-row">
+              <label for="project_code">รหัสโครงงาน (ถ้ามี)</label>
+              <input type="text" class="form-control" id="project_code">
+            </div>
+            <div class="flex-md-row">
+              <label for="development_subject">การใช้งบประมาณ</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="use_budget" id="use_budget1" value="use_budget" checked>
+                <label class="form-check-label" for="use_budget1"> ใช้งบประมาณ </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="use_budget" id="use_budget2" value="not_use_budget">
+                <label class="form-check-label" for="use_budget2"> ไม่ใช้งบประมาณ </label>
+              </div>
+            </div>
+            <div class="flex-md-row">
+              <label for="budget_year">ปีงบประมาณที่ดำเนินโครงการ</label>
+              <input type="text" class="form-control" id="budget_year">
+            </div>
+            <div class="flex-md-row">
+              <label for="institution">หน่วยงานที่รับผิดชอบ</label>
+              <input type="text" class="form-control" id="institution">
+            </div>
+            <div class="flex-md-row">
+              <label for="province">จังหวัดที่ดำเนินโครงการ</label>
+              <input type="text" class="form-control" id="province">
+            </div>
+            <div class="flex-md-row">
+              <label for="target">กลุ่มเป้าหมายในการดำเนินงาน</label>
+              <input type="text" class="form-control" id="target">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>รายละเอียดการดำเนินงาน</label>
+            <div class="flex-md-row">
+              <label for="project_objective">วัตถุประสงค์และรายละเอียดโครงการ</label>
+              <input type="text" class="form-control" id="project_objective">
+            </div>
+            <div class="flex-md-row">
+              <label for="project_result">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
+              <input type="text" class="form-control" id="project_result">
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+    
     <div class="flex-md-row align-items-center justify-content-around part" id="p3">
       <span>P3</span>
       <span>P3</span>
