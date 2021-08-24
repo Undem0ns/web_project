@@ -42,10 +42,10 @@
 
   <div id="main" class="bd-main order-1">
     <div class="d-md-flex flex-md-row align-items-center justify-content-around">
-      <span class="bd-title" id="part1">1.ความเชื่อมโยงกับแผนกลุ่มจังหวัด</span>
-      <span class="bd-title" id="part2">2.รายละเอียด</span>
-      <span class="bd-title" id="part3">3.งบประมาณ</span>
-      <span class="bd-title" id="part4">4.เพิ่มเติมอื่น ๆ</span>
+      <span class="bd-title" id="part1">1. ความเชื่อมโยงกับแผนกลุ่มจังหวัด</span>
+      <span class="bd-title" id="part2">2. รายละเอียด</span>
+      <span class="bd-title" id="part3">3. งบประมาณ</span>
+      <span class="bd-title" id="part4">4. เพิ่มเติมอื่น ๆ</span>
     </div>
     <br>
 
