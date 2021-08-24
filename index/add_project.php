@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+if (!isset($_SESSION["user_email"])) {
+  header("location:../login/index.php");
+}
+?>
 
 <head>
   <meta charset="UTF-8">
@@ -147,7 +153,7 @@
         </form>
       </div>
     </div>
-    
+
     <div class="flex-md-row align-items-center justify-content-around part" id="p3">
       <span>P3</span>
       <span>P3</span>
