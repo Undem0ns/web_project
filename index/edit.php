@@ -48,6 +48,7 @@ $row = $stmt->fetch();
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">จังหวัด </label>
+                                
                                 <input type="text" name="province" class="form-control">
                             </div>
                             <div class="mb-3">
