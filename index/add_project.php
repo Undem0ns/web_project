@@ -147,18 +147,115 @@
         </form>
       </div>
     </div>
-    
+
     <div class="flex-md-row align-items-center justify-content-around part" id="p3">
-      <span>P3</span>
-      <span>P3</span>
-      <span>P3</span>
-      <span>P3</span>
+      <div>
+        <label>แหล่งงบประมาณตามแผน</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณขององค์กรปกครองส่วนท้องถิ่น </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของภาคเอกชน/ชุมชน </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+      </div>
+      <div>
+        <label>งบประมาณที่ได้รับจัดสรร</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณขององค์กรปกครองส่วนท้องถิ่น </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของภาคเอกชน/ชุมชน </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+      </div>
+      <div>
+        <label>งบประมาณตามที่ใช้จ่ายจริง</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณขององค์กรปกครองส่วนท้องถิ่น </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของภาคเอกชน/ชุมชน </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+      </div>
     </div>
     <div class="flex-md-row align-items-center justify-content-around part" id="p4">
-      <span>P4</span>
-      <span>P4</span>
-      <span>P4</span>
-      <span>P4</span>
+      <div>
+        <label>รายละเอียดอื่น ๆ เพิ่มเติม</label>
+        <div>
+          <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
+          <input type="text" class="form-control" id="addition">
+        </div>
+        <div>
+          <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
+          <input type="text" class="form-control" id="addition">
+          <button type="submit">แนบไฟล์</button>
+        </div>
+      </div>
     </div>
 
     <div class="d-md-flex flex-md-row align-items-center justify-content-end fixed-bottom" style="margin-bottom: 100px; margin-right: 50px;">
