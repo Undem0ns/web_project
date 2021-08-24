@@ -48,16 +48,28 @@
       <span class="bd-title" id="part4">4.เพิ่มเติมอื่น ๆ</span>
     </div>
     <br>
-    <div class="d-md-flex flex-md-row align-items-center justify-content-around part" id="p1">
+    <div class="flex-md-row align-items-center justify-content-around part" id="p1">
+      <span>P1</span>
+      <span>P1</span>
+      <span>P1</span>
       <span>P1</span>
     </div>
-    <div class="d-md-flex flex-md-row align-items-center justify-content-around part" id="p2">
+    <div class="flex-md-row align-items-center justify-content-around part" id="p2">
+      <span>P2</span>
+      <span>P2</span>
+      <span>P2</span>
       <span>P2</span>
     </div>
-    <div class="d-md-flex flex-md-row align-items-center justify-content-around part" id="p3">
+    <div class="flex-md-row align-items-center justify-content-around part" id="p3">
+      <span>P3</span>
+      <span>P3</span>
+      <span>P3</span>
       <span>P3</span>
     </div>
-    <div class="d-md-flex flex-md-row align-items-center justify-content-around part" id="p4">
+    <div class="flex-md-row align-items-center justify-content-around part" id="p4">
+      <span>P4</span>
+      <span>P4</span>
+      <span>P4</span>
       <span>P4</span>
     </div>
 
@@ -87,6 +99,11 @@
       document.getElementById("button2").style.display = "block";
       document.getElementById("button3").style.display = "block";
 
+      document.getElementById("p1").style.display = "none";
+      document.getElementById("p2").style.display = "none";
+      document.getElementById("p3").style.display = "none";
+      document.getElementById("p4").style.display = "none";
+
     }
 
     function renderPart(part) {
@@ -100,11 +117,21 @@
         document.getElementById("button2").style.display = "block";
         document.getElementById("button3").style.display = "none";
 
+        document.getElementById("p1").style.display = "flex";
+        document.getElementById("p2").style.display = "none";
+        document.getElementById("p3").style.display = "none";
+        document.getElementById("p4").style.display = "none";
+
       }
       if (part == 2) {
         document.getElementById("button1").style.display = "block";
         document.getElementById("button2").style.display = "block";
         document.getElementById("button3").style.display = "none";
+
+        document.getElementById("p1").style.display = "none";
+        document.getElementById("p2").style.display = "flex";
+        document.getElementById("p3").style.display = "none";
+        document.getElementById("p4").style.display = "none";
 
       }
       if (part == 3) {
@@ -112,11 +139,21 @@
         document.getElementById("button2").style.display = "block";
         document.getElementById("button3").style.display = "none";
 
+        document.getElementById("p1").style.display = "none";
+        document.getElementById("p2").style.display = "none";
+        document.getElementById("p3").style.display = "flex";
+        document.getElementById("p4").style.display = "none";
+
       }
       if (part == 4) {
         document.getElementById("button1").style.display = "block";
         document.getElementById("button2").style.display = "none";
         document.getElementById("button3").style.display = "block";
+
+        document.getElementById("p1").style.display = "none";
+        document.getElementById("p2").style.display = "none";
+        document.getElementById("p3").style.display = "none";
+        document.getElementById("p4").style.display = "flex";
 
       }
     }
