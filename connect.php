@@ -16,20 +16,13 @@
 </body>
 </html>
 <?php
-
-    $hostName = "localhost";
-    $userName = "root";
-    $password = "";
-    // Create connection
-    $conn = mysqli_connect($hostName, $userName, $password);
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }else{
-        // echo "Connected successfully";
-        // echo "<br>";
-        // console.log($conn);
-    }
-    
-    // mysqli_close($conn);
+try {
+$pdo = new PDO("mysql:host=localhost;dbname=pcp_ms;charset=utf8", "root", "");
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+echo "เกิดข้อผิดพลาด : " . $e->getMessage();
+}
 ?>
+<html>
+<body></body>
+</html>

@@ -1,5 +1,6 @@
 <?php include '../connect.php' ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,12 @@
     <title>Document</title>
 </head>
 <body  class="bg-secondary">
+<?php 
+    session_start();
+    session_destroy();
+ 
+        
+  ?>
     <div class="container " style="margin-top: 12%; ">
     <div class="row">
         <div class="col">
@@ -20,14 +27,14 @@
                     <h5 class="card-title">เข้าสู่ระบบ</h5>
                     <h6 class="card-subtitle mb-2 text-muted">sign in your account</h6>
 
-                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                    <form action="login_check.php" method="POST">
                         <div class="mb-3">
-                            <input type="email" name="e_mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Email">
+                            <input type="email" name="user_email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Email">
                         </div>
                         <div class="mb-3">
-                            <input type="password" name="passwd" class="form-control" id="exampleInputPassword1"  placeholder="password">
+                            <input type="password" name="user_password" class="form-control" id="exampleInputPassword1"  placeholder="password">
                         </div>
-                       
+
                         <button type="submit" name="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
                     </form>
                     
@@ -42,12 +49,6 @@
 </body>
 </html>
 
-<?php 
- if(isset($_POST['submit'])){
-    session_start();
-    $_SESSION['e_mail'] = htmlentities($_POST['e_mail']);
-    header('location: test.php  ');
- }
 
-?>
+
 
