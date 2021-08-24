@@ -14,8 +14,10 @@ if (!isset($_SESSION["user_email"]) ) {
     header("location:../login/index.php");
     }
    
-    
+    $stmt = $pdo->prepare("SELECT * FROM project");
+  $stmt->execute(); 
 ?>
+
   <nav class="navbar navbar-light bg-secondary fixed-top">
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -42,7 +44,7 @@ if (!isset($_SESSION["user_email"]) ) {
           <a class=nav-link active" aria-current="page" href="#"><?php echo $row['username']; ?></a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">ออกจากระบบ</a>
+          <a class="nav-link active" aria-current="page" href="../login/index.php">ออกจากระบบ</a>
         </li>
   </ul>
 </header>
@@ -68,16 +70,19 @@ if (!isset($_SESSION["user_email"]) ) {
             <th scope="col">ปีงบประมาณ</th>
             <th scope="col">การจัดการโครงการ</th>
           </tr>
+          <?php while ($row = $stmt->fetch()){?>
         </thead>
         <tbody>
+          
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?=$row["project_name"] ?></td>
+            <td><?=$row["project_roadmap"] ?></td>
+            <td><?=$row["province"] ?></td>
+            <td><?=$row["budget_year"] ?></td>
+            <td><a href="edit.php?project_id=<?=$row["project_id"] ?>">แก้ไข</a></td>
           </tr>
         </tbody>
+        <?php }?>
         </table>
 
 
