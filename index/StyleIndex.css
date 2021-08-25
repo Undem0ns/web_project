@@ -1,5 +1,11 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../font/THSarabunNew.ttf);
+}
+
 body {
-  font: 1rem/1.5 var(--bs-font-sans-serif);
+  font-family: myFirstFont;
+  font-size: 28px;
   margin-top: 0px;
   width: auto;
   margin-left: auto;
@@ -18,7 +24,6 @@ div.main {
     border: 3px solid gray;
     box-shadow: 3px 3px 3px 3px #ccc;
     }
-}
 a.border {
     border-style: solid;
     border-width: 5px;
@@ -126,4 +131,10 @@ h5.nav {
 
 span.marginle {
   margin-left: 20;
+}
+label , textarea, option, input {
+  font-size: 25px;
+}
+select {
+  font-size: 25px;
 }
