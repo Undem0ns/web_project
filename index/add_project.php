@@ -51,7 +51,7 @@ if (!isset($_SESSION["user_email"])) {
         </ul>
   </header>
 
-  <div id="main" class="bd-main order-1">
+  <div id="main" class="main bd-main order-1">
     <div class="d-md-flex flex-md-row align-items-center justify-content-around">
       <span class="bd-title" id="part1">1. ความเชื่อมโยงกับแผนกลุ่มจังหวัด</span>
       <span class="bd-title" id="part2">2. รายละเอียด</span>
@@ -61,19 +61,18 @@ if (!isset($_SESSION["user_email"])) {
     <br>
 
     <div class="flex-md-row align-items-center justify-content-around part" id="p1">
-      <div class="bd-example">
+      <div class="w-100 bd-highlight">
         <!-- --------------------------------------------------------------------------- -->
 
         <form action="test.php" method="post">
-          <div class="form-group">
-            <label for="project_name">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
-            <input type="text" class="form-control" id="project_name" name="name">
+          <div class="mb-3">
+            <label for="project_name" class="col-sm-2 col-form-label col-form-label-sm">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
+            <input type="text" class="form-control" name="name"id="project_name" placeholder="ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน">
           </div>
-          <div class="form-group">
-            <label>เลือกความเชื่อมโยงของโครงการกับแผนกลุ่มจังหวัด</label>
-            <div class="flex-md-row">
-              <label for="development_subject">ประเด็นการพัฒนา</label>
-              <select class="form-control" id="development_subject" name="development_subject">
+          <div class="row mb-3">
+            <label for="development_subject" class="col-sm-2 col-form-label col-form-label-sm">ประเด็นการพัฒนา</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="development_subject" placeholder="col-form-label-sm">
                 <option value="ประเด็นการพัฒนาที่ 1">ประเด็นการพัฒนาที่ 1</option>
                 <option value="ประเด็นการพัฒนาที่ 2">ประเด็นการพัฒนาที่ 2</option>
                 <option value="ประเด็นการพัฒนาที่ 3">ประเด็นการพัฒนาที่ 3</option>
@@ -81,88 +80,193 @@ if (!isset($_SESSION["user_email"])) {
                 <option value="ประเด็นการพัฒนาที่ 5">ประเด็นการพัฒนาที่ 5</option>
               </select>
             </div>
-            <div class="flex-md-row">
-              <label for="project_roadmap">แผนงาน</label>
-              <input type="text" class="form-control" id="project_roadmap">
+          </div>
+          <div class="row mb-3">
+            <label for="project_roadmap" class="col-sm-2 col-form-label col-form-label-sm">แผนงาน</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="project_roadmap" placeholder="col-form-label-sm">
+                <option>แผนงาน 1</option>
+                <option>แผนงาน 2</option>
+                <option>แผนงาน 3</option>
+                <option>แผนงาน 4</option>
+                <option>แผนงาน 5</option>
+              </select>
             </div>
-            <div class="flex-md-row">
-              <label for="project_main">โครงการหลัก (ตามแผน)</label>
-              <input type="text" class="form-control" id="project_main">
+          </div>
+          <div class="row mb-3">
+            <label for="project_main" class="col-sm-2 col-form-label col-form-label-sm">โครงการหลัก (ตามแผน)</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="project_main" placeholder="col-form-label-sm">
+                <option>โครงการหลัก (ตามแผน) 1</option>
+                <option>โครงการหลัก (ตามแผน) 2</option>
+                <option>โครงการหลัก (ตามแผน) 3</option>
+                <option>โครงการหลัก (ตามแผน) 4</option>
+                <option>โครงการหลัก (ตามแผน) 5</option>
+              </select>
             </div>
-            <div class="flex-md-row">
-              <label for="project_sub">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
-              <input type="text" class="form-control" id="project_sub">
-            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="project_sub" class="col-sm-2 col-form-label col-form-label-sm">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="project_sub" placeholder="col-form-label-sm">
+                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 1</option>
+                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 2</option>
+                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 3</option>
+                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 4</option>
+                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 5</option>
+              </select>
+            </div </div>
           </div>
 
       </div>
-    </div>
+   
 
     <div class="flex-md-row align-items-center justify-content-around part" id="p2">
-      <div class="bd-example">
+      <div class="w-100 bd-highlight">
 
-        <div class="form-group">
-          <label>ภาพรวมการดำเนินงาน</label>
-          <div class="flex-md-row">
-            <label for="development_subject">ลักษณะการดำเนินงาน</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="operation_type" id="operation_type1" value="option1" checked>
-              <label class="form-check-label" for="operation_type1"> โครงการ </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="operation_type" id="operation_type2" value="option2">
-              <label class="form-check-label" for="operation_type2"> การดำเนินงาน </label>
+      <div class="row mb-3">
+            <div class="-flex p-2 bd-highlight" style="background-color: gray;">
+              <label>ภาพรวมการดำเนินงาน</label>
             </div>
           </div>
-          <div class="flex-md-row">
-            <label for="project_code">รหัสโครงงาน (ถ้ามี)</label>
-            <input type="text" class="form-control" id="project_code">
-          </div>
-          <div class="flex-md-row">
-            <label for="development_subject">การใช้งบประมาณ</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="use_budget" id="use_budget1" value="use_budget" checked>
-              <label class="form-check-label" for="use_budget1"> ใช้งบประมาณ </label>
+
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0" for="development_subject">ลักษณะการดำเนินงาน</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  โครงการ
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                  การดำเนินงาน
+                </label>
+              </div>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="use_budget" id="use_budget2" value="not_use_budget">
-              <label class="form-check-label" for="use_budget2"> ไม่ใช้งบประมาณ </label>
+          </fieldset>
+
+
+          <div class="row mb-3">
+            <label for="project_code" class="col-sm-2 col-form-label">รหัสโครงงาน (ถ้ามี)</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="project_code">
             </div>
           </div>
-          <div class="flex-md-row">
-            <label for="budget_year">ปีงบประมาณที่ดำเนินโครงการ</label>
-            <input type="text" class="form-control" id="budget_year">
+
+
+          <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0" for="use_budget">การใช้งบประมาณ</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <label class="form-check-label" for="use_budget1">
+                  ใช้งบประมาณ
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="use_budget2">
+                  ไม่ใช้งบประมาณ
+                </label>
+              </div>
+            </div>
+
+
+          </fieldset>
+          <div class="row mb-3">
+            <label for="project_code" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="project_code">
+            </div>
           </div>
-          <div class="flex-md-row">
-            <label for="institution">หน่วยงานที่รับผิดชอบ</label>
-            <input type="text" class="form-control" id="institution">
+
+          <div class="row mb-3">
+            <label for="project_code" class="col-sm-2 col-form-label">หน่วยงานที่รับผิดชอบ</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="project_code">
+            </div>
           </div>
-          <div class="flex-md-row">
-            <label for="province">จังหวัดที่ดำเนินโครงการ</label>
-            <input type="text" class="form-control" id="province">
+
+          <div class="row mb-3">
+            <label for="project_code" class="col-sm-2 col-form-label">จังหวัดที่ดำเนินโครงการ</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="project_code">
+            </div>
           </div>
-          <div class="flex-md-row">
-            <label for="target">กลุ่มเป้าหมายในการดำเนินงาน</label>
-            <input type="text" class="form-control" id="target">
+          <div class="row mb-3">
+            <label for="target" class="col-sm-2 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="target">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label>รายละเอียดการดำเนินงาน</label>
-          <div class="flex-md-row">
-            <label for="project_objective">วัตถุประสงค์และรายละเอียดโครงการ</label>
-            <input type="text" class="form-control" id="project_objective">
+          <div class="row mb-3">
+            <div class="-flex p-2 bd-highlight" style="background-color: gray;">
+              <label>รายละเอียดการดำเนินงาน</label>
+            </div>
           </div>
-          <div class="flex-md-row">
-            <label for="project_result">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
-            <input type="text" class="form-control" id="project_result">
+
+          <div class="row mb-3">
+            <label for="project_objection" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="project_objection">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="project_result">
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="flex-md-row align-items-center justify-content-around part" id="p3">
+      <div class="w-100 bd-highlight">
+        <div class="-flex p-2 bd-highlight" style="background-color: gray;">
+        <label>แหล่งงบประมาณตามแผน</label></div><br>
+
+
+	        <div class="row row-cols-lg-auto g-3 align-items-center">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault" class="col-sm-2 col-form-label"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
+	          <div class="col-sm-10">
+              <label>จำนวน</label>
+              <input type="text" class="form-control" id="institution">
+              <span>บาท</span>
+        </div></div></div>
+
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณขององค์กรปกครองส่วนท้องถิ่น </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของภาคเอกชน/ชุมชน </label>
+          <label for="institution">จำนวน</label>
+          <input type="text" class="form-control" id="institution">
+          <span>บาท</span>
+        </div>
+      
       <div>
-        <label>แหล่งงบประมาณตามแผน</label>
+      <div class="-flex p-2 bd-highlight" style="background-color: gray;">
+        <label>งบประมาณที่ได้รับจัดสรร</label></div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
@@ -193,38 +297,8 @@ if (!isset($_SESSION["user_email"])) {
         </div>
       </div>
       <div>
-        <label>งบประมาณที่ได้รับจัดสรร</label>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
-          <label for="institution">จำนวน</label>
-          <input type="text" class="form-control" id="institution">
-          <span>บาท</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
-          <label for="institution">จำนวน</label>
-          <input type="text" class="form-control" id="institution">
-          <span>บาท</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault"> งบประมาณขององค์กรปกครองส่วนท้องถิ่น </label>
-          <label for="institution">จำนวน</label>
-          <input type="text" class="form-control" id="institution">
-          <span>บาท</span>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault"> งบประมาณของภาคเอกชน/ชุมชน </label>
-          <label for="institution">จำนวน</label>
-          <input type="text" class="form-control" id="institution">
-          <span>บาท</span>
-        </div>
-      </div>
-      <div>
-        <label>งบประมาณตามที่ใช้จ่ายจริง</label>
+      <div class="-flex p-2 bd-highlight" style="background-color: gray;">
+        <label>งบประมาณตามที่ใช้จ่ายจริง</label></div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault"> งบประมาณของจังหวัด/กลุ่มจังหวัด </label>
@@ -255,9 +329,12 @@ if (!isset($_SESSION["user_email"])) {
         </div>
       </div>
     </div>
+    </div>
+
     <div class="flex-md-row align-items-center justify-content-around part" id="p4">
       <div>
-        <label>รายละเอียดอื่น ๆ เพิ่มเติม</label>
+      <div class="-flex p-2 bd-highlight" style="background-color: gray;">
+        <label>รายละเอียดอื่น ๆ เพิ่มเติม</label></div>
         <div>
           <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
           <input type="text" class="form-control" id="addition">
@@ -280,7 +357,7 @@ if (!isset($_SESSION["user_email"])) {
   </div>
   </form>
    <!-- --------------------------------------------------------------------------- -->
-  <script>
+  <!-- <script>
     var part = 1;
     renderPart(part);
 
@@ -371,7 +448,7 @@ if (!isset($_SESSION["user_email"])) {
     function saveProject() {
 
     }
-  </script>
+  </script> -->
 
   <script>
     function openNav() {

@@ -51,7 +51,7 @@
           </ul>
     </header>
 
-    <div id="main" class="bd-main order-1">
+    <div id="main" class="main bd-main order-1">
       <div class="bd-intro ps-lg-4">
         <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
           <!-- <button type="button" class="btn btn-secondary">Secondary</button> -->
