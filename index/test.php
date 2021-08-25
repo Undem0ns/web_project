@@ -1,8 +1,9 @@
 <?php include "../connect.php" ?>
 <?php
-$stmt = $pdo->prepare("INSERT INTO test VALUES ('',?,?)");
+$stmt = $pdo->prepare("INSERT INTO test VALUES ('',?,?,?)");
 $stmt->bindParam(1, $_POST["name"]);
 $stmt->bindParam(2, $_POST["development_subject"]);
+$stmt->bindParam(3, $_POST["operation_type"]);
 
 $stmt->execute(); 
 $FoodID = $pdo->lastInsertId(); 
