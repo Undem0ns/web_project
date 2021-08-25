@@ -64,10 +64,10 @@ if (!isset($_SESSION["user_email"])) {
       <div class="w-100 bd-highlight">
         <!-- --------------------------------------------------------------------------- -->
 
-        <form action="test.php" method="post">
+        <form action="add_check.php" method="post">
           <div class="mb-3">
             <label for="project_name" class=" col-form-label ">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
-            <textarea class="form-control" name="name" id="project_name"></textarea>
+            <textarea class="form-control" name="project_name" id="project_name"></textarea>
           </div>
           <div class="row mb-3">
             <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
@@ -84,150 +84,157 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3" id="project_roadmap" >
-                <option>แผนงาน 1</option>
-                <option>แผนงาน 2</option>
-                <option>แผนงาน 3</option>
-                <option>แผนงาน 4</option>
-                <option>แผนงาน 5</option>
+              <select class="form-select form-select-lg mb-3" id="project_roadmap" name="project_roadmap">
+                <option value="แผนงาน 1">แผนงาน 1</option>
+                <option value="แผนงาน 2">แผนงาน 2</option>
+                <option value="แผนงาน 3">แผนงาน 3</option>
+                <option value="แผนงาน 4">แผนงาน 4</option>
+                <option value="แผนงาน 5">แผนงาน 5</option>
               </select>
             </div>
           </div>
           <div class="row mb-3">
             <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3" id="project_main" >
-                <option>โครงการหลัก (ตามแผน) 1</option>
-                <option>โครงการหลัก (ตามแผน) 2</option>
-                <option>โครงการหลัก (ตามแผน) 3</option>
-                <option>โครงการหลัก (ตามแผน) 4</option>
-                <option>โครงการหลัก (ตามแผน) 5</option>
+              <select class="form-select form-select-lg mb-3" id="project_main" name="project_main">
+                <option value="โครงการหลัก (ตามแผน) 1">โครงการหลัก (ตามแผน) 1</option>
+                <option value="โครงการหลัก (ตามแผน) 2">โครงการหลัก (ตามแผน) 2</option>
+                <option value="โครงการหลัก (ตามแผน) 3">โครงการหลัก (ตามแผน) 3</option>
+                <option value="โครงการหลัก (ตามแผน) 4">โครงการหลัก (ตามแผน) 4</option>
+                <option value="โครงการหลัก (ตามแผน) 5">โครงการหลัก (ตามแผน) 5</option>
               </select>
             </div>
           </div>
           <div class="row mb-3">
             <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3" id="project_sub" >
-                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 1</option>
-                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 2</option>
-                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 3</option>
-                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 4</option>
-                <option>โครงการ/กิจกรรมย่อย (ตามแผน) 5</option>
+              <select class="form-select form-select-lg mb-3" id="project_sub" name="project_sub">
+                <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 1">โครงการ/กิจกรรมย่อย (ตามแผน) 1</option>
+                <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 2">โครงการ/กิจกรรมย่อย (ตามแผน) 2</option>
+                <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 3">โครงการ/กิจกรรมย่อย (ตามแผน) 3</option>
+                <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 4">โครงการ/กิจกรรมย่อย (ตามแผน) 4</option>
+                <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 5">โครงการ/กิจกรรมย่อย (ตามแผน) 5</option>
               </select>
-            </div> 
-          </div>
-
-      </div></div>
-
-
-      <div class="flex-md-row align-items-center justify-content-around part" id="p2">
-        <div class="w-100 bd-highlight">
-
-          <div class="row mb-3">
-            <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-              <label>ภาพรวมการดำเนินงาน</label>
             </div>
           </div>
 
-          <fieldset class="row mb-3">
-            <legend class="col-form-label col-sm-2 pt-0" for="development_subject">ลักษณะการดำเนินงาน</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input input-font-size-lg" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                <label class="form-check-label" for="gridRadios1">
-                  โครงการ
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
-                  การดำเนินงาน
-                </label>
-              </div>
+      </div>
+    </div>
+
+
+    <div class="flex-md-row align-items-center justify-content-around part" id="p2">
+      <div class="w-100 bd-highlight">
+
+        <div class="row mb-3">
+          <div class="-flex p-2 bd-highlight" style="background-color: gray;">
+            <label>ภาพรวมการดำเนินงาน</label>
+          </div>
+        </div>
+
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0" for="operation_type">ลักษณะการดำเนินงาน</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input input-font-size-lg" type="radio" id="gridRadios1" value="โครงการ" name="operation_type" checked>
+              <label class="form-check-label" for="gridRadios1">
+                โครงการ
+              </label>
             </div>
-          </fieldset>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="gridRadios2" value="การดำเนินงาน" name="operation_type">
+              <label class="form-check-label" for="gridRadios2">
+                การดำเนินงาน
+              </label>
+            </div>
+          </div>
+        </fieldset>
 
 
-          <div class="row mb-3">
-            <label for="project_code" class="col-sm-2 col-form-label">รหัสโครงงาน (ถ้ามี)</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="project_code">
+        <div class="row mb-3">
+          <label for="project_code" class="col-sm-2 col-form-label">รหัสโครงงาน (ถ้ามี)</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="project_code " name="project_code">
+          </div>
+        </div>
+
+
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0" for="use_budget">การใช้งบประมาณ</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="gridRadios1" value="option1" checked name="use_budget">
+              <label class="form-check-label" for="use_budget1">
+                ใช้งบประมาณ
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="gridRadios2" value="option2" name="use_budget">
+              <label class="form-check-label" for="use_budget2">
+                ไม่ใช้งบประมาณ
+              </label>
             </div>
           </div>
 
 
-          <fieldset class="row mb-3">
-            <legend class="col-form-label col-sm-2 pt-0" for="use_budget">การใช้งบประมาณ</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                <label class="form-check-label" for="use_budget1">
-                  ใช้งบประมาณ
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="use_budget2">
-                  ไม่ใช้งบประมาณ
-                </label>
-              </div>
-            </div>
-
-
-          </fieldset>
-          <div class="row mb-3">
-            <label for="project_code" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="project_code">
-            </div>
+        </fieldset>
+        <div class="row mb-3">
+          <label for="budget_year" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="budget_year" name="budget_year">
           </div>
+        </div>
 
-          <div class="row mb-3">
-            <label for="project_code" class="col-sm-2 col-form-label">หน่วยงานที่รับผิดชอบ</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="project_code">
-            </div>
+        <div class="row mb-3">
+          <label for="institution" class="col-sm-2 col-form-label">หน่วยงานที่รับผิดชอบ</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="institution" name="institution">
           </div>
+        </div>
 
-          <div class="row mb-3">
-            <label for="project_code" class="col-sm-2 col-form-label">จังหวัดที่ดำเนินโครงการ</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="project_code">
-            </div>
+        <div class="row mb-3">
+          <label for="province" class="col-sm-2 col-form-label ">จังหวัดที่ดำเนินโครงการ</label>
+          <div class="col-sm-10">
+            <select class="form-select form-select-lg mb-3" id="province" name="province">
+              <option value="ขอนแก่น">ขอนแก่น</option>
+              <option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
+              <option value="มหาสารคาม">มหาสารคาม</option>
+              <option value="กาฬสินธุ์">กาฬสินธุ์</option>
+            </select>
           </div>
-          <div class="row mb-3">
-            <label for="target" class="col-sm-2 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="target">
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-              <label>รายละเอียดการดำเนินงาน</label>
-            </div>
-          </div>
+        </div>
 
-          <div class="row mb-3">
-            <label for="project_objection" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="project_objection">
-            </div>
+        <div class="row mb-3">
+          <label for="target" class="col-sm-2 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="target" name="target">
           </div>
+        </div>
+        <div class="row mb-3">
+          <div class="-flex p-2 bd-highlight" style="background-color: gray;">
+            <label>รายละเอียดการดำเนินงาน</label>
+          </div>
+        </div>
 
-          <div class="row mb-3">
-            <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="project_result">
-            </div>
+        <div class="row mb-3">
+          <label for="project_objective" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="project_objective" name="project_objective">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="project_result" name="project_result">
           </div>
         </div>
       </div>
-    
+    </div>
+
 
     <div class="flex-md-row align-items-center justify-content-around part" id="p3">
       <div class="w-100 bd-highlight">
-      <div>
+        <div>
           <div class="-flex p-2 bd-highlight" style="background-color: gray;">
             <label>แหล่งงบประมาณตามแผน</label>
           </div>
@@ -245,7 +252,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_province_plan" name="budget_province_plan" >
             </div>
             <div class="col-auto">
               บาท
@@ -263,7 +270,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_department_plan" name="budget_department_plan" >
             </div>
             <div class="col-auto">
               บาท
@@ -272,7 +279,7 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="autoSizingCheck" >
                 <label class="form-check-label" for="autoSizingCheck">
                   งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                 </label>
@@ -282,7 +289,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control"  id="budget_local_plan" name="budget_local_plan">
             </div>
             <div class="col-auto">
               บาท
@@ -301,7 +308,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_private_plan" name="budget_private_plan">
             </div>
             <div class="col-auto">
               บาท
@@ -327,7 +334,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_province_receive" name="budget_province_receive">
             </div>
             <div class="col-auto">
               บาท
@@ -345,7 +352,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="institution" name="budget_department_receive">
             </div>
             <div class="col-auto">
               บาท
@@ -364,7 +371,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_local_receive" name="budget_local_receive">
             </div>
             <div class="col-auto">
               บาท
@@ -383,7 +390,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_private_receive" name="budget_private_receive">
             </div>
             <div class="col-auto">
               บาท
@@ -410,7 +417,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_province_use" name="budget_province_use">
             </div>
             <div class="col-auto">
               บาท
@@ -428,7 +435,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_department_use" name="budget_department_use">
             </div>
             <div class="col-auto">
               บาท
@@ -447,7 +454,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_local_use" name="budget_local_use">
             </div>
             <div class="col-auto">
               บาท
@@ -466,7 +473,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution">
+              <input type="text" class="form-control" id="budget_private_use" name="budget_private_use">
             </div>
             <div class="col-auto">
               บาท
@@ -484,7 +491,7 @@ if (!isset($_SESSION["user_email"])) {
         </div><br>
         <div>
           <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
-          <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+          <textarea class="form-control" id="project_additional" style="height: 100px" name="project_additional"></textarea>
         </div><br>
         <div class="-flex p-2 bd-highlight" style="background-color: gray;">
           <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
