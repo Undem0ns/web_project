@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+<?php include "../connect.php" ?>
 <html lang="en">
 <?php
 session_start();
 if (!isset($_SESSION["user_email"])) {
   header("location:../login/index.php");
 }
+// $stmt = $pdo->prepare("SELECT * FROM project WHERE project_id = ?");
+// $stmt->bindParam(1, $_GET["project_id"]);
+// $stmt->execute();
+// $row = $stmt->fetch(); 
 ?>
 
 <head>
@@ -12,7 +17,7 @@ if (!isset($_SESSION["user_email"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>เพิ่มโครงการ</title>
-  <?php include "../connect.php" ?>
+
 </head>
 
 <body>
@@ -57,21 +62,23 @@ if (!isset($_SESSION["user_email"])) {
 
     <div class="flex-md-row align-items-center justify-content-around part" id="p1">
       <div class="bd-example">
-        <form>
+        <!-- --------------------------------------------------------------------------- -->
+
+        <form action="test.php" method="post">
           <div class="form-group">
             <label for="project_name">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
-            <input type="text" class="form-control" id="project_name">
+            <input type="text" class="form-control" id="project_name" name="name">
           </div>
           <div class="form-group">
             <label>เลือกความเชื่อมโยงของโครงการกับแผนกลุ่มจังหวัด</label>
             <div class="flex-md-row">
               <label for="development_subject">ประเด็นการพัฒนา</label>
-              <select class="form-control" id="development_subject">
-                <option>ประเด็นการพัฒนาที่ 1</option>
-                <option>ประเด็นการพัฒนาที่ 2</option>
-                <option>ประเด็นการพัฒนาที่ 3</option>
-                <option>ประเด็นการพัฒนาที่ 4</option>
-                <option>ประเด็นการพัฒนาที่ 5</option>
+              <select class="form-control" id="development_subject" name="development_subject">
+                <option value="ประเด็นการพัฒนาที่ 1">ประเด็นการพัฒนาที่ 1</option>
+                <option value="ประเด็นการพัฒนาที่ 2">ประเด็นการพัฒนาที่ 2</option>
+                <option value="ประเด็นการพัฒนาที่ 3">ประเด็นการพัฒนาที่ 3</option>
+                <option value="ประเด็นการพัฒนาที่ 4">ประเด็นการพัฒนาที่ 4</option>
+                <option value="ประเด็นการพัฒนาที่ 5">ประเด็นการพัฒนาที่ 5</option>
               </select>
             </div>
             <div class="flex-md-row">
@@ -87,70 +94,69 @@ if (!isset($_SESSION["user_email"])) {
               <input type="text" class="form-control" id="project_sub">
             </div>
           </div>
-        </form>
+
       </div>
     </div>
 
     <div class="flex-md-row align-items-center justify-content-around part" id="p2">
       <div class="bd-example">
-        <form>
-          <div class="form-group">
-            <label>ภาพรวมการดำเนินงาน</label>
-            <div class="flex-md-row">
-              <label for="development_subject">ลักษณะการดำเนินงาน</label>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="operation_type" id="operation_type1" value="option1" checked>
-                <label class="form-check-label" for="operation_type1"> โครงการ </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="operation_type" id="operation_type2" value="option2">
-                <label class="form-check-label" for="operation_type2"> การดำเนินงาน </label>
-              </div>
+
+        <div class="form-group">
+          <label>ภาพรวมการดำเนินงาน</label>
+          <div class="flex-md-row">
+            <label for="development_subject">ลักษณะการดำเนินงาน</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="operation_type" id="operation_type1" value="option1" checked>
+              <label class="form-check-label" for="operation_type1"> โครงการ </label>
             </div>
-            <div class="flex-md-row">
-              <label for="project_code">รหัสโครงงาน (ถ้ามี)</label>
-              <input type="text" class="form-control" id="project_code">
-            </div>
-            <div class="flex-md-row">
-              <label for="development_subject">การใช้งบประมาณ</label>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="use_budget" id="use_budget1" value="use_budget" checked>
-                <label class="form-check-label" for="use_budget1"> ใช้งบประมาณ </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="use_budget" id="use_budget2" value="not_use_budget">
-                <label class="form-check-label" for="use_budget2"> ไม่ใช้งบประมาณ </label>
-              </div>
-            </div>
-            <div class="flex-md-row">
-              <label for="budget_year">ปีงบประมาณที่ดำเนินโครงการ</label>
-              <input type="text" class="form-control" id="budget_year">
-            </div>
-            <div class="flex-md-row">
-              <label for="institution">หน่วยงานที่รับผิดชอบ</label>
-              <input type="text" class="form-control" id="institution">
-            </div>
-            <div class="flex-md-row">
-              <label for="province">จังหวัดที่ดำเนินโครงการ</label>
-              <input type="text" class="form-control" id="province">
-            </div>
-            <div class="flex-md-row">
-              <label for="target">กลุ่มเป้าหมายในการดำเนินงาน</label>
-              <input type="text" class="form-control" id="target">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="operation_type" id="operation_type2" value="option2">
+              <label class="form-check-label" for="operation_type2"> การดำเนินงาน </label>
             </div>
           </div>
-          <div class="form-group">
-            <label>รายละเอียดการดำเนินงาน</label>
-            <div class="flex-md-row">
-              <label for="project_objective">วัตถุประสงค์และรายละเอียดโครงการ</label>
-              <input type="text" class="form-control" id="project_objective">
+          <div class="flex-md-row">
+            <label for="project_code">รหัสโครงงาน (ถ้ามี)</label>
+            <input type="text" class="form-control" id="project_code">
+          </div>
+          <div class="flex-md-row">
+            <label for="development_subject">การใช้งบประมาณ</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="use_budget" id="use_budget1" value="use_budget" checked>
+              <label class="form-check-label" for="use_budget1"> ใช้งบประมาณ </label>
             </div>
-            <div class="flex-md-row">
-              <label for="project_result">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
-              <input type="text" class="form-control" id="project_result">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="use_budget" id="use_budget2" value="not_use_budget">
+              <label class="form-check-label" for="use_budget2"> ไม่ใช้งบประมาณ </label>
             </div>
           </div>
-        </form>
+          <div class="flex-md-row">
+            <label for="budget_year">ปีงบประมาณที่ดำเนินโครงการ</label>
+            <input type="text" class="form-control" id="budget_year">
+          </div>
+          <div class="flex-md-row">
+            <label for="institution">หน่วยงานที่รับผิดชอบ</label>
+            <input type="text" class="form-control" id="institution">
+          </div>
+          <div class="flex-md-row">
+            <label for="province">จังหวัดที่ดำเนินโครงการ</label>
+            <input type="text" class="form-control" id="province">
+          </div>
+          <div class="flex-md-row">
+            <label for="target">กลุ่มเป้าหมายในการดำเนินงาน</label>
+            <input type="text" class="form-control" id="target">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>รายละเอียดการดำเนินงาน</label>
+          <div class="flex-md-row">
+            <label for="project_objective">วัตถุประสงค์และรายละเอียดโครงการ</label>
+            <input type="text" class="form-control" id="project_objective">
+          </div>
+          <div class="flex-md-row">
+            <label for="project_result">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
+            <input type="text" class="form-control" id="project_result">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -263,14 +269,17 @@ if (!isset($_SESSION["user_email"])) {
         </div>
       </div>
     </div>
+    
+ 
 
     <div class="d-md-flex flex-md-row align-items-center justify-content-end fixed-bottom" style="margin-bottom: 100px; margin-right: 50px;">
-      <button class="btn btn-primary" id="button1" onclick="previousPart()">หน้าก่อนหน้า</button>
-      <button class="btn btn-primary" id="button2" onclick="nextPart()">หน้าถัดไป</button>
-      <button class="btn btn-danger" id="button3" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
+      <div class="btn btn-primary" id="button1" onclick="previousPart()">หน้าก่อนหน้า</div>
+      <div class="btn btn-primary" id="button2" onclick="nextPart()">หน้าถัดไป</div>
+      <button class="btn btn-danger" type="submit" id="button3" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
     </div>
   </div>
-
+  </form>
+   <!-- --------------------------------------------------------------------------- -->
   <script>
     var part = 1;
     renderPart(part);
