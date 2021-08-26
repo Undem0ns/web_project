@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2021 at 12:43 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Generation Time: Aug 26, 2021 at 10:56 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,13 +34,13 @@ CREATE TABLE `project` (
   `project_roadmap` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `project_main` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `project_sub` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `operation_type` int(11) NOT NULL,
+  `operation_type` varchar(200) NOT NULL,
   `project_code` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `use_budget` int(11) NOT NULL,
-  `budget_year` date NOT NULL,
+  `use_budget` varchar(200) NOT NULL,
+  `budget_year` varchar(200) NOT NULL,
   `institution` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `province` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `target` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `target_user` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `project_objective` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `project_result` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `project_additional` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -55,15 +55,23 @@ CREATE TABLE `project` (
   `budget_local_use` int(11) DEFAULT NULL,
   `budget_private_plan` int(11) DEFAULT NULL,
   `budget_private_receive` int(11) DEFAULT NULL,
-  `budget_private_use` int(11) DEFAULT NULL
+  `budget_private_use` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `project`
 --
 
-INSERT INTO `project` (`project_id`, `project_name`, `development_subject`, `project_roadmap`, `project_main`, `project_sub`, `operation_type`, `project_code`, `use_budget`, `budget_year`, `institution`, `province`, `target`, `project_objective`, `project_result`, `project_additional`, `budget_province_plan`, `budget_province_receive`, `budget_province_use`, `budget_department_plan`, `budget_department_receive`, `budget_department_use`, `budget_local_plan`, `budget_local_receive`, `budget_local_use`, `budget_private_plan`, `budget_private_receive`, `budget_private_use`) VALUES
-(3, 'ทดสอบโครงการ', 1, 'แบบแผน', 'หลัก', 'ย่อย', 1, 'พงด00152484', 10000, '0000-00-00', 'ศศศ', 'ขอนแก่น', 'นักศึกษา', 'เก่ง', 'เก่งจริง', 'ไม่มี', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `project` (`project_id`, `project_name`, `development_subject`, `project_roadmap`, `project_main`, `project_sub`, `operation_type`, `project_code`, `use_budget`, `budget_year`, `institution`, `province`, `target_user`, `project_objective`, `project_result`, `project_additional`, `budget_province_plan`, `budget_province_receive`, `budget_province_use`, `budget_department_plan`, `budget_department_receive`, `budget_department_use`, `budget_local_plan`, `budget_local_receive`, `budget_local_use`, `budget_private_plan`, `budget_private_receive`, `budget_private_use`, `user_id`) VALUES
+(3, 'ทดสอบโครงการ', 1, 'แบบแผน', 'หลัก', 'ย่อย', '1', 'พงด00152484', '10000', '0000-00-00', 'ศศศ', 'ขอนแก่น', 'นักศึกษา', 'เก่ง', 'เก่งจริง', 'ไม่มี', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(4, 'jay', 0, 'แผนงาน 3', 'โครงการหลัก (ตามแผน) 4', 'โครงการ/กิจกรรมย่อย (ตามแผน) 2', 'การดำเนินงาน', '123456', 'option2', '0000-00-00', 'asdasd', 'ร้อยเอ็ด', 'asdasd', 'asdasdasdasd', 'asdsad', 'asdasdasd', 2000, 200, 200, 2000, 200, 2000, 200, 2000, 200, 200, 2000, 200, 0),
+(5, 'jay', 0, 'แผนงาน 3', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 3', 'โครงการ', '123456', 'option1', '0000-00-00', 'ไม่รู้', 'กาฬสินธุ์', 'ประชาชน', 'กกกกห', 'asdasdasd', 'asdasdasd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
+(8, 'jay', 0, 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 3', 'โครงการ/กิจกรรมย่อย (ตามแผน) 3', 'โครงการ', '123456', 'option1', '0000-00-00', 'ไม่รู้', 'ขอนแก่น', 'ประชาชน', 'กกกกห', 'ฟหกฟหกฟหก', 'asdasdsad', 2000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
+(9, 'jay', 0, 'แผนงาน 3', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 2', 'โครงการ', '123456', 'option1', '2542', 'ไม่รู้', 'กาฬสินธุ์', 'นักเรียน', 'asdasd', 'sadasdsad', 'asdasdsad', 2000, 20000, 2000, 2000, 20000, 2000, 200, 20000, 200, 200, 2000, 2000, 0),
+(10, 'www', 0, 'แผนงาน 1', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 2', 'โครงการ', '55555', 'option1', '2015', 'นักเรียน', 'มหาสารคาม', 'นักเรียน', 'asdasdasdasdasasd', 'asdasd', 'asdsad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
+(11, 'หหหห', 0, 'แผนงาน 1', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 3', 'โครงการ', '123456', 'option2', '2015', 'ไม่รู้', 'มหาสารคาม', 'นักเรียน', 'asdasd', 'asdasd', 'asdasdasd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(12, 'ตู๋', 0, 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 3', 'การดำเนินงาน', '123456', 'ไม่ใช้งบประมาณ', '2015', 'นักเรียน', 'มหาสารคาม', 'นักเรียน', 'ฟหกหฟก', 'หฟกฟหกฟกห', 'ฟหกหฟก', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -83,7 +91,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`) VALUES
-(1, 'admin123', 'admin123@mail.com', '12345678');
+(1, 'admin123', 'admin123@mail.com', '1234'),
+(2, '', 'jay@hotmail.com', '1234');
 
 --
 -- Indexes for dumped tables
@@ -109,13 +118,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

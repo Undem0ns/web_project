@@ -16,6 +16,7 @@
   }
 
   $stmt = $pdo->prepare("SELECT * FROM project");
+
   $stmt->execute();
   ?>
 
@@ -76,7 +77,7 @@
       <tbody>
 
         <tr>
-          <td><?= $row["project_name"] ?></td>
+          <td><a class="text-primary decoration-none" href="detail.php?project_id=<?=$row["project_id"] ?>"> <?= $row["project_name"] ?></a> </td>
           <td><?= $row["project_roadmap"] ?></td>
           <td><?= $row["province"] ?></td>
           <td><?= $row["budget_year"] ?></td>
