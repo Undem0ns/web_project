@@ -8,8 +8,10 @@ $stmt->bindParam(1, $_POST["user_email"]);
 $stmt->bindParam(2, $_POST["user_password"]);
 $stmt->execute();
 $row = $stmt->fetch();
-
 if(!empty($row)){
+
+    setcookie("user_email",$row["user_email"], time() + (86400 * 30), "/");
+    setcookie("user_id",$row["user_id"], time() + (86400 * 30), "/");
     
     $_SESSION["user_email"] = $row["user_password"];  
     header("Location:../index/index.php");

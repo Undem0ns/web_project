@@ -1,15 +1,17 @@
-<!DOCTYPE html>
 <?php include "../connect.php" ?>
-<html lang="en">
 <?php
+
 session_start();
-if (!isset($_SESSION["user_email"])) {
-  header("location:../login/index.php");
-}
-// $stmt = $pdo->prepare("SELECT * FROM project WHERE project_id = ?");
-// $stmt->bindParam(1, $_GET["project_id"]);
-// $stmt->execute();
-// $row = $stmt->fetch(); 
+if (!isset($_SESSION["user_email"]) ) {
+    header("location:../login/index.php");
+    }
+
+$stmt = $pdo->prepare("SELECT * FROM project WHERE project_id = ?");
+$stmt->bindParam(1, $_GET["project_id"]);
+$stmt->execute();
+$row = $stmt->fetch();
+
+
 ?>
 
 <head>
@@ -46,7 +48,7 @@ if (!isset($_SESSION["user_email"])) {
           <a class=nav-link active" aria-current="page" href="#"><?php echo $row['user_name']; ?></a>
         </li> -->
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../login/index.php">ออกจากระบบ</a>
+            <a class="nav-link active" aria-current="page" href="#">ออกจากระบบ</a>
           </li>
         </ul>
   </header>
@@ -64,10 +66,11 @@ if (!isset($_SESSION["user_email"])) {
       <div class="w-100 bd-highlight">
         <!-- --------------------------------------------------------------------------- -->
 
-        <form action="add_check.php" method="post">
+        <form action="edit_check.php" method="post">
+        <h5 class="card-title"><input type="hidden" name="project_id" value="<?=$row["project_id"]?>"></h5>
           <div class="mb-3 was-validated">
             <label for="project_name" class=" col-form-label ">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
-            <textarea class="form-control fs-3" name="project_name" id="project_name" style="height: 100px" required></textarea>
+            <textarea class="form-control fs-3" name="project_name" id="project_name" style="height: 100px"  required ><?=$row["project_name"]?></textarea>
           </div>
 
           <div class="row mb-3">
@@ -164,7 +167,7 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label">รหัสโครงงาน (ถ้ามี)</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="project_code " name="project_code">
+            <input type="text" class="form-control fs-3" id="project_code " name="project_code" value='<?=$row["project_code"]?>' >
           </div>
         </div>
 
@@ -191,14 +194,14 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="budget_year" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="budget_year" name="budget_year"  required>
+            <input type="text" class="form-control fs-3" id="budget_year" name="budget_year"  required  value='<?=$row["budget_year"]?>'>
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="institution" class="col-sm-2 col-form-label">หน่วยงานที่รับผิดชอบ</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="institution" name="institution"  required>
+            <input type="text" class="form-control fs-3" id="institution" name="institution"  required  value='<?=$row["institution"]?>'>
           </div>
         </div>
 
@@ -218,7 +221,7 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="target_user" class="col-sm-2 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="target_user" name="target_user"  required>
+            <input type="text" class="form-control fs-3" id="target_user" name="target_user"  required  value='<?=$row["target_user"]?>'>
           </div>
         </div>
         <div class="row mb-3">
@@ -230,14 +233,14 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="project_objective" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="project_objective" name="project_objective" style="height: 300px">
+            <input type="text" class="form-control fs-3" id="project_objective" name="project_objective" style="height: 300px" value='<?=$row["project_objective"]?>'>
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="project_result" name="project_result" style="height: 300px">
+            <input type="text" class="form-control fs-3" id="project_result" name="project_result" style="height: 300px"  value='<?=$row["project_result"]?>'>
           </div>
         </div>
       </div>
@@ -254,7 +257,7 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox1_1" onclick="enableInput('checkbox1_1','budget_province_plan')">
+                <input class="form-check-input" type="checkbox" id="checkbox1_1" onclick="enableInput('checkbox1_1','budget_province_plan',)" >
                 <label class="form-check-label" for="checkbox1_1">
                   งบประมาณของจังหวัด/กลุ่มจังหวัด
                 </label>
@@ -264,7 +267,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_province_plan" name="budget_province_plan" >
+              <input type="text" disabled class="form-control fs-3" id="budget_province_plan" name="budget_province_plan"  value='<?=$row["budget_province_plan"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -281,7 +284,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_department_plan" name="budget_department_plan" >
+              <input type="text" disabled class="form-control fs-3" id="budget_department_plan" name="budget_department_plan"  value='<?=$row["budget_department_plan"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -300,7 +303,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  input type="text" disabled class="form-control fs-3" id="budget_local_plan" name="budget_local_plan">
+              <input type="text"  input type="text" disabled class="form-control fs-3" id="budget_local_plan" name="budget_local_plan" value='<?=$row["budget_local_plan"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -319,7 +322,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_private_plan" name="budget_private_plan">
+              <input type="text" disabled class="form-control fs-3" id="budget_private_plan" name="budget_private_plan"  value='<?=$row["budget_private_plan"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -345,7 +348,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_province_receive" name="budget_province_receive">
+              <input type="text" disabled class="form-control fs-3" id="budget_province_receive" name="budget_province_receive"  value='<?=$row["budget_province_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -362,7 +365,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_department_receive" name="budget_department_receive">
+              <input type="text" disabled class="form-control fs-3" id="budget_department_receive" name="budget_department_receive"  value='<?=$row["budget_department_receive"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -381,7 +384,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_local_receive" name="budget_local_receive">
+              <input type="text" disabled class="form-control fs-3" id="budget_local_receive" name="budget_local_receive"  value='<?=$row["budget_local_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -400,7 +403,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_private_receive" name="budget_private_receive">
+              <input type="text" disabled class="form-control fs-3" id="budget_private_receive" name="budget_private_receive" value='<?=$row["budget_private_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -427,7 +430,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_province_use" name="budget_province_use">
+              <input type="text" disabled class="form-control fs-3" id="budget_province_use" name="budget_province_use" value='<?=$row["budget_province_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -444,7 +447,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_department_use" name="budget_department_use">
+              <input type="text" disabled class="form-control fs-3" id="budget_department_use" name="budget_department_use" value='<?=$row["budget_department_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -463,7 +466,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_local_use" name="budget_local_use">
+              <input type="text" disabled class="form-control fs-3" id="budget_local_use" name="budget_local_use" value='<?=$row["budget_local_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -482,7 +485,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-3" id="budget_private_use" name="budget_private_use">
+              <input type="text" disabled class="form-control fs-3" id="budget_private_use" name="budget_private_use"  value='<?=$row["budget_private_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -500,7 +503,7 @@ if (!isset($_SESSION["user_email"])) {
         </div><br>
         <div>
           <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
-          <textarea class="form-control" id="project_additional" style="height: 300px" name="project_additional"></textarea>
+          <textarea class="form-control" id="project_additional" style="height: 300px" name="project_additional"><?=$row["project_additional"]?></textarea>
         </div><br>
         <div class="-flex p-2 bd-highlight" style="background-color: gray;">
           <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
@@ -534,7 +537,7 @@ if (!isset($_SESSION["user_email"])) {
         input.disabled = false;
       } else {
         input.disabled = true;
-        input.value = '';
+        
       }
     }
 

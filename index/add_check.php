@@ -1,6 +1,6 @@
 <?php include "../connect.php" ?>
 <?php
-$stmt = $pdo->prepare("INSERT INTO project VALUES ('',? ,?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$stmt = $pdo->prepare("INSERT INTO project VALUES ('',? ,?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 $stmt->bindParam(1, $_POST["project_name"]);
 $stmt->bindParam(2, $_POST["development_subject"]);
 $stmt->bindParam(3, $_POST["project_roadmap"]);
@@ -12,7 +12,7 @@ $stmt->bindParam(8, $_POST["use_budget"]);
 $stmt->bindParam(9, $_POST["budget_year"]);
 $stmt->bindParam(10, $_POST["institution"]);
 $stmt->bindParam(11, $_POST["province"]);
-$stmt->bindParam(12, $_POST["target"]);
+$stmt->bindParam(12, $_POST["target_user"]);
 $stmt->bindParam(13, $_POST["project_objective"]);
 $stmt->bindParam(14, $_POST["project_result"]);
 $stmt->bindParam(15, $_POST["project_additional"]);
@@ -28,12 +28,13 @@ $stmt->bindParam(24, $_POST["budget_local_use"]);
 $stmt->bindParam(25, $_POST["budget_private_plan"]);
 $stmt->bindParam(26, $_POST["budget_private_receive"]);
 $stmt->bindParam(27, $_POST["budget_private_use"]);
-
+$stmt->bindParam(28, $_COOKIE["user_id"]);
 $stmt->execute(); 
 $FoodID = $pdo->lastInsertId(); 
 
 
-echo "เพิ่มโครงการสำเร็จ"
+echo "เพิ่มโครงการสำเร็จ";
+header("refresh: 1;url=index.php");
 
 // header("location:detail.php?project_id=" . $_POST["project_id"]);
 
