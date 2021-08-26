@@ -80,7 +80,7 @@
           <td><?= $row["project_roadmap"] ?></td>
           <td><?= $row["province"] ?></td>
           <td><?= $row["budget_year"] ?></td>
-          <td><a class="bn btn-primary" href="add_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
+          <td><a class="btn btn-primary" href="add_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
         </tr>
       </tbody>
     <?php } ?>

@@ -65,14 +65,22 @@ if (!isset($_SESSION["user_email"])) {
         <!-- --------------------------------------------------------------------------- -->
 
         <form action="add_check.php" method="post">
-          <div class="mb-3">
+          <div class="mb-3 was-validated">
             <label for="project_name" class=" col-form-label ">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
-            <textarea class="form-control fs-3" name="project_name" id="project_name"></textarea>
+            <textarea class="form-control fs-3" name="project_name" id="project_name" style="height: 100px" required></textarea>
           </div>
+
+          <div class="row mb-3">
+          <div class="-flex p-2 bd-highlight" style="background-color: gray;">
+            <label>เลือกความเชื่อมโยงของโครงการกับแผนกลุ่มจังหวัด
+            </label>
+          </div>
+        </div>
           <div class="row mb-3">
             <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3 fs-3" id="development_subject" name="development_subject">
+              <select class="form-select form-select-lg mb-3 fs-3" id="development_subject" name="development_subject"  required>
+                <option selected disabled value="">Choose...</option>
                 <option value="ประเด็นการพัฒนาที่ 1">ประเด็นการพัฒนาที่ 1</option>
                 <option value="ประเด็นการพัฒนาที่ 2">ประเด็นการพัฒนาที่ 2</option>
                 <option value="ประเด็นการพัฒนาที่ 3">ประเด็นการพัฒนาที่ 3</option>
@@ -84,7 +92,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3 fs-3" id="project_roadmap" name="project_roadmap">
+              <select class="form-select form-select-lg mb-3 fs-3" id="project_roadmap" name="project_roadmap"  required>
+                <option selected disabled value="">Choose...</option>
                 <option value="แผนงาน 1">แผนงาน 1</option>
                 <option value="แผนงาน 2">แผนงาน 2</option>
                 <option value="แผนงาน 3">แผนงาน 3</option>
@@ -96,7 +105,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3 fs-3" id="project_main" name="project_main">
+              <select class="form-select form-select-lg mb-3 fs-3" id="project_main" name="project_main"  required>
+                <option selected disabled value="">Choose...</option>
                 <option value="โครงการหลัก (ตามแผน) 1">โครงการหลัก (ตามแผน) 1</option>
                 <option value="โครงการหลัก (ตามแผน) 2">โครงการหลัก (ตามแผน) 2</option>
                 <option value="โครงการหลัก (ตามแผน) 3">โครงการหลัก (ตามแผน) 3</option>
@@ -108,7 +118,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3 fs-3" id="project_sub" name="project_sub">
+              <select class="form-select form-select-lg mb-3 fs-3" id="project_sub" name="project_sub"  required>
+                <option selected disabled value="">Choose...</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 1">โครงการ/กิจกรรมย่อย (ตามแผน) 1</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 2">โครงการ/กิจกรรมย่อย (ตามแผน) 2</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 3">โครงการ/กิจกรรมย่อย (ตามแผน) 3</option>
@@ -180,21 +191,22 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="budget_year" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="budget_year" name="budget_year">
+            <input type="text" class="form-control fs-3" id="budget_year" name="budget_year"  required>
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="institution" class="col-sm-2 col-form-label">หน่วยงานที่รับผิดชอบ</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="institution" name="institution">
+            <input type="text" class="form-control fs-3" id="institution" name="institution"  required>
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="province" class="col-sm-2 col-form-label fs-3">จังหวัดที่ดำเนินโครงการ</label>
           <div class="col-sm-10">
-            <select class="form-select form-select-lg mb-3" id="province" name="province">
+            <select class="form-select form-select-lg mb-3" id="province" name="province"  required>
+              <option selected disabled value="">Choose...</option>
               <option value="ขอนแก่น">ขอนแก่น</option>
               <option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
               <option value="มหาสารคาม">มหาสารคาม</option>
@@ -206,7 +218,7 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="target" class="col-sm-2 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="target" name="target">
+            <input type="text" class="form-control fs-3" id="target" name="target"  required>
           </div>
         </div>
         <div class="row mb-3">
@@ -218,14 +230,14 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="project_objective" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="project_objective" name="project_objective">
+            <input type="text" class="form-control fs-3" id="project_objective" name="project_objective" style="height: 300px">
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control fs-3" id="project_result" name="project_result">
+            <input type="text" class="form-control fs-3" id="project_result" name="project_result" style="height: 300px">
           </div>
         </div>
       </div>
@@ -488,7 +500,7 @@ if (!isset($_SESSION["user_email"])) {
         </div><br>
         <div>
           <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
-          <textarea class="form-control" id="project_additional" style="height: 100px" name="project_additional"></textarea>
+          <textarea class="form-control" id="project_additional" style="height: 300px" name="project_additional"></textarea>
         </div><br>
         <div class="-flex p-2 bd-highlight" style="background-color: gray;">
           <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
