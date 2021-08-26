@@ -67,12 +67,12 @@ if (!isset($_SESSION["user_email"])) {
         <form action="add_check.php" method="post">
           <div class="mb-3">
             <label for="project_name" class=" col-form-label ">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
-            <textarea class="form-control" name="project_name" id="project_name"></textarea>
+            <textarea class="form-control fs-3" name="project_name" id="project_name"></textarea>
           </div>
           <div class="row mb-3">
             <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3" id="development_subject" name="development_subject">
+              <select class="form-select form-select-lg mb-3 fs-3" id="development_subject" name="development_subject">
                 <option value="ประเด็นการพัฒนาที่ 1">ประเด็นการพัฒนาที่ 1</option>
                 <option value="ประเด็นการพัฒนาที่ 2">ประเด็นการพัฒนาที่ 2</option>
                 <option value="ประเด็นการพัฒนาที่ 3">ประเด็นการพัฒนาที่ 3</option>
@@ -84,7 +84,7 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3" id="project_roadmap" name="project_roadmap">
+              <select class="form-select form-select-lg mb-3 fs-3" id="project_roadmap" name="project_roadmap">
                 <option value="แผนงาน 1">แผนงาน 1</option>
                 <option value="แผนงาน 2">แผนงาน 2</option>
                 <option value="แผนงาน 3">แผนงาน 3</option>
@@ -96,7 +96,7 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3" id="project_main" name="project_main">
+              <select class="form-select form-select-lg mb-3 fs-3" id="project_main" name="project_main">
                 <option value="โครงการหลัก (ตามแผน) 1">โครงการหลัก (ตามแผน) 1</option>
                 <option value="โครงการหลัก (ตามแผน) 2">โครงการหลัก (ตามแผน) 2</option>
                 <option value="โครงการหลัก (ตามแผน) 3">โครงการหลัก (ตามแผน) 3</option>
@@ -108,7 +108,7 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
             <div class="col-sm-10">
-              <select class="form-select form-select-lg mb-3" id="project_sub" name="project_sub">
+              <select class="form-select form-select-lg mb-3 fs-3" id="project_sub" name="project_sub">
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 1">โครงการ/กิจกรรมย่อย (ตามแผน) 1</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 2">โครงการ/กิจกรรมย่อย (ตามแผน) 2</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 3">โครงการ/กิจกรรมย่อย (ตามแผน) 3</option>
@@ -153,7 +153,7 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label">รหัสโครงงาน (ถ้ามี)</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="project_code " name="project_code">
+            <input type="text" class="form-control fs-3" id="project_code " name="project_code">
           </div>
         </div>
 
@@ -180,19 +180,19 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="budget_year" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="budget_year" name="budget_year">
+            <input type="text" class="form-control fs-3" id="budget_year" name="budget_year">
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="institution" class="col-sm-2 col-form-label">หน่วยงานที่รับผิดชอบ</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="institution" name="institution">
+            <input type="text" class="form-control fs-3" id="institution" name="institution">
           </div>
         </div>
 
         <div class="row mb-3">
-          <label for="province" class="col-sm-2 col-form-label ">จังหวัดที่ดำเนินโครงการ</label>
+          <label for="province" class="col-sm-2 col-form-label fs-3">จังหวัดที่ดำเนินโครงการ</label>
           <div class="col-sm-10">
             <select class="form-select form-select-lg mb-3" id="province" name="province">
               <option value="ขอนแก่น">ขอนแก่น</option>
@@ -206,7 +206,7 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="target" class="col-sm-2 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="target" name="target">
+            <input type="text" class="form-control fs-3" id="target" name="target">
           </div>
         </div>
         <div class="row mb-3">
@@ -218,14 +218,14 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row mb-3">
           <label for="project_objective" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="project_objective" name="project_objective">
+            <input type="text" class="form-control fs-3" id="project_objective" name="project_objective">
           </div>
         </div>
 
         <div class="row mb-3">
           <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="project_result" name="project_result">
+            <input type="text" class="form-control fs-3" id="project_result" name="project_result">
           </div>
         </div>
       </div>
@@ -242,8 +242,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="checkbox1_1" onclick="enableInput('checkbox1_1','budget_province_plan')">
+                <label class="form-check-label" for="checkbox1_1">
                   งบประมาณของจังหวัด/กลุ่มจังหวัด
                 </label>
               </div>
@@ -252,7 +252,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_province_plan" name="budget_province_plan" >
+              <input type="text" disabled class="form-control fs-3" id="budget_province_plan" name="budget_province_plan" >
             </div>
             <div class="col-auto">
               บาท
@@ -261,16 +261,15 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
-                  <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+                <input class="form-check-input" type="checkbox" id="checkbox1_2" onclick="enableInput('checkbox1_2','budget_department_plan')">
+                  <label class="form-check-label" for="checkbox1_2"> งบประมาณของกระทรวง/กรม </label>
               </div>
             </div>
             <div class="col-auto">
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_department_plan" name="budget_department_plan" >
+              <input type="text" disabled class="form-control fs-3" id="budget_department_plan" name="budget_department_plan" >
             </div>
             <div class="col-auto">
               บาท
@@ -279,8 +278,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck" >
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="checkbox1_3" onclick="enableInput('checkbox1_3','budget_local_plan')" >
+                <label class="form-check-label" for="checkbox1_3">
                   งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                 </label>
               </div>
@@ -289,7 +288,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control"  id="budget_local_plan" name="budget_local_plan">
+              <input type="text"  input type="text" disabled class="form-control fs-3" id="budget_local_plan" name="budget_local_plan">
             </div>
             <div class="col-auto">
               บาท
@@ -298,8 +297,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="checkbox1_4" onclick="enableInput('checkbox1_4','budget_private_plan')">
+                <label class="form-check-label" for="checkbox1_4">
                   งบประมาณของภาคเอกชน/ชุมชน
                 </label>
               </div>
@@ -308,7 +307,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_private_plan" name="budget_private_plan">
+              <input type="text" disabled class="form-control fs-3" id="budget_private_plan" name="budget_private_plan">
             </div>
             <div class="col-auto">
               บาท
@@ -324,8 +323,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="checkbox2_1" onclick="enableInput('checkbox2_1','budget_province_receive')">
+                <label class="form-check-label" for="checkbox2_1">
                   งบประมาณของจังหวัด/กลุ่มจังหวัด
                 </label>
               </div>
@@ -334,7 +333,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_province_receive" name="budget_province_receive">
+              <input type="text" disabled class="form-control fs-3" id="budget_province_receive" name="budget_province_receive">
             </div>
             <div class="col-auto">
               บาท
@@ -343,16 +342,15 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
-                  <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+                <input class="form-check-input" type="checkbox" id="checkbox2_2" onclick="enableInput('checkbox2_2','budget_department_receive')">
+                  <label class="form-check-label" for="checkbox2_2"> งบประมาณของกระทรวง/กรม </label>
               </div>
             </div>
             <div class="col-auto">
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="institution" name="budget_department_receive">
+              <input type="text" disabled class="form-control fs-3" id="budget_department_receive" name="budget_department_receive">
             </div>
             <div class="col-auto">
               บาท
@@ -361,8 +359,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="checkbox2_3" onclick="enableInput('checkbox2_3','budget_local_receive')">
+                <label class="form-check-label" for="checkbox2_3">
                   งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                 </label>
               </div>
@@ -371,7 +369,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_local_receive" name="budget_local_receive">
+              <input type="text" disabled class="form-control fs-3" id="budget_local_receive" name="budget_local_receive">
             </div>
             <div class="col-auto">
               บาท
@@ -380,8 +378,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="checkbox2_4" onclick="enableInput('checkbox2_4','budget_private_receive')">
+                <label class="form-check-label" for="checkbox2_4">
                   งบประมาณของภาคเอกชน/ชุมชน
                 </label>
               </div>
@@ -390,7 +388,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_private_receive" name="budget_private_receive">
+              <input type="text" disabled class="form-control fs-3" id="budget_private_receive" name="budget_private_receive">
             </div>
             <div class="col-auto">
               บาท
@@ -407,8 +405,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="checkbox3_1" onclick="enableInput('checkbox3_1','budget_province_use')">
+                <label class="form-check-label" for="checkbox3_1">
                   งบประมาณของจังหวัด/กลุ่มจังหวัด
                 </label>
               </div>
@@ -417,7 +415,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_province_use" name="budget_province_use">
+              <input type="text" disabled class="form-control fs-3" id="budget_province_use" name="budget_province_use">
             </div>
             <div class="col-auto">
               บาท
@@ -426,16 +424,15 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
-                  <label class="form-check-label" for="flexCheckDefault"> งบประมาณของกระทรวง/กรม </label>
+                <input class="form-check-input" type="checkbox" id="checkbox3_2" onclick="enableInput('checkbox3_2','budget_department_use')">
+                  <label class="form-check-label" for="checkbox3_2"> งบประมาณของกระทรวง/กรม </label>
               </div>
             </div>
             <div class="col-auto">
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_department_use" name="budget_department_use">
+              <input type="text" disabled class="form-control fs-3" id="budget_department_use" name="budget_department_use">
             </div>
             <div class="col-auto">
               บาท
@@ -444,8 +441,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="checkbox3_3" onclick="enableInput('checkbox3_3','budget_local_use')">
+                <label class="form-check-label" for="checkbox3_3">
                   งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                 </label>
               </div>
@@ -454,7 +451,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_local_use" name="budget_local_use">
+              <input type="text" disabled class="form-control fs-3" id="budget_local_use" name="budget_local_use">
             </div>
             <div class="col-auto">
               บาท
@@ -463,8 +460,8 @@ if (!isset($_SESSION["user_email"])) {
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input" type="checkbox" id="checkbox3_4" onclick="enableInput('checkbox3_4','budget_private_use')">
+                <label class="form-check-label" for="checkbox3_4">
                   งบประมาณของภาคเอกชน/ชุมชน
                 </label>
               </div>
@@ -473,7 +470,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="budget_private_use" name="budget_private_use">
+              <input type="text" disabled class="form-control fs-3" id="budget_private_use" name="budget_private_use">
             </div>
             <div class="col-auto">
               บาท
@@ -517,6 +514,17 @@ if (!isset($_SESSION["user_email"])) {
   <script>
     var part = 1;
     renderPart(part);
+
+    function enableInput(checkbox_id, input_id) {
+      var checkBox = document.getElementById(checkbox_id);
+      var input = document.getElementById(input_id);
+      if (checkBox.checked == true) {
+        input.disabled = false;
+      } else {
+        input.disabled = true;
+        input.value = '';
+      }
+    }
 
     function initPart() {
       document.getElementById("part1").style.fontWeight = "normal";
