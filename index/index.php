@@ -41,9 +41,9 @@
           </li>
         </ul>
         <ul class="nav justify-content-end">
-          <!-- <li class="nav-item">
-              <a class=nav-link active" aria-current="page" href="#"><?php echo $row['user_name']; ?></a>
-        </li> -->
+          <li class="nav-item">
+              <a class=nav-link active aria-current="page" ><?php echo $_COOKIE["user_email"]; ?></a>
+        </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../login/index.php">ออกจากระบบ</a>
           </li>
@@ -80,7 +80,7 @@
           <td><?= $row["project_roadmap"] ?></td>
           <td><?= $row["province"] ?></td>
           <td><?= $row["budget_year"] ?></td>
-          <td><a class="btn btn-primary" href="add_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
+          <td><a class="btn btn-primary" href="edit_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
         </tr>
       </tbody>
     <?php } ?>
