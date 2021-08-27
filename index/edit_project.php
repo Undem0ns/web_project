@@ -48,7 +48,7 @@ $row = $stmt->fetch();
               <a class=nav-link active aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-</svg> <?php echo $_COOKIE["user_email"]; ?></a>
+</svg><?php echo $_COOKIE["user_name"]; ?></a>
         </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../login/index.php">ออกจากระบบ</a>
@@ -69,7 +69,7 @@ $row = $stmt->fetch();
       <div class="w-100 bd-highlight">
         <!-- --------------------------------------------------------------------------- -->
 
-        <form action="edit_check.php" method="post">
+        <form action="edit_check.php" method="post" enctype="multipart/form-data">
         <h5 class="card-title"><input type="hidden" name="project_id" value="<?=$row["project_id"]?>"></h5>
           <div class="mb-3 was-validated">
             <label for="project_name" class=" col-form-label ">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
@@ -512,8 +512,8 @@ $row = $stmt->fetch();
           <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
         </div><br>
         <div class="input-group mb-3">
-          <input type="file" class="form-control" id="inputGroupFile02">
-          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+          <input type="file" class="form-control" id="upload_file" name="upload_file">
+          <label class="input-group-text" for="upload_file">Upload</label>
         </div>
 
       </div>

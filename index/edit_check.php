@@ -1,15 +1,17 @@
 <?php include "../connect.php" ?>
 <?php
-// $stmt = $pdo->prepare("UPDATE project SET project_name=?,project_roadmap=?, province=?, budget_year=?
-// WHERE project_id=?"); 
-// $stmt->bindParam(1, $_POST["project_name"]); 
-// $stmt->bindParam(2, $_POST["project_roadmap"]);
-// $stmt->bindParam(3, $_POST["province"]);
-// $stmt->bindParam(4, $_POST["budget_year"]);
-// $stmt->bindParam(5, $_POST["project_id"]);
-// if ($stmt->execute()) 
-// echo "แก้ไข" . $_POST["project_name"] . " สำเร็จ";
-// header("refresh: 1;url=index.php");
+
+$ext = pathinfo(basename($_FILES['upload_file']['name']), PATHINFO_EXTENSION);
+$new_file_name = uniqid('file_').".".$ext;
+$file_path = "upload_file/";
+$upload_path = $file_path.$new_file_name;
+
+$success = move_uploaded_file($_FILES['upload_file']['tmp_name'], $upload_path);
+if ($success == true) {
+    echo "upload สำเร็จ";
+} 
+$file_path = $new_file_name;
+
 ?>
 <?php 
 $stmt = $pdo->prepare("UPDATE project SET project_name=?,development_subject=?, project_roadmap=?,project_main=?, project_sub=?,operation_type=?,

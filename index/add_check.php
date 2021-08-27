@@ -9,8 +9,6 @@ $upload_path = $file_path.$new_file_name;
 $success = move_uploaded_file($_FILES['upload_file']['tmp_name'], $upload_path);
 if ($success == true) {
     echo "upload สำเร็จ";
-} else {
-    echo "upload ไม่สำเร็จ";
 }
 
 $file_path = $new_file_name;
