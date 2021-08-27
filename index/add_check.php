@@ -2,7 +2,7 @@
 <?php
 
 $ext = pathinfo(basename($_FILES['upload_file']['name']), PATHINFO_EXTENSION);
-$new_file_name = uniqid('flie_').".".$ext;
+$new_file_name = uniqid('file_').".".$ext;
 $file_path = "upload_file/";
 $upload_path = $file_path.$new_file_name;
 
