@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2021 at 05:00 AM
+-- Generation Time: Aug 27, 2021 at 08:23 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -65,8 +65,9 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`project_id`, `project_name`, `development_subject`, `project_roadmap`, `project_main`, `project_sub`, `operation_type`, `project_code`, `use_budget`, `budget_year`, `institution`, `province`, `target_user`, `project_objective`, `project_result`, `project_additional`, `budget_province_plan`, `budget_province_receive`, `budget_province_use`, `budget_department_plan`, `budget_department_receive`, `budget_department_use`, `budget_local_plan`, `budget_local_receive`, `budget_local_use`, `budget_private_plan`, `budget_private_receive`, `budget_private_use`, `user_id`, `file_path`) VALUES
-(14, 'กิจกรรมแก้มลิงหนองลิงแก พร้อมอาคารประกอบ ในเขตพื้นที่ อำเภอปทุมรัตต์จังหวัดร้อยเอ็ด', 'ประเด็นการพัฒนาที่ 1', 'แผนงาน 3', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 2', 'โครงการ', '', 'option1', '2565', 'ศ.บ.ค', 'ร้อยเอ็ด', 'ประชาชน', 'เพื่อทำแก้มลิง', 'ทำแก้มลิงสำเร็จ', 'https://www.moicovid.com/', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'flie_6128517976486.pdf'),
-(15, 'กิจกรรมพัฒนาแหล่งน้าเพื่อการเกษตรและแก้ปัญหาภัยแล้ง จังหวัดกาฬสินธุ์', 'ประเด็นการพัฒนาที่ 2', 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 3', 'โครงการ/กิจกรรมย่อย (ตามแผน) 4', 'โครงการ', '', 'ใช้งบประมาณ', '2565', 'อบต.', 'กาฬสินธุ์', 'ประชาชน', 'เพื่อแก้ภัยแล้ง', 'ทำฝายกั้นน้ำ', '', NULL, NULL, NULL, NULL, NULL, 123, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'file_61285497e5f5e.pdf');
+(14, 'กิจกรรมแก้มลิงหนองลิงแก พร้อมอาคารประกอบ ในเขตพื้นที่ อำเภอปทุมรัตต์จังหวัดร้อยเอ็ด', 'ประเด็นการพัฒนาที่ 1', 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 3', 'โครงการ/กิจกรรมย่อย (ตามแผน) 2', 'โครงการ', '', 'ใช้งบประมาณ', '2565', 'ศ.บ.ค', 'ร้อยเอ็ด', 'ประชาชน', 'เพื่อทำแก้มลิง', 'ทำแก้มลิงสำเร็จ', 'https://www.moicovid.com/', 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'flie_6128517976486.pdf'),
+(15, 'กิจกรรมพัฒนาแหล่งน้าเพื่อการเกษตรและแก้ปัญหาภัยแล้ง จังหวัดกาฬสินธุ์', 'ประเด็นการพัฒนาที่ 2', 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 3', 'โครงการ/กิจกรรมย่อย (ตามแผน) 4', 'โครงการ', '', 'ใช้งบประมาณ', '2565', 'อบต.', 'กาฬสินธุ์', 'ประชาชน', 'เพื่อแก้ภัยแล้ง', 'ทำฝายกั้นน้ำ', '', NULL, NULL, NULL, NULL, NULL, 123, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'file_61285497e5f5e.pdf'),
+(16, 'ทดสอบ', 'ประเด็นการพัฒนาที่ 3', 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 4', 'โครงการ/กิจกรรมย่อย (ตามแผน) 3', 'การดำเนินงาน', '', 'ใช้งบประมาณ', '2345', 'สสส.', 'มหาสารคาม', 'ประชาชน', '234', '234', '', 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 'file_612883fc1442d.sql');
 
 -- --------------------------------------------------------
 
@@ -114,13 +115,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
