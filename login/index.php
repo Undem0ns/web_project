@@ -13,7 +13,6 @@
 <?php 
     session_start();
     session_destroy();
-    
         
   ?>
     <div class="container " style="margin-top: 12%; ">
