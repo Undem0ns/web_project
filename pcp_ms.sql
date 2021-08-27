@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2021 at 06:55 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Aug 27, 2021 at 05:00 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,23 +56,17 @@ CREATE TABLE `project` (
   `budget_private_plan` int(11) DEFAULT NULL,
   `budget_private_receive` int(11) DEFAULT NULL,
   `budget_private_use` int(11) DEFAULT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `file_path` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `project`
 --
 
-INSERT INTO `project` (`project_id`, `project_name`, `development_subject`, `project_roadmap`, `project_main`, `project_sub`, `operation_type`, `project_code`, `use_budget`, `budget_year`, `institution`, `province`, `target_user`, `project_objective`, `project_result`, `project_additional`, `budget_province_plan`, `budget_province_receive`, `budget_province_use`, `budget_department_plan`, `budget_department_receive`, `budget_department_use`, `budget_local_plan`, `budget_local_receive`, `budget_local_use`, `budget_private_plan`, `budget_private_receive`, `budget_private_use`, `user_id`) VALUES
-(3, 'ทดสอบโครงการ', '1', 'แบบแผน', 'หลัก', 'ย่อย', '1', 'พงด00152484', '10000', '0000-00-00', 'ศศศ', 'ขอนแก่น', 'นักศึกษา', 'เก่ง', 'เก่งจริง', 'ไม่มี', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(4, 'jay', '0', 'แผนงาน 3', 'โครงการหลัก (ตามแผน) 4', 'โครงการ/กิจกรรมย่อย (ตามแผน) 2', 'การดำเนินงาน', '123456', 'option2', '0000-00-00', 'asdasd', 'ร้อยเอ็ด', 'asdasd', 'asdasdasdasd', 'asdsad', 'asdasdasd', 2000, 200, 200, 2000, 200, 2000, 200, 2000, 200, 200, 2000, 200, 0),
-(5, 'jay', '0', 'แผนงาน 3', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 3', 'โครงการ', '123456', 'option1', '0000-00-00', 'ไม่รู้', 'กาฬสินธุ์', 'ประชาชน', 'กกกกห', 'asdasdasd', 'asdasdasd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
-(8, 'jay', '0', 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 3', 'โครงการ/กิจกรรมย่อย (ตามแผน) 3', 'โครงการ', '123456', 'option1', '0000-00-00', 'ไม่รู้', 'ขอนแก่น', 'ประชาชน', 'กกกกห', 'ฟหกฟหกฟหก', 'asdasdsad', 2000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
-(9, 'jay', '0', 'แผนงาน 3', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 2', 'โครงการ', '123456', 'option1', '2542', 'ไม่รู้', 'กาฬสินธุ์', 'นักเรียน', 'asdasd', 'sadasdsad', 'asdasdsad', 2000, 20000, 2000, 2000, 20000, 2000, 200, 20000, 200, 200, 2000, 2000, 0),
-(10, 'www', '0', 'แผนงาน 1', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 2', 'โครงการ', '55555', 'option1', '2015', 'นักเรียน', 'มหาสารคาม', 'นักเรียน', 'asdasdasdasdasasd', 'asdasd', 'asdsad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
-(11, 'o10', 'ประเด็นการพัฒนาที่ 2', 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 4', 'โครงการ', '123456', 'ไม่ใช้งบประมาณ', '2015', 'ไม่รู้', 'ร้อยเอ็ด', 'นักเรียน', 'asdasd', 'asdasd', 'asdasdasd', 100, 10000, 1000, 1000, 1000, 1000, 1000, 1000, 10000, 1000, 1000, 10000, 1),
-(12, 'ตู๋', '0', 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 3', 'การดำเนินงาน', '123456', 'ไม่ใช้งบประมาณ', '2015', 'นักเรียน', 'มหาสารคาม', 'นักเรียน', 'ฟหกหฟก', 'หฟกฟหกฟกห', 'ฟหกหฟก', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
-(13, 'kkk', '2', 'แผนงาน 3', 'โครงการหลัก (ตามแผน) 3', 'โครงการ/กิจกรรมย่อย (ตามแผน) 4', 'โครงการ', '123456', 'option1', '123', 'นักเรียน', 'ขอนแก่น', 'นักเรียน', 'asdasdasdasdasasd', 'asdasd', 'yttyrtytry', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2);
+INSERT INTO `project` (`project_id`, `project_name`, `development_subject`, `project_roadmap`, `project_main`, `project_sub`, `operation_type`, `project_code`, `use_budget`, `budget_year`, `institution`, `province`, `target_user`, `project_objective`, `project_result`, `project_additional`, `budget_province_plan`, `budget_province_receive`, `budget_province_use`, `budget_department_plan`, `budget_department_receive`, `budget_department_use`, `budget_local_plan`, `budget_local_receive`, `budget_local_use`, `budget_private_plan`, `budget_private_receive`, `budget_private_use`, `user_id`, `file_path`) VALUES
+(14, 'กิจกรรมแก้มลิงหนองลิงแก พร้อมอาคารประกอบ ในเขตพื้นที่ อำเภอปทุมรัตต์จังหวัดร้อยเอ็ด', 'ประเด็นการพัฒนาที่ 1', 'แผนงาน 3', 'โครงการหลัก (ตามแผน) 2', 'โครงการ/กิจกรรมย่อย (ตามแผน) 2', 'โครงการ', '', 'option1', '2565', 'ศ.บ.ค', 'ร้อยเอ็ด', 'ประชาชน', 'เพื่อทำแก้มลิง', 'ทำแก้มลิงสำเร็จ', 'https://www.moicovid.com/', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'flie_6128517976486.pdf'),
+(15, 'กิจกรรมพัฒนาแหล่งน้าเพื่อการเกษตรและแก้ปัญหาภัยแล้ง จังหวัดกาฬสินธุ์', 'ประเด็นการพัฒนาที่ 2', 'แผนงาน 2', 'โครงการหลัก (ตามแผน) 3', 'โครงการ/กิจกรรมย่อย (ตามแผน) 4', 'โครงการ', '', 'ใช้งบประมาณ', '2565', 'อบต.', 'กาฬสินธุ์', 'ประชาชน', 'เพื่อแก้ภัยแล้ง', 'ทำฝายกั้นน้ำ', '', NULL, NULL, NULL, NULL, NULL, 123, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'file_61285497e5f5e.pdf');
 
 -- --------------------------------------------------------
 
@@ -92,8 +86,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`) VALUES
-(1, 'admin123', 'admin123@mail.com', '1234'),
-(2, '', 'jay@hotmail.com', '1234');
+(1, 'user1', '1111@hotmail.com', '1234'),
+(2, 'user2', '2222@hotmail.com', '1234');
 
 --
 -- Indexes for dumped tables
@@ -103,7 +97,8 @@ INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_password`) VALUE
 -- Indexes for table `project`
 --
 ALTER TABLE `project`
-  ADD PRIMARY KEY (`project_id`);
+  ADD PRIMARY KEY (`project_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `user`
@@ -119,13 +114,23 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `project`
+--
+ALTER TABLE `project`
+  ADD CONSTRAINT `project_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

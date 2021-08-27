@@ -67,7 +67,7 @@ if (!isset($_SESSION["user_email"])) {
       <div class="w-100 bd-highlight">
         <!-- --------------------------------------------------------------------------- -->
 
-        <form action="add_check.php" method="post">
+        <form action="add_check.php" method="post" enctype="multipart/form-data">
           <div class="mb-3 was-validated">
             <label for="project_name" class=" col-form-label ">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
             <textarea class="form-control fs-3" name="project_name" id="project_name" style="height: 100px" required></textarea>
@@ -509,8 +509,8 @@ if (!isset($_SESSION["user_email"])) {
           <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
         </div><br>
         <div class="input-group mb-3">
-          <input type="file" class="form-control" id="inputGroupFile02">
-          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+          <input type="file" class="form-control" id="upload_file" name="upload_file">
+          <label class="input-group-text" for="upload_file">Upload</label>
         </div>
 
       </div>

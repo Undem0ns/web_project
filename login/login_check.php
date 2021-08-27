@@ -12,6 +12,8 @@ if(!empty($row)){
 
     setcookie("user_email",$row["user_email"], time() + (86400 * 30), "/");
     setcookie("user_id",$row["user_id"], time() + (86400 * 30), "/");
+    setcookie("user_name",$row["user_name"], time() + (86400 * 30), "/");
+    
     
     $_SESSION["user_email"] = $row["user_password"];  
     header("Location:../index/index.php");
