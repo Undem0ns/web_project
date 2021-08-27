@@ -51,7 +51,7 @@ $row = $stmt->fetch();
 </svg> <?php echo $_COOKIE["user_email"]; ?></a>
         </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ออกจากระบบ</a>
+            <a class="nav-link active" aria-current="page" href="../login/index.php">ออกจากระบบ</a>
           </li>
         </ul>
   </header>
@@ -179,13 +179,13 @@ $row = $stmt->fetch();
           <legend class="col-form-label col-sm-2 pt-0" for="use_budget">การใช้งบประมาณ</legend>
           <div class="col-sm-10">
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="gridRadios1" value="option1" checked name="use_budget">
+              <input class="form-check-input" type="radio" id="gridRadios1" value="ใช้งบประมาณ" checked name="use_budget">
               <label class="form-check-label" for="use_budget1">
                 ใช้งบประมาณ
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="gridRadios2" value="option2" name="use_budget">
+              <input class="form-check-input" type="radio" id="gridRadios2" value="ไม่ใช้งบประมาณ" name="use_budget">
               <label class="form-check-label" for="use_budget2">
                 ไม่ใช้งบประมาณ
               </label>
