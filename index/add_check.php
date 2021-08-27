@@ -1,6 +1,22 @@
 <?php include "../connect.php" ?>
 <?php
-$stmt = $pdo->prepare("INSERT INTO project VALUES ('',? ,?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+
+$ext = pathinfo(basename($_FILES['upload_file']['name']), PATHINFO_EXTENSION);
+$new_file_name = uniqid('flie_').".".$ext;
+$file_path = "upload_file/";
+$upload_path = $file_path.$new_file_name;
+
+$success = move_uploaded_file($_FILES['upload_file']['tmp_name'], $upload_path);
+if ($success == true) {
+    echo "upload สำเร็จ";
+} else {
+    echo "upload ไม่สำเร็จ";
+}
+
+$file_path = $new_file_name;
+
+
+$stmt = $pdo->prepare("INSERT INTO project VALUES ('',? ,?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 $stmt->bindParam(1, $_POST["project_name"]);
 $stmt->bindParam(2, $_POST["development_subject"]);
 $stmt->bindParam(3, $_POST["project_roadmap"]);
@@ -29,8 +45,9 @@ $stmt->bindParam(25, $_POST["budget_private_plan"]);
 $stmt->bindParam(26, $_POST["budget_private_receive"]);
 $stmt->bindParam(27, $_POST["budget_private_use"]);
 $stmt->bindParam(28, $_COOKIE["user_id"]);
-$stmt->execute(); 
-$FoodID = $pdo->lastInsertId(); 
+$stmt->bindParam(29, $file_path);
+$stmt->execute();
+$FoodID = $pdo->lastInsertId();
 
 
 echo "เพิ่มโครงการสำเร็จ";
