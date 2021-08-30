@@ -48,6 +48,32 @@ $stmt->bindParam(26, $_POST["budget_private_receive"]);
 $stmt->bindParam(27, $_POST["budget_private_use"]);
 $stmt->bindParam(28, $_POST["project_id"]);
 if ($stmt->execute()) 
- echo "แก้ไข" . $_POST["project_name"] . " สำเร็จ";
- header("refresh: 1;url=index.php");
+
+//  echo "แก้ไข" . $_POST["project_name"] . " สำเร็จ";
+//  header("refresh: 1;url=index.php");
+
+echo "<script>";
+echo  " Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'แก้ไขสำเร็จ',
+    showConfirmButton: false,
+    timer: 1500,
+  })";
+echo "</script>";
+header("refresh: 2;url=index.php");
+
+
 ?>
+
+<!-- <script>
+    Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: 'แก้ไขสำเร็จ',
+  showConfirmButton: false,
+  timer: 1500,
+})
+</script> -->
+
+

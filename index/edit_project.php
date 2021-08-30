@@ -86,7 +86,7 @@ $row = $stmt->fetch();
             <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
             <div class="col-sm-10">
               <select class="form-select form-select-lg mb-3 fs-3" id="development_subject" name="development_subject"  required>
-                <option selected disabled value="">Choose...</option>
+                <option selected class="text-muted " value="<?=$row["development_subject"]?>"><?=$row["development_subject"]?></option>
                 <option value="ประเด็นการพัฒนาที่ 1">ประเด็นการพัฒนาที่ 1</option>
                 <option value="ประเด็นการพัฒนาที่ 2">ประเด็นการพัฒนาที่ 2</option>
                 <option value="ประเด็นการพัฒนาที่ 3">ประเด็นการพัฒนาที่ 3</option>
@@ -99,7 +99,7 @@ $row = $stmt->fetch();
             <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
             <div class="col-sm-10">
               <select class="form-select form-select-lg mb-3 fs-3" id="project_roadmap" name="project_roadmap"  required>
-                <option selected disabled value="">Choose...</option>
+                <option selected  value="<?=$row["project_roadmap"]?>"><?=$row["project_roadmap"]?></option>
                 <option value="แผนงาน 1">แผนงาน 1</option>
                 <option value="แผนงาน 2">แผนงาน 2</option>
                 <option value="แผนงาน 3">แผนงาน 3</option>
@@ -112,7 +112,7 @@ $row = $stmt->fetch();
             <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
             <div class="col-sm-10">
               <select class="form-select form-select-lg mb-3 fs-3" id="project_main" name="project_main"  required>
-                <option selected disabled value="">Choose...</option>
+                <option selected  value="<?=$row["project_main"]?>"><?=$row["project_main"]?></option>
                 <option value="โครงการหลัก (ตามแผน) 1">โครงการหลัก (ตามแผน) 1</option>
                 <option value="โครงการหลัก (ตามแผน) 2">โครงการหลัก (ตามแผน) 2</option>
                 <option value="โครงการหลัก (ตามแผน) 3">โครงการหลัก (ตามแผน) 3</option>
@@ -125,7 +125,7 @@ $row = $stmt->fetch();
             <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
             <div class="col-sm-10">
               <select class="form-select form-select-lg mb-3 fs-3" id="project_sub" name="project_sub"  required>
-                <option selected disabled value="">Choose...</option>
+                <option selected value="<?=$row["project_sub"]?>"><?=$row["project_sub"]?></option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 1">โครงการ/กิจกรรมย่อย (ตามแผน) 1</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 2">โครงการ/กิจกรรมย่อย (ตามแผน) 2</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 3">โครงการ/กิจกรรมย่อย (ตามแผน) 3</option>
@@ -161,7 +161,7 @@ $row = $stmt->fetch();
               <input class="form-check-input" type="radio" id="gridRadios2" value="การดำเนินงาน" name="operation_type">
               <label class="form-check-label" for="gridRadios2">
                 การดำเนินงาน
-              </label>
+              </label> 
             </div>
           </div>
         </fieldset>
@@ -212,7 +212,7 @@ $row = $stmt->fetch();
           <label for="province" class="col-sm-2 col-form-label fs-3">จังหวัดที่ดำเนินโครงการ</label>
           <div class="col-sm-10">
             <select class="form-select form-select-lg mb-3" id="province" name="province"  required>
-              <option selected disabled value="">Choose...</option>
+              <option selected value="<?=$row["province"]?>"><?=$row["province"]?></option>
               <option value="ขอนแก่น">ขอนแก่น</option>
               <option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
               <option value="มหาสารคาม">มหาสารคาม</option>
@@ -538,6 +538,7 @@ $row = $stmt->fetch();
       var input = document.getElementById(input_id);
       if (checkBox.checked == true) {
         input.disabled = false;
+        
       } else {
         input.disabled = true;
         

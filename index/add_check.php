@@ -48,8 +48,17 @@ $stmt->execute();
 $FoodID = $pdo->lastInsertId();
 
 
-echo "เพิ่มโครงการสำเร็จ";
-header("refresh: 1;url=index.php");
+echo "<script>";
+echo  " Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'เพิ่มโครงการสำเร็จ',
+    showConfirmButton: false,
+    timer: 1500,
+  })";
+echo "</script>";
+header("refresh: 2;url=index.php");
+
 
 // header("location:detail.php?project_id=" . $_POST["project_id"]);
 
