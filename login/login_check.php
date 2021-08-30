@@ -16,12 +16,31 @@ if(!empty($row)){
     
     
     $_SESSION["user_email"] = $row["user_password"];  
-    header("Location:../index/index.php");
+
+    // header("Location:../index/index.php");
+    echo "<script>";
+    echo  " Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'เข้าสู่ระบบสำเร็จ',
+    showConfirmButton: false,   
+    timer: 1500,
+    })";
+    echo "</script>";
+    header("refresh: 2;url=../index/index.php");
+    
 }else{
-    echo "เข้าสู่ระบบล้มเหลว" . "<br>";
-    echo "กลับไปยังหน้าเข้าสู่ระบบใน 3 วินาที" . "<br>";
-    echo "<a href='index.php'>คลิกเพื่อเข้าสู่ระบบอีกครั้ง</a>";
-    echo "<meta http-equiv='refresh' content='3,URL=index.php' />";
+    echo "<script>";
+    echo  " Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'เข้าสู่ระบบไม่สำเร็จ',
+    showConfirmButton: false,   
+    timer: 1500,
+    })";
+    echo "</script>";
+    header("refresh: 2;url=index.php");
+    
 }
 
 ?>

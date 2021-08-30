@@ -83,7 +83,7 @@ if (!isset($_SESSION["user_email"])) {
             <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
             <div class="col-sm-10">
               <select class="form-select form-select-lg mb-3 fs-3" id="development_subject" name="development_subject"  required>
-                <option selected disabled value="">Choose...</option>
+                <option selected disabled value="">เลือก...</option>
                 <option value="ประเด็นการพัฒนาที่ 1">ประเด็นการพัฒนาที่ 1</option>
                 <option value="ประเด็นการพัฒนาที่ 2">ประเด็นการพัฒนาที่ 2</option>
                 <option value="ประเด็นการพัฒนาที่ 3">ประเด็นการพัฒนาที่ 3</option>
@@ -96,7 +96,7 @@ if (!isset($_SESSION["user_email"])) {
             <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
             <div class="col-sm-10">
               <select class="form-select form-select-lg mb-3 fs-3" id="project_roadmap" name="project_roadmap"  required>
-                <option selected disabled value="">Choose...</option>
+                <option selected disabled value="">เลือก...</option>
                 <option value="แผนงาน 1">แผนงาน 1</option>
                 <option value="แผนงาน 2">แผนงาน 2</option>
                 <option value="แผนงาน 3">แผนงาน 3</option>
@@ -109,7 +109,7 @@ if (!isset($_SESSION["user_email"])) {
             <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
             <div class="col-sm-10">
               <select class="form-select form-select-lg mb-3 fs-3" id="project_main" name="project_main"  required>
-                <option selected disabled value="">Choose...</option>
+                <option selected disabled value="">เลือก...</option>
                 <option value="โครงการหลัก (ตามแผน) 1">โครงการหลัก (ตามแผน) 1</option>
                 <option value="โครงการหลัก (ตามแผน) 2">โครงการหลัก (ตามแผน) 2</option>
                 <option value="โครงการหลัก (ตามแผน) 3">โครงการหลัก (ตามแผน) 3</option>
@@ -122,7 +122,7 @@ if (!isset($_SESSION["user_email"])) {
             <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
             <div class="col-sm-10">
               <select class="form-select form-select-lg mb-3 fs-3" id="project_sub" name="project_sub"  required>
-                <option selected disabled value="">Choose...</option>
+                <option selected disabled value="">เลือก...</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 1">โครงการ/กิจกรรมย่อย (ตามแผน) 1</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 2">โครงการ/กิจกรรมย่อย (ตามแผน) 2</option>
                 <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 3">โครงการ/กิจกรรมย่อย (ตามแผน) 3</option>
