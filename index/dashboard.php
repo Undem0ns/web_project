@@ -15,7 +15,18 @@
     header("location:../login/index.php");
   }
 
-  $stmt = $pdo->prepare("SELECT * FROM project");
+  // $stmt = $pdo->prepare("SELECT * FROM project");
+  $stmt = $pdo->prepare("SELECT *
+  FROM project_v2
+  LEFT JOIN development_subject
+  ON project_v2.development_subject = development_subject.development_id
+  LEFT JOIN project_roadmap
+  ON project_v2.project_roadmap = project_roadmap.project_roadmap_id
+  LEFT JOIN project_main
+  ON project_v2.project_main = project_main.project_main_id
+  LEFT JOIN project_sub
+  ON project_v2.project_sub = project_sub.project_sub_id
+  ;");
 
   $stmt->execute();
   ?>
@@ -90,7 +101,7 @@
             <tbody>
             <tr>
                 <td><a class="text-primary decoration-none" href="detail.php?project_id=<?=$row["project_id"] ?>"> <?= $row["project_name"] ?></a> </td>
-                <td><?= $row["development_subject"] ?></td>
+                <td><?= $row["development_name"] ?></td>
                 <td><?= $row["province"] ?></td>
                 <td><?= $row["budget_year"] ?></td>
                 <td><a class="btn btn-danger" href="edit_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
