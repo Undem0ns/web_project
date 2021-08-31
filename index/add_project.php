@@ -533,9 +533,10 @@ if (!isset($_SESSION["user_email"])) {
 
 
     <div class="d-md-flex flex-md-row align-items-center justify-content-end" style="margin-bottom: 100px; margin-right: 50px;">
-      <div class="btn btn-primary" id="button1" onclick="previousPart()" style="margin-right: 10px;">หน้าก่อนหน้า</div>
+    <button class="btn btn-secondary" type="submit" id="button0" name="draft" onclick="" style="margin-right: 10px;">บันทึกร่างโครงการ</button>
+    <div class="btn btn-primary" id="button1" onclick="previousPart()" style="margin-right: 10px;">หน้าก่อนหน้า</div>
       <div class="btn btn-primary" id="button2" onclick="nextPart()">หน้าถัดไป</div>
-      <button class="btn btn-danger" type="submit" id="button3" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
+      <button class="btn btn-success" type="submit" id="button3" name="save" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
     </div>
   </div>
   </form> </div></div>

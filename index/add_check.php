@@ -10,11 +10,18 @@ $success = move_uploaded_file($_FILES['upload_file']['tmp_name'], $upload_path);
 if ($success == true) {
     echo "upload สำเร็จ";
 }
+$TABLE_NAME = '';
+
+if (isset($_POST['save'])) {
+  $TABLE_NAME = 'project';
+} else {
+  $TABLE_NAME = 'project_draft';
+}
 
 $file_path = $new_file_name;
 
 
-$stmt = $pdo->prepare("INSERT INTO project VALUES ('',? ,?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$stmt = $pdo->prepare("INSERT INTO $DATABASE_NAME VALUES ('',? ,?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 $stmt->bindParam(1, $_POST["project_name"]);
 $stmt->bindParam(2, $_POST["development_subject"]);
 $stmt->bindParam(3, $_POST["project_roadmap"]);
