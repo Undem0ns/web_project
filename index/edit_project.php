@@ -110,7 +110,7 @@ $row = $stmt->fetch();
                         <option selected class="text-muted " value="<?= $row["development_subject"] ?>"><?= $row["development_subject"] ?></option>
 
                         <?php while ($result = mysqli_fetch_assoc($query)) : ?>
-                          <option value="<?= $result['development_name'] ?>"><?= $result['development_name'] ?></option>
+                          <option value="<?= $result['development_id'] ?>"><?= $result['development_name'] ?></option>
                         <?php endwhile; ?>
                         
                       </select>
@@ -121,11 +121,6 @@ $row = $stmt->fetch();
                     <div class="col-sm-10">
                       <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" required>
                         <option selected value="<?= $row["project_roadmap"] ?>"><?= $row["project_roadmap"] ?></option>
-                        <option value="แผนงาน 1">แผนงาน 1</option>
-                        <option value="แผนงาน 2">แผนงาน 2</option>
-                        <option value="แผนงาน 3">แผนงาน 3</option>
-                        <option value="แผนงาน 4">แผนงาน 4</option>
-                        <option value="แผนงาน 5">แผนงาน 5</option>
                       </select>
                     </div>
                   </div>
@@ -134,11 +129,6 @@ $row = $stmt->fetch();
                     <div class="col-sm-10">
                       <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" required>
                         <option selected value="<?= $row["project_main"] ?>"><?= $row["project_main"] ?></option>
-                        <option value="โครงการหลัก (ตามแผน) 1">โครงการหลัก (ตามแผน) 1</option>
-                        <option value="โครงการหลัก (ตามแผน) 2">โครงการหลัก (ตามแผน) 2</option>
-                        <option value="โครงการหลัก (ตามแผน) 3">โครงการหลัก (ตามแผน) 3</option>
-                        <option value="โครงการหลัก (ตามแผน) 4">โครงการหลัก (ตามแผน) 4</option>
-                        <option value="โครงการหลัก (ตามแผน) 5">โครงการหลัก (ตามแผน) 5</option>
                       </select>
                     </div>
                   </div>
@@ -147,11 +137,6 @@ $row = $stmt->fetch();
                     <div class="col-sm-10">
                       <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" required>
                         <option selected value="<?= $row["project_sub"] ?>"><?= $row["project_sub"] ?></option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 1">โครงการ/กิจกรรมย่อย (ตามแผน) 1</option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 2">โครงการ/กิจกรรมย่อย (ตามแผน) 2</option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 3">โครงการ/กิจกรรมย่อย (ตามแผน) 3</option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 4">โครงการ/กิจกรรมย่อย (ตามแผน) 4</option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 5">โครงการ/กิจกรรมย่อย (ตามแผน) 5</option>
                       </select>
                     </div>
                   </div>
@@ -552,8 +537,8 @@ $row = $stmt->fetch();
         </div>
       </div>
       <!-- --------------------------------------------------------------------------- -->
-      <script src="assets/jquery.min.js"></script>
-      <script src="assets/script.js"></script>
+      <script src="../assets/jquery.min.js"></script>
+      <script src="../assets/script.js"></script>
       <script>
         var part = 1;
         renderPart(part);
