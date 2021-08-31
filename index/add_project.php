@@ -83,7 +83,7 @@ if (!isset($_SESSION["user_email"])) {
 
         <form action="add_check.php" method="post" enctype="multipart/form-data">
           <div class="mb-3 was-validated">
-            <label for="project_name" class="col-form-label" style="font-weight: bold;font-size=25px;">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
+            <label for="project_name" class="col-form-label" style="font-weight: bold;font-size:25px;">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
             <textarea class="form-control fs-5" name="project_name" id="project_name" style="height: 100px" required></textarea>
           </div>
 
