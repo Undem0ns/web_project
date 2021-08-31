@@ -25,7 +25,7 @@
       <div class="container-fluid">
       <ul class="nav nav-tabs">
           <li class="nav-item">
-            <span clss="marginle" style="font-size:30px;">PCP-MS</span>
+            <a class="nav-link"  href="dashboard.php" style="font-size:25px; color:black">PCP-MS</a>
           </li>
         </ul>
         <ul class="nav justify-content-end">
@@ -59,7 +59,7 @@
  
                     <li>
                         <a href="model.php" class="nav-link px-0 align-middle text-white">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">ร่างโครงการ</span> </a>
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline ">ร่างโครงการ</span> </a>
                     </li>
                 </ul>
                 <hr>
@@ -94,7 +94,7 @@
                 <td><?= $row["development_subject"] ?></td>
                 <td><?= $row["province"] ?></td>
                 <td><?= $row["budget_year"] ?></td>
-                <td><a class="btn btn-primary" href="edit_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
+                <td><a class="btn btn-danger" href="edit_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
             </tr>
         </tbody>
         <?php } ?>
