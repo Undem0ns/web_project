@@ -12,9 +12,16 @@ if ($success == true) {
 } 
 $file_path = $new_file_name;
 
+$TABLE_NAME = '';
+
+if (isset($_POST['edit'])) {
+  $TABLE_NAME = 'project';
+} else {
+  $TABLE_NAME = 'project_draft';
+}
 ?>
 <?php 
-$stmt = $pdo->prepare("UPDATE project SET project_name=?,development_subject=?, project_roadmap=?,project_main=?, project_sub=?,operation_type=?,
+$stmt = $pdo->prepare("UPDATE $TABLE_NAME SET project_name=?,development_subject=?, project_roadmap=?,project_main=?, project_sub=?,operation_type=?,
 project_code=?,use_budget=?,budget_year=?,institution=?,province=?,target_user=?,project_objective=?,project_result=?,project_additional=?,
 budget_province_plan=?,budget_province_receive=?,budget_province_use=?,budget_department_plan=?,budget_department_receive=?,budget_department_use=?,
 budget_local_plan=?,budget_local_receive=?,budget_local_use=?,budget_private_plan=?,budget_private_receive=?,budget_private_use=?

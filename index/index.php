@@ -85,7 +85,7 @@ echo $_COOKIE["user_name"]; ?></a>
           <td><?= $row["development_subject"] ?></td>
           <td><?= $row["province"] ?></td>
           <td><?= $row["budget_year"] ?></td>
-          <td><a class="btn btn-primary" href="edit_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
+          <td><a class="btn btn-primary" name="edit" href="edit_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
         </tr>
       </tbody>
     <?php } ?>

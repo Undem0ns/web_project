@@ -7,7 +7,7 @@ if (!isset($_SESSION["user_email"])) {
 }
 
 
-$stmt = $pdo->prepare("SELECT * FROM project WHERE project_id = ?");
+$stmt = $pdo->prepare("SELECT * FROM project_draft WHERE project_id = ?");
 $stmt->bindParam(1, $_GET["project_id"]);
 $stmt->execute();
 $row = $stmt->fetch();
@@ -87,7 +87,7 @@ $row = $stmt->fetch();
       <div class="w-100 bd-highlight">
         <!-- --------------------------------------------------------------------------- -->
 
-        <form action="edit_check.php" method="post" enctype="multipart/form-data">
+        <form action="add_check.php" method="post" enctype="multipart/form-data">
           <h5 class="card-title"><input type="hidden" name="project_id" value="<?= $row["project_id"] ?>"></h5>
           <div class="mb-3 was-validated">
             <label for="project_name" class=" col-form-label " style="font-weight: bold;font-size:25px;">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
@@ -540,7 +540,7 @@ $row = $stmt->fetch();
     <div class="d-md-flex flex-md-row align-items-center justify-content-end" style="margin-bottom: 100px; margin-right: 50px;">
       <div class="btn btn-primary" id="button1" onclick="previousPart()" style="margin-right: 10px;">หน้าก่อนหน้า</div>
       <div class="btn btn-primary" id="button2" onclick="nextPart()">หน้าถัดไป</div>
-      <button class="btn btn-danger" type="submit" id="button3" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
+      <button class="btn btn-danger" name="save" type="submit" id="button3" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
     </div>
   </div>
   </form></div></div>
@@ -706,3 +706,4 @@ FROM development_subject
 LEFT JOIN project_roadmap
 ON development_subject.development_id = project_roadmap.development_id
 WHERE development_subject.development_id = 1; -->
+
