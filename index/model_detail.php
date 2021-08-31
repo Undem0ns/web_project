@@ -17,7 +17,7 @@
   }
   
 
-  $stmt = $pdo->prepare("SELECT * FROM project where project_id = ?");
+  $stmt = $pdo->prepare("SELECT * FROM project_draft where project_id = ?");
   $stmt->bindParam(1, $_GET["project_id"]);
   $stmt->execute();
   ?>

@@ -27,7 +27,7 @@ if(!empty($row)){
     timer: 1500,
     })";
     echo "</script>";
-    header("refresh: 2;url=../index/index.php");
+    header("refresh: 2;url=../index/dashboard.php");
     
 }else{
     echo "<script>";
@@ -39,7 +39,7 @@ if(!empty($row)){
     timer: 1500,
     })";
     echo "</script>";
-    header("refresh: 2;url=index.php");
+    header("refresh: 2;url=dashboard.php");
     
 }
 

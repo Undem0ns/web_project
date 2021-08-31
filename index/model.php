@@ -15,8 +15,8 @@
     header("location:../login/index.php");
   }
 
-  $stmt = $pdo->prepare("SELECT * FROM project");
-
+  $stmt = $pdo->prepare("SELECT * FROM project_draft WHERE user_id =?");
+  $stmt->bindParam(1, $_COOKIE["user_id"]);
   $stmt->execute();
   ?>
 </head>
@@ -90,11 +90,11 @@
             </thead>
             <tbody>
             <tr>
-                <td><a class="text-primary decoration-none" href="detail.php?project_id=<?=$row["project_id"] ?>"> <?= $row["project_name"] ?></a> </td>
+                <td><a class="text-primary decoration-none" href="model_detail.php?project_id=<?=$row["project_id"] ?>"> <?= $row["project_name"] ?></a> </td>
                 <td><?= $row["development_subject"] ?></td>
                 <td><?= $row["province"] ?></td>
                 <td><?= $row["budget_year"] ?></td>
-                <td><a class="btn btn-danger" href="edit_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
+                <td><a class="btn btn-danger" name="edit_model" href="edit_model.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
             </tr>
         </tbody>
         <?php } ?>

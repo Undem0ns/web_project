@@ -14,9 +14,31 @@ $TABLE_NAME = '';
 
 if (isset($_POST['save'])) {
   $TABLE_NAME = 'project';
+  echo "<script>";
+  echo  " Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'เพิ่มโครงการสำเร็จ',
+    showConfirmButton: false,
+    timer: 1500,
+  })";
+echo "</script>";
+header("refresh: 2;url=dashboard.php");
+  
 } else {
   $TABLE_NAME = 'project_draft';
+  echo "<script>";
+  echo  " Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'ร่างโครงการสำเร็จ',
+    showConfirmButton: false,
+    timer: 1500,
+  })";
+echo "</script>";
+header("refresh: 2;url=dashboard.php");
 }
+
 
 $file_path = $new_file_name;
 
@@ -52,22 +74,17 @@ $stmt->bindParam(27, $_POST["budget_private_use"]);
 $stmt->bindParam(28, $_COOKIE["user_id"]);
 $stmt->bindParam(29, $file_path);
 $stmt->execute();
-$FoodID = $pdo->lastInsertId();
+$project_id = $pdo->lastInsertId();
 
 
-echo "<script>";
-echo  " Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: 'เพิ่มโครงการสำเร็จ',
-    showConfirmButton: false,
-    timer: 1500,
-  })";
-echo "</script>";
-header("refresh: 2;url=index.php");
+$stmt = $pdo->prepare("DELETE FROM project_draft WHERE project_draft.project_id =?");
+$stmt->bindParam(1, $_POST["project_id"]);
+$stmt->execute();
+$project_id = $pdo->lastInsertId();
+
+
 
 
 // header("location:detail.php?project_id=" . $_POST["project_id"]);
-
 
 ?>
