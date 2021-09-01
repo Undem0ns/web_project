@@ -15,7 +15,17 @@
     header("location:../login/index.php");
   }
 
-  $stmt = $pdo->prepare("SELECT * FROM project");
+  $stmt = $pdo->prepare("SELECT *
+  FROM project
+  LEFT JOIN development_subject
+  ON project.development_subject = development_subject.development_id
+  LEFT JOIN project_roadmap
+  ON project.project_roadmap = project_roadmap.project_roadmap_id
+  LEFT JOIN project_main
+  ON project.project_main = project_main.project_main_id
+  LEFT JOIN project_sub
+  ON project.project_sub = project_sub.project_sub_id
+  ;");
 
   $stmt->execute();
   ?>
@@ -82,7 +92,7 @@ echo $_COOKIE["user_name"]; ?></a>
 
         <tr>
           <td><a class="text-primary decoration-none" href="detail.php?project_id=<?=$row["project_id"] ?>"> <?= $row["project_name"] ?></a> </td>
-          <td><?= $row["development_subject"] ?></td>
+          <td><?= $row["development_name"] ?></td>
           <td><?= $row["province"] ?></td>
           <td><?= $row["budget_year"] ?></td>
           <td><a class="btn btn-primary" name="edit" href="edit_project.php?project_id=<?= $row["project_id"] ?>">แก้ไข</a></td>
