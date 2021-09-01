@@ -67,7 +67,7 @@ $(function(){
             console.log(result);
             
             if (result.length === 0){
-                project_subObject.html('<option value="">ไม่มี (ไม่ต้องเลือก)</option>');
+                project_subObject.html('<option value="999">ไม่มี (ไม่ต้องเลือก)</option>');
             } else {
                 $.each(result, function(index, item){
                     project_subObject.append(

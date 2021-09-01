@@ -115,39 +115,24 @@ if (!isset($_SESSION["user_email"])) {
                   <div class="row mb-3">
                     <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" required>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" required disabled>
                         <option selected disabled value="">เลือก...</option>
-                        <option value="แผนงาน 1">แผนงาน 1</option>
-                        <option value="แผนงาน 2">แผนงาน 2</option>
-                        <option value="แผนงาน 3">แผนงาน 3</option>
-                        <option value="แผนงาน 4">แผนงาน 4</option>
-                        <option value="แผนงาน 5">แผนงาน 5</option>
                       </select>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" required>
-                        <option selected disabled value="">เลือก...</option>
-                        <option value="โครงการหลัก (ตามแผน) 1">โครงการหลัก (ตามแผน) 1</option>
-                        <option value="โครงการหลัก (ตามแผน) 2">โครงการหลัก (ตามแผน) 2</option>
-                        <option value="โครงการหลัก (ตามแผน) 3">โครงการหลัก (ตามแผน) 3</option>
-                        <option value="โครงการหลัก (ตามแผน) 4">โครงการหลัก (ตามแผน) 4</option>
-                        <option value="โครงการหลัก (ตามแผน) 5">โครงการหลัก (ตามแผน) 5</option>
-                      </select>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" required disabled>
+                      <option selected disabled value="">เลือก...</option>
+                    </select>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" required>
-                        <option selected disabled value="">เลือก...</option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 1">โครงการ/กิจกรรมย่อย (ตามแผน) 1</option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 2">โครงการ/กิจกรรมย่อย (ตามแผน) 2</option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 3">โครงการ/กิจกรรมย่อย (ตามแผน) 3</option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 4">โครงการ/กิจกรรมย่อย (ตามแผน) 4</option>
-                        <option value="โครงการ/กิจกรรมย่อย (ตามแผน) 5">โครงการ/กิจกรรมย่อย (ตามแผน) 5</option>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" required disabled>
+                      <option selected disabled value="">เลือก...</option>
                       </select>
                     </div>
                   </div>
@@ -196,13 +181,13 @@ if (!isset($_SESSION["user_email"])) {
                   <legend class="col-form-label col-sm-2 pt-0" for="use_budget">การใช้งบประมาณ</legend>
                   <div class="col-sm-10">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" id="gridRadios1" value="ใช้งบประมาณ" checked name="use_budget">
+                      <input class="form-check-input" type="radio" id="use_budget1" value="ใช้งบประมาณ" checked name="use_budget">
                       <label class="form-check-label" for="use_budget1">
                         ใช้งบประมาณ
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" id="gridRadios2" value="ไม่ใช้งบประมาณ" name="use_budget">
+                      <input class="form-check-input" type="radio" id="use_budget2" value="ไม่ใช้งบประมาณ" name="use_budget">
                       <label class="form-check-label" for="use_budget2">
                         ไม่ใช้งบประมาณ
                       </label>

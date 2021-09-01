@@ -2,14 +2,21 @@
 <?php
 
 $ext = pathinfo(basename($_FILES['upload_file']['name']), PATHINFO_EXTENSION);
-$new_file_name = uniqid('file_').".".$ext;
-$file_path = "upload_file/";
-$upload_path = $file_path.$new_file_name;
 
-$success = move_uploaded_file($_FILES['upload_file']['tmp_name'], $upload_path);
-if ($success == true) {
-    echo "upload สำเร็จ";
+if ($ext == '') {
+  $file_path = '';
+} else {
+  $new_file_name = uniqid('file_').".".$ext;
+  $file_path = "upload_file/";
+  $upload_path = $file_path.$new_file_name;
+  
+  $success = move_uploaded_file($_FILES['upload_file']['tmp_name'], $upload_path);
+  if ($success == true) {
+      echo "upload สำเร็จ";
+  }
+  $file_path = $new_file_name;
 }
+
 $TABLE_NAME = '';
 
 if (isset($_POST['save'])) {
@@ -17,9 +24,6 @@ if (isset($_POST['save'])) {
 } else {
   $TABLE_NAME = 'project_draft';
 }
-
-$file_path = $new_file_name;
-
 
 $stmt = $pdo->prepare("INSERT INTO $TABLE_NAME VALUES ('',? ,?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 $stmt->bindParam(1, $_POST["project_name"]);
