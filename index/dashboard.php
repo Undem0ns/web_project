@@ -16,7 +16,7 @@
   if (!isset($_SESSION["user_email"])) {
     header("location:../login/index.php");
   }
-
+//select * from where คือส่ง id  แต่ ไม่มี where คือทั้งหมด
   // $stmt = $pdo->prepare("SELECT * FROM project");
   $stmt = $pdo->prepare("SELECT *
   FROM project
