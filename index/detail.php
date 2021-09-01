@@ -16,7 +16,7 @@
     header("location:../login/index.php");
   }
   
-
+//select * from where คือส่ง id  แต่ ไม่มี where คือทั้งหมด
   $stmt = $pdo->prepare("SELECT *
   FROM project
   LEFT JOIN development_subject
@@ -84,9 +84,11 @@
     <div class="bd-intro ps-lg-4">
       <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
         <!-- <button type="button" class="btn btn-secondary">Secondary</button> -->
+        <?php  if ($_COOKIE['user_id'] == $row['user_id']) {?>
         <a class="btn btn-danger" href="edit_project.php?project_id=<?= $row["project_id"] ?>?from=detail" title="edit" rel="noopener" style="margin-right: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
             <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
           </svg> แก้ไข </a>
+          <?php } ?>
         <h2 class="bd-title" id="content" style="font-weight: bold;">รายละเอียดโครงการ</h2>
       </div>
     </div>
