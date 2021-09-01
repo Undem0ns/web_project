@@ -107,7 +107,7 @@ $row = $stmt->fetch();
                     <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
                     <div class="col-sm-10">
                       <select class="form-select form-select-md mb-3 fs-5" id="development_subject" name="development_subject" required>
-                        <option selected class="text-muted " value="<?= $row["development_subject"] ?>"><?= $row["development_subject"] ?></option>
+                        <option selected class="text-muted " value="<?= $row["development_subject"] ?>">เลือก...</option>
 
                         <?php while ($result = mysqli_fetch_assoc($query)) : ?>
                           <option value="<?= $result['development_id'] ?>"><?= $result['development_name'] ?></option>
@@ -119,24 +119,24 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" required>
-                        <option selected value="<?= $row["project_roadmap"] ?>"><?= $row["project_roadmap"] ?></option>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" required disabled>
+                        <option selected value="<?= $row["project_roadmap"] ?>">เลือก...</option>
                       </select>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" required>
-                        <option selected value="<?= $row["project_main"] ?>"><?= $row["project_main"] ?></option>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" required disabled>
+                        <option selected value="<?= $row["project_main"] ?>">เลือก...</option>
                       </select>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" required>
-                        <option selected value="<?= $row["project_sub"] ?>"><?= $row["project_sub"] ?></option>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" required disabled>
+                        <option selected value="<?= $row["project_sub"] ?>">เลือก...</option>
                       </select>
                     </div>
                   </div>

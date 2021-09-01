@@ -589,6 +589,7 @@ if (!isset($_SESSION["user_email"])) {
         }
 
         function renderPart(part) {
+          scrollTo(0,0);
           initPart();
           p = "part".concat(part.toString());
           document.getElementById(p).style.fontWeight = "bold";

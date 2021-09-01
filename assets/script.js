@@ -13,6 +13,10 @@ $(function(){
         project_mainObject.html('<option value="">เลือก...</option>');
         project_subObject.html('<option value="">เลือก...</option>');
 
+        project_roadmapObject.ready(function(){
+            document.getElementById('project_roadmap').disabled = false;
+        });
+
         $.get('get_project_roadmap.php?development_id=' + development_id, function(data){
             var result = JSON.parse(data);
             console.log(result);
@@ -32,6 +36,10 @@ $(function(){
         project_mainObject.html('<option value="">เลือก...</option>');
         project_subObject.html('<option value="">เลือก...</option>');
 
+        project_mainObject.ready(function(){
+            document.getElementById('project_main').disabled = false;
+        });
+        
         $.get('get_project_main.php?project_roadmap_id=' + project_roadmap_id, function(data){
             var result = JSON.parse(data);
             console.log(result);
@@ -50,6 +58,10 @@ $(function(){
 
         project_subObject.html('<option value="">เลือก...</option>');
 
+        project_subObject.ready(function(){
+            document.getElementById('project_sub').disabled = false;
+        });
+        
         $.get('get_project_sub.php?project_main_id=' + project_main_id, function(data){
             var result = JSON.parse(data);
             console.log(result);

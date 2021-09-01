@@ -17,15 +17,15 @@
 
   // $stmt = $pdo->prepare("SELECT * FROM project");
   $stmt = $pdo->prepare("SELECT *
-  FROM project_v2
+  FROM project
   LEFT JOIN development_subject
-  ON project_v2.development_subject = development_subject.development_id
+  ON project.development_subject = development_subject.development_id
   LEFT JOIN project_roadmap
-  ON project_v2.project_roadmap = project_roadmap.project_roadmap_id
+  ON project.project_roadmap = project_roadmap.project_roadmap_id
   LEFT JOIN project_main
-  ON project_v2.project_main = project_main.project_main_id
+  ON project.project_main = project_main.project_main_id
   LEFT JOIN project_sub
-  ON project_v2.project_sub = project_sub.project_sub_id
+  ON project.project_sub = project_sub.project_sub_id
   ;");
 
   $stmt->execute();

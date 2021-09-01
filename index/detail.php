@@ -16,7 +16,17 @@
     header("location:../login/index.php");
   }
 
-  $stmt = $pdo->prepare("SELECT * FROM project where project_id = ?");
+  $stmt = $pdo->prepare("SELECT *
+  FROM project
+  LEFT JOIN development_subject
+  ON project.development_subject = development_subject.development_id
+  LEFT JOIN project_roadmap
+  ON project.project_roadmap = project_roadmap.project_roadmap_id
+  LEFT JOIN project_main
+  ON project.project_main = project_main.project_main_id
+  LEFT JOIN project_sub
+  ON project.project_sub = project_sub.project_sub_id
+  WHERE project_id = ?");
   $stmt->bindParam(1, $_GET["project_id"]);
   $stmt->execute();
   ?>
@@ -81,26 +91,26 @@
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ประเด็นการพัฒนา: </label>
           <div class="col-sm-10">
-            <?= $row["development_subject"] ?>
+            <?= $row["development_name"] ?>
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">แผนงาน</label>
           <div class="col-sm-10">
-            <?= $row["project_roadmap"] ?>
+            <?= $row["project_roadmap_name"] ?>
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">โครงการหลัก (ตามแผน)</label>
           <div class="col-sm-10">
-            <?= $row["project_main"] ?>
+            <?= $row["project_main_name"] ?>
           </div>
         </div>
       </div>
       <div class="row mb-3">
         <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
         <div class="col-sm-10">
-          <?= $row["project_sub"] ?>
+          <?= $row["project_sub_name"] ?>
         </div>
       </div>
       <div class="row mb-3">
