@@ -277,7 +277,7 @@
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ไฟล์แนบ (ถ้ามี)</label>
           <div class="col-sm-10">
-            <a class="text-primary decoration-none" href= "upload_file/<?= $row["file_path"] ?>" ><?= $row["file_path"] ?></a>
+            <a class="text-primary decoration-none" href= "upload_file/<?= $row["file_path"] ?>" download><?= $row["file_path"] ?></a>
           </div>
         </div>
 
