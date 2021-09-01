@@ -26,7 +26,7 @@ if (!isset($_SESSION["user_email"])) {
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-secondary sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light t sticky-top" style="background-color:#a6a6a6;">
     <div class="container-fluid">
       <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -35,14 +35,14 @@ if (!isset($_SESSION["user_email"])) {
       </ul>
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class=nav-link active aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <a class=nav-link active aria-current="page" style="color:#212121"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
             </svg> <?php
                     echo $_COOKIE["user_name"]; ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../login/index.php">ออกจากระบบ</a>
+          <a class="nav-link active" aria-current="page" href="../login/index.php" style="color:#212121">ออกจากระบบ</a>
         </li>
       </ul>
     </div>
@@ -52,7 +52,7 @@ if (!isset($_SESSION["user_email"])) {
         
   <div class="container-fluid">
     <div class="row">
-      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-info">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #0070c0;">
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
           <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
             <li class="nav-item">
@@ -89,21 +89,24 @@ if (!isset($_SESSION["user_email"])) {
                 <!-- --------------------------------------------------------------------------- -->
 
                 <form action="add_check.php" method="post" enctype="multipart/form-data">
-                  <div class="mb-3 was-validated">
+                  <div class="mb-3 was-validated"" novalidate>
                     <label for="project_name" class="col-form-label" style="font-weight: bold;font-size:25px;">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
                     <textarea class="form-control fs-5" name="project_name" id="project_name" style="height: 100px" required></textarea>
+                    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                          กรุณากรอกชื่อโครงการ
+                        </div>
                   </div>
 
                   <div class="row mb-3">
-                    <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                      <label>เลือกความเชื่อมโยงของโครงการกับแผนกลุ่มจังหวัด
-                      </label>
+                    <div class="-flex p-2 bd-highlight" style="background-color: #bbc7cd;">
+                      <b><label>เลือกความเชื่อมโยงของโครงการกับแผนกลุ่มจังหวัด
+                      </label></b>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="development_subject" name="development_subject" required>
+                      <select class="form-select form-select-md mb-3 fs-5" id="development_subject" name="development_subject" >
                         <option selected disabled value="">เลือก...</option>
 
                         <?php while ($result = mysqli_fetch_assoc($query)) : ?>
@@ -116,7 +119,7 @@ if (!isset($_SESSION["user_email"])) {
                   <div class="row mb-3">
                     <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" required disabled>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap"  disabled>
                         <option selected disabled value="">เลือก...</option>
                       </select>
                     </div>
@@ -124,7 +127,7 @@ if (!isset($_SESSION["user_email"])) {
                   <div class="row mb-3">
                     <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" required disabled>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main"  disabled>
                       <option selected disabled value="">เลือก...</option>
                     </select>
                     </div>
@@ -132,7 +135,7 @@ if (!isset($_SESSION["user_email"])) {
                   <div class="row mb-3">
                     <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" required disabled>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub"  disabled>
                       <option selected disabled value="">เลือก...</option>
                       </select>
                     </div>
@@ -146,8 +149,8 @@ if (!isset($_SESSION["user_email"])) {
               <div class="w-100 bd-highlight">
 
                 <div class="row mb-3">
-                  <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                    <label>ภาพรวมการดำเนินงาน</label>
+                  <div class="-flex p-2 bd-highlight" style="background-color: #bbc7cd;">
+                    <b><label>ภาพรวมการดำเนินงาน</label></b>
                   </div>
                 </div>
 
@@ -200,21 +203,21 @@ if (!isset($_SESSION["user_email"])) {
                 <div class="row mb-3">
                   <label for="budget_year" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="budget_year" name="budget_year" required>
+                    <input type="text" class="form-control fs-5" id="budget_year" name="budget_year" >
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <label for="institution" class="col-sm-2 col-form-label">หน่วยงานที่รับผิดชอบ</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="institution" name="institution" required>
+                    <input type="text" class="form-control fs-5" id="institution" name="institution" >
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <label for="province" class="col-sm-2 col-form-label">จังหวัดที่ดำเนินโครงการ</label>
                   <div class="col-sm-10">
-                    <select class="form-select form-select-md mb-3 fs-5" id="province" name="province" required>
+                    <select class="form-select form-select-md mb-3 fs-5" id="province" name="province" >
                       <option selected disabled value="">เลือก...</option>
                       <option value="ขอนแก่น">ขอนแก่น</option>
                       <option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
@@ -227,12 +230,12 @@ if (!isset($_SESSION["user_email"])) {
                 <div class="row mb-3">
                   <label for="target_user" class="col-sm-2 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="target_user" name="target_user" required>
+                    <input type="text" class="form-control fs-5" id="target_user" name="target_user" >
                   </div>
                 </div>
                 <div class="row mb-3">
-                  <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                    <label>รายละเอียดการดำเนินงาน</label>
+                  <div class="-flex p-2 bd-highlight" style="background-color: #bbc7cd;">
+                    <b><label>รายละเอียดการดำเนินงาน</label></b>
                   </div>
                 </div>
 
@@ -256,8 +259,8 @@ if (!isset($_SESSION["user_email"])) {
             <div class="flex-md-row align-items-center justify-content-around part" id="p3">
               <div class="w-100 bd-highlight">
                 <div>
-                  <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                    <label>แหล่งงบประมาณตามแผน</label>
+                  <div class="-flex p-2 bd-highlight" style="background-color: #bbc7cd;">
+                    <b><label>แหล่งงบประมาณตามแผน</label></b>
                   </div>
                   <br>
                   <div class="row mb-3">
@@ -337,8 +340,8 @@ if (!isset($_SESSION["user_email"])) {
                 </div>
 
                 <div>
-                  <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                    <label>งบประมาณที่ได้รับจัดสรร</label>
+                  <div class="-flex p-2 bd-highlight" style="background-color: #bbc7cd;">
+                    <b><label>งบประมาณที่ได้รับจัดสรร</label></b>
                   </div>
                   <br>
                   <div class="row mb-3">
@@ -419,8 +422,8 @@ if (!isset($_SESSION["user_email"])) {
 
 
                 <div>
-                  <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                    <label>งบประมาณตามที่ใช้จ่ายจริง</label>
+                  <div class="-flex p-2 bd-highlight" style="background-color: #bbc7cd;">
+                    <b><label>งบประมาณตามที่ใช้จ่ายจริง</label></b>
                   </div>
                   <br>
                   <div class="row mb-3">
@@ -504,15 +507,15 @@ if (!isset($_SESSION["user_email"])) {
 
             <div class="flex-md-row align-items-center justify-content-around part" id="p4">
               <div class="w-100 bd-highlight">
-                <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                  <label>รายละเอียดอื่น ๆ เพิ่มเติม</label>
+                <div class="-flex p-2 bd-highlight" style="background-color: #bbc7cd;">
+                  <b><label>รายละเอียดอื่น ๆ เพิ่มเติม</label></b>
                 </div><br>
                 <div>
                   <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
                   <textarea class="form-control" id="project_additional" style="height: 300px" name="project_additional"></textarea>
                 </div><br>
-                <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                  <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
+                <div class="-flex p-2 bd-highlight" style="background-color: #bbc7cd;">
+                  <b><label for="addition">ไฟล์แนบ (ถ้ามี)</label></b>
                 </div><br>
                 <div class="input-group mb-3">
                   <input type="file" class="form-control" id="upload_file" name="upload_file">
