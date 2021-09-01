@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2021 at 06:58 AM
+-- Generation Time: Sep 01, 2021 at 10:23 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -64,18 +64,18 @@ CREATE TABLE `project` (
   `project_objective` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `project_result` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `project_additional` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `budget_province_plan` float DEFAULT 0,
-  `budget_province_receive` float DEFAULT 0,
-  `budget_province_use` float DEFAULT 0,
-  `budget_department_plan` float DEFAULT 0,
-  `budget_department_receive` float DEFAULT 0,
-  `budget_department_use` float DEFAULT 0,
-  `budget_local_plan` float DEFAULT 0,
-  `budget_local_receive` float DEFAULT 0,
-  `budget_local_use` float DEFAULT 0,
-  `budget_private_plan` float DEFAULT 0,
-  `budget_private_receive` float DEFAULT 0,
-  `budget_private_use` float DEFAULT 0,
+  `budget_province_plan` varchar(21) DEFAULT '0',
+  `budget_province_receive` varchar(21) DEFAULT '0',
+  `budget_province_use` varchar(21) DEFAULT '0',
+  `budget_department_plan` varchar(21) DEFAULT '0',
+  `budget_department_receive` varchar(21) DEFAULT '0',
+  `budget_department_use` varchar(21) DEFAULT '0',
+  `budget_local_plan` varchar(21) DEFAULT '0',
+  `budget_local_receive` varchar(21) DEFAULT '0',
+  `budget_local_use` varchar(21) DEFAULT '0',
+  `budget_private_plan` varchar(21) DEFAULT '0',
+  `budget_private_receive` varchar(21) DEFAULT '0',
+  `budget_private_use` varchar(21) DEFAULT '0',
   `user_id` int(11) NOT NULL,
   `file_path` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -85,12 +85,20 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`project_id`, `project_name`, `development_subject`, `project_roadmap`, `project_main`, `project_sub`, `operation_type`, `project_code`, `use_budget`, `budget_year`, `institution`, `province`, `target_user`, `project_objective`, `project_result`, `project_additional`, `budget_province_plan`, `budget_province_receive`, `budget_province_use`, `budget_department_plan`, `budget_department_receive`, `budget_department_use`, `budget_local_plan`, `budget_local_receive`, `budget_local_use`, `budget_private_plan`, `budget_private_receive`, `budget_private_use`, `user_id`, `file_path`) VALUES
-(18, 'adsasdf', 2, 9, 26, 76, 'โครงการ', '', 'ใช้งบประมาณ', '2345', 'สสส.', 'ร้อยเอ็ด', 'ประชาชน', 'fa', 'fa', '', 20000000000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'file_612eee000f48c.'),
-(19, 'sdfsd', 1, 2, 3, 999, 'โครงการ', 'ergt', 'ใช้งบประมาณ', '2345', 's', 'ร้อยเอ็ด', 'ert', 'wef', 'WEF', '', 60000000000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'file_612ef1b2b1e2f.'),
-(20, 'rthrth', 1, 2, 3, 999, 'โครงการ', 'rth', 'ใช้งบประมาณ', 'rth', 'rsths', 'มหาสารคาม', 'srth', 'srth', 'srth', '', 3000000000000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'file_612ef1d9298e6.'),
-(21, 'arewrar', 2, 9, 26, 76, 'โครงการ', 'aerg', 'ใช้งบประมาณ', 'aerg', 'areg', 'มหาสารคาม', 'aerg', 'earg', 'aerg', '', 3000000000, NULL, NULL, 3378790000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
-(22, 'asdasdasd', 1, 2, 3, 999, 'การดำเนินงาน', 'asdf', 'ไม่ใช้งบประมาณ', 'sadf', 'sadf', 'ขอนแก่น', 'asdf', 'sadf', 'gerwgewrg', 'ergerg', 625255000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
-(23, 'ร่าง', 2, 9, 26, 76, 'โครงการ', 'aasd', 'ใช้งบประมาณ', '2345', 'สสส.', 'ขอนแก่น', 'พะั', 'พะั', 'พะั', '', 665656, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, '');
+(18, 'adsasdf', 2, 9, 26, 76, 'โครงการ', '', 'ใช้งบประมาณ', '2345', 'สสส.', 'ร้อยเอ็ด', 'ประชาชน', 'fa', 'fa', '', '20000000000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 'file_612eee000f48c.'),
+(19, 'sdfsd', 1, 2, 3, 999, 'โครงการ', 'ergt', 'ใช้งบประมาณ', '2345', 's', 'ร้อยเอ็ด', 'ert', 'wef', 'WEF', '', '60000000000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 'file_612ef1b2b1e2f.'),
+(20, 'rthrth', 1, 2, 3, 999, 'โครงการ', 'rth', 'ใช้งบประมาณ', 'rth', 'rsths', 'มหาสารคาม', 'srth', 'srth', 'srth', '', '3000000000000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 'file_612ef1d9298e6.'),
+(21, 'arewrar', 2, 9, 26, 76, 'โครงการ', 'aerg', 'ใช้งบประมาณ', 'aerg', 'areg', 'มหาสารคาม', 'aerg', 'earg', 'aerg', '', '3000000000', '0', '0', '3378790000', '0', '0', '0', '0', '0', '0', '0', '0', 1, ''),
+(22, 'asdasdasd', 1, 2, 3, 999, 'การดำเนินงาน', 'asdf', 'ไม่ใช้งบประมาณ', 'sadf', 'sadf', 'ขอนแก่น', 'asdf', 'sadf', 'gerwgewrg', 'ergerg', '625255000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, ''),
+(23, 'ร่าง', 2, 9, 26, 76, 'โครงการ', 'aasd', 'ใช้งบประมาณ', '2345', 'สสส.', 'ขอนแก่น', 'พะั', 'พะั', 'พะั', '', '665656', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, ''),
+(24, 'asdasd', 1, 2, 3, 999, 'โครงการ', '', 'ใช้งบประมาณ', '2345', '2523', 'ร้อยเอ็ด', 'sad', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, ''),
+(25, 'aefa', 2, 8, 22, 999, 'โครงการ', 'wef', 'ใช้งบประมาณ', 'ewf', 'wef', 'มหาสารคาม', 'wefwef', 'wefwef', 'wefwef', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
+(26, 'ewfwefw', 1, 2, 3, 999, 'โครงการ', '', 'ใช้งบประมาณ', 'wefwef', 'wefwef', 'ร้อยเอ็ด', 'wefwef', 'wefwef', 'wefwefwe', '', '4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
+(27, 'egrrgerg', 1, 2, 3, 999, 'โครงการ', 'ergerge', 'ใช้งบประมาณ', 'erg', 'ergerg', 'มหาสารคาม', 'ergerge', 'ergerge', 'rgerg', '', '3,000,000,000,000', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
+(28, 'awergerg', 3, 12, 32, 102, 'โครงการ', 'erg', 'ใช้งบประมาณ', 'erg', 'ergerg', 'ร้อยเอ็ด', 'ประชาชน', 'ergergerg', 'ergerg', '', NULL, NULL, '33333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
+(29, 'adsasd', 1, 2, 3, 999, 'โครงการ', '', 'ใช้งบประมาณ', 'sdf', 'สสส.', 'ร้อยเอ็ด', 's', 'sdf', 'dsfsdf', '', '34,523,452,345', NULL, NULL, '234,532,453,245', NULL, NULL, '32,453,245', NULL, NULL, '234,532,452,345,324,5', NULL, NULL, 1, ''),
+(30, 'asdasd', 2, 10, 29, 87, 'โครงการ', 'asd', 'ใช้งบประมาณ', 'sad', 'asd', 'ร้อยเอ็ด', 'asda', 'asd', 'asd', '', NULL, NULL, '987987987', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
+(31, 'thrthrthr', 1, 2, 3, 999, 'โครงการ', 'trhthwth', 'ใช้งบประมาณ', 'wh4h5', 'w45h', 'มหาสารคาม', 'w4h5', 'wefwe', 'wefwef', 'wefef', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '');
 
 -- --------------------------------------------------------
 
@@ -130,13 +138,6 @@ CREATE TABLE `project_draft` (
   `user_id` int(11) NOT NULL,
   `file_path` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `project_draft`
---
-
-INSERT INTO `project_draft` (`project_id`, `project_name`, `development_subject`, `project_roadmap`, `project_main`, `project_sub`, `operation_type`, `project_code`, `use_budget`, `budget_year`, `institution`, `province`, `target_user`, `project_objective`, `project_result`, `project_additional`, `budget_province_plan`, `budget_province_receive`, `budget_province_use`, `budget_department_plan`, `budget_department_receive`, `budget_department_use`, `budget_local_plan`, `budget_local_receive`, `budget_local_use`, `budget_private_plan`, `budget_private_receive`, `budget_private_use`, `user_id`, `file_path`) VALUES
-(0, 'asdasd', 1, 2, 3, 999, 'โครงการ', 'asd', 'ใช้งบประมาณ', 'sad', 'asd', 'ร้อยเอ็ด', 'asda', 'asd', 'asd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, '');
 
 -- --------------------------------------------------------
 
@@ -510,7 +511,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `project_sub`

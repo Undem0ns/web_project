@@ -49,7 +49,7 @@ if (!isset($_SESSION["user_email"])) {
   </nav>
 
 
-        
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #0070c0;">
@@ -127,9 +127,9 @@ if (!isset($_SESSION["user_email"])) {
                   <div class="row mb-3">
                     <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main"  disabled>
-                      <option selected disabled value="">เลือก...</option>
-                    </select>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" disabled>
+                        <option selected disabled value="">เลือก...</option>
+                      </select>
                     </div>
                   </div>
                   <div class="row mb-3">
@@ -176,7 +176,7 @@ if (!isset($_SESSION["user_email"])) {
                 <div class="row mb-3">
                   <label for="project_code" class="col-sm-2 col-form-label">รหัสโครงงาน (ถ้ามี)</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="project_code " name="project_code">
+                    <input class="form-control fs-5" id="project_code " name="project_code">
                   </div>
                 </div>
 
@@ -242,15 +242,16 @@ if (!isset($_SESSION["user_email"])) {
                 <div class="row mb-3">
                   <label for="project_objective" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="project_objective" name="project_objective" style="height: 300px">
+                    <textarea type="text" class="form-control fs-5" id="project_objective" name="project_objective" style="height: 300px">
+                    </textarea>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="project_result" name="project_result" style="height: 300px">
-                  </div>
+                    <textarea type="text" class="form-control fs-5" id="project_result" name="project_result" style="height: 300px">
+                    </textarea></div>
                 </div>
               </div>
             </div>
@@ -276,7 +277,7 @@ if (!isset($_SESSION["user_email"])) {
                       จำนวน
                     </div>
                     <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_province_plan" name="budget_province_plan" value="0">
+                      <input type="text" disabled class="form-control fs-5" id="budget_province_plan" name="budget_province_plan" value="0" >
                     </div>
                     <div class="col-auto">
                       บาท
@@ -512,7 +513,7 @@ if (!isset($_SESSION["user_email"])) {
                 </div><br>
                 <div>
                   <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
-                  <textarea class="form-control" id="project_additional" style="height: 300px" name="project_additional"></textarea>
+                  <textarea class="form-control fs-5" id="project_additional" style="height: 300px" name="project_additional"></textarea>
                 </div><br>
                 <div class="-flex p-2 bd-highlight" style="background-color: #bbc7cd;">
                   <b><label for="addition">ไฟล์แนบ (ถ้ามี)</label></b>
@@ -521,162 +522,165 @@ if (!isset($_SESSION["user_email"])) {
                   <input type="file" class="form-control" id="upload_file" name="upload_file">
                   <label class="input-group-text" for="upload_file">Upload</label>
                 </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="d-md-flex flex-md-row align-items-center justify-content-end" style="margin-bottom: 100px; margin-right: 50px;">
+            <button class="btn btn-secondary" type="submit" id="button0" name="draft" onclick="" style="margin-right: 10px;">บันทึกร่างโครงการ</button>
+            <div class="btn btn-primary" id="button1" onclick="previousPart()" style="margin-right: 10px;">หน้าก่อนหน้า</div>
+            <div class="btn btn-primary" id="button2" onclick="nextPart()">หน้าถัดไป</div>
+            <button class="btn btn-success" type="submit" id="button3" name="save" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
+          </div>
         </div>
+        </form>
       </div>
     </div>
 
+    <!-- --------------------------------------------------------------------------- -->
+    <script src="../assets/jquery.min.js"></script>
+    <script src="../assets/script.js"></script>
+    <script src="../assets/numeric.js"></script>
+    <script>
+      var part = 1;
+      renderPart(part);
 
-
-    <div class="d-md-flex flex-md-row align-items-center justify-content-end" style="margin-bottom: 100px; margin-right: 50px;">
-    <button class="btn btn-secondary" type="submit" id="button0" name="draft" onclick="" style="margin-right: 10px;">บันทึกร่างโครงการ</button>
-    <div class="btn btn-primary" id="button1" onclick="previousPart()" style="margin-right: 10px;">หน้าก่อนหน้า</div>
-      <div class="btn btn-primary" id="button2" onclick="nextPart()">หน้าถัดไป</div>
-      <button class="btn btn-success" type="submit" id="button3" name="save" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
-    </div>
-  </div>
-  </form> </div></div>
-   
-      <!-- --------------------------------------------------------------------------- -->
-      <script src="../assets/jquery.min.js"></script>
-      <script src="../assets/script.js"></script>
-      <script>
-        var part = 1;
-        renderPart(part);
-
-        function enableInput(checkbox_id, input_id) {
-          var checkBox = document.getElementById(checkbox_id);
-          var input = document.getElementById(input_id);
-          if (checkBox.checked == true) {
-            input.disabled = false;
-          } else {
-            input.disabled = true;
-            input.value = '0';
-          }
+      function enableInput(checkbox_id, input_id) {
+        var checkBox = document.getElementById(checkbox_id);
+        var input = document.getElementById(input_id);
+        if (checkBox.checked == true) {
+          input.disabled = false;
+        } else {
+          input.disabled = true;
+          input.value = '0';
         }
+      }
 
-        function initPart() {
-          document.getElementById("part1").style.fontWeight = "normal";
-          document.getElementById("part2").style.fontWeight = "normal";
-          document.getElementById("part3").style.fontWeight = "normal";
-          document.getElementById("part4").style.fontWeight = "normal";
+      function initPart() {
+        document.getElementById("part1").style.fontWeight = "normal";
+        document.getElementById("part2").style.fontWeight = "normal";
+        document.getElementById("part3").style.fontWeight = "normal";
+        document.getElementById("part4").style.fontWeight = "normal";
 
-          document.getElementById("part1").style.textDecoration = "none";
-          document.getElementById("part2").style.textDecoration = "none";
-          document.getElementById("part3").style.textDecoration = "none";
-          document.getElementById("part4").style.textDecoration = "none";
+        document.getElementById("part1").style.textDecoration = "none";
+        document.getElementById("part2").style.textDecoration = "none";
+        document.getElementById("part3").style.textDecoration = "none";
+        document.getElementById("part4").style.textDecoration = "none";
 
-          document.getElementById("button1").style.display = "block";
+        document.getElementById("button1").style.display = "block";
+        document.getElementById("button2").style.display = "block";
+        document.getElementById("button3").style.display = "block";
+
+        document.getElementById("p1").style.display = "none";
+        document.getElementById("p2").style.display = "none";
+        document.getElementById("p3").style.display = "none";
+        document.getElementById("p4").style.display = "none";
+
+      }
+
+      function renderPart(part) {
+        scrollTo(0, 0);
+        initPart();
+        p = "part".concat(part.toString());
+        document.getElementById(p).style.fontWeight = "bold";
+        document.getElementById(p).style.textDecoration = "underline";
+
+        if (part == 1) {
+          document.getElementById("button1").style.display = "none";
           document.getElementById("button2").style.display = "block";
-          document.getElementById("button3").style.display = "block";
+          document.getElementById("button3").style.display = "none";
 
-          document.getElementById("p1").style.display = "none";
+          document.getElementById("p1").style.display = "flex";
           document.getElementById("p2").style.display = "none";
           document.getElementById("p3").style.display = "none";
           document.getElementById("p4").style.display = "none";
 
         }
+        if (part == 2) {
+          document.getElementById("button1").style.display = "block";
+          document.getElementById("button2").style.display = "block";
+          document.getElementById("button3").style.display = "none";
 
-        function renderPart(part) {
-          scrollTo(0,0);
-          initPart();
-          p = "part".concat(part.toString());
-          document.getElementById(p).style.fontWeight = "bold";
-          document.getElementById(p).style.textDecoration = "underline";
-
-          if (part == 1) {
-            document.getElementById("button1").style.display = "none";
-            document.getElementById("button2").style.display = "block";
-            document.getElementById("button3").style.display = "none";
-
-            document.getElementById("p1").style.display = "flex";
-            document.getElementById("p2").style.display = "none";
-            document.getElementById("p3").style.display = "none";
-            document.getElementById("p4").style.display = "none";
-
-          }
-          if (part == 2) {
-            document.getElementById("button1").style.display = "block";
-            document.getElementById("button2").style.display = "block";
-            document.getElementById("button3").style.display = "none";
-
-            document.getElementById("p1").style.display = "none";
-            document.getElementById("p2").style.display = "flex";
-            document.getElementById("p3").style.display = "none";
-            document.getElementById("p4").style.display = "none";
-
-          }
-          if (part == 3) {
-            document.getElementById("button1").style.display = "block";
-            document.getElementById("button2").style.display = "block";
-            document.getElementById("button3").style.display = "none";
-
-            document.getElementById("p1").style.display = "none";
-            document.getElementById("p2").style.display = "none";
-            document.getElementById("p3").style.display = "flex";
-            document.getElementById("p4").style.display = "none";
-
-          }
-          if (part == 4) {
-            document.getElementById("button1").style.display = "block";
-            document.getElementById("button2").style.display = "none";
-            document.getElementById("button3").style.display = "block";
-
-            document.getElementById("p1").style.display = "none";
-            document.getElementById("p2").style.display = "none";
-            document.getElementById("p3").style.display = "none";
-            document.getElementById("p4").style.display = "flex";
-
-          }
-        }
-
-        function nextPart() {
-          part += 1;
-          renderPart(part);
-        }
-
-        function previousPart() {
-          part -= 1;
-          renderPart(part);
-        }
-
-        function saveProject() {
+          document.getElementById("p1").style.display = "none";
+          document.getElementById("p2").style.display = "flex";
+          document.getElementById("p3").style.display = "none";
+          document.getElementById("p4").style.display = "none";
 
         }
-      </script>
+        if (part == 3) {
+          document.getElementById("button1").style.display = "block";
+          document.getElementById("button2").style.display = "block";
+          document.getElementById("button3").style.display = "none";
 
+          document.getElementById("p1").style.display = "none";
+          document.getElementById("p2").style.display = "none";
+          document.getElementById("p3").style.display = "flex";
+          document.getElementById("p4").style.display = "none";
 
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-    }
-
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
-    }
-
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
         }
+        if (part == 4) {
+          document.getElementById("button1").style.display = "block";
+          document.getElementById("button2").style.display = "none";
+          document.getElementById("button3").style.display = "block";
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
-  </script>
+          document.getElementById("p1").style.display = "none";
+          document.getElementById("p2").style.display = "none";
+          document.getElementById("p3").style.display = "none";
+          document.getElementById("p4").style.display = "flex";
+
+        }
+      }
+
+      function nextPart() {
+        part += 1;
+        renderPart(part);
+      }
+
+      function previousPart() {
+        part -= 1;
+        renderPart(part);
+      }
+
+      function saveProject() {
+
+      }
+    </script>
+
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+    </script>
 
 </body>
 
