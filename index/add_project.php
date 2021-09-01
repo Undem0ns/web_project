@@ -81,7 +81,7 @@ if (!isset($_SESSION["user_email"])) {
       <div class="w-100 bd-highlight">
         <!-- --------------------------------------------------------------------------- -->
 
-        <form action="add_check.php" method="post" enctype="multipart/form-data">
+        <form action="add_check.php" method="post" enctype="multipart/form-data" class="">
           <div class="mb-3 was-validated">
             <label for="project_name" class="col-form-label" style="font-weight: bold;font-size:25px;">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
             <textarea class="form-control fs-5" name="project_name" id="project_name" style="height: 100px" required></textarea>
@@ -281,7 +281,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_province_plan" name="budget_province_plan"  value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_province_plan" name="budget_province_plan"  value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -298,7 +298,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_department_plan" name="budget_department_plan" value="0">
+              <input type="text"pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_department_plan" name="budget_department_plan" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -317,7 +317,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  input type="text" disabled class="form-control fs-5" id="budget_local_plan" name="budget_local_plan" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_local_plan" name="budget_local_plan" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -336,7 +336,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_private_plan" name="budget_private_plan" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_private_plan" name="budget_private_plan" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -362,7 +362,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_province_receive" name="budget_province_receive" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_province_receive" name="budget_province_receive" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -379,7 +379,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_department_receive" name="budget_department_receive" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_department_receive" name="budget_department_receive" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -398,7 +398,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_local_receive" name="budget_local_receive" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_local_receive" name="budget_local_receive" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -417,7 +417,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_private_receive" name="budget_private_receive" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_private_receive" name="budget_private_receive" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -444,7 +444,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_province_use" name="budget_province_use" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_province_use" name="budget_province_use" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -461,7 +461,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_department_use" name="budget_department_use" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_department_use" name="budget_department_use" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -480,7 +480,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_local_use" name="budget_local_use" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_local_use" name="budget_local_use" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -499,7 +499,7 @@ if (!isset($_SESSION["user_email"])) {
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_private_use" name="budget_private_use" value="0">
+              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_private_use" name="budget_private_use" value="0">
             </div>
             <div class="col-auto">
               บาท
@@ -655,7 +655,29 @@ if (!isset($_SESSION["user_email"])) {
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
     }
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
   </script>
+  
 </body>
 
 </html>
