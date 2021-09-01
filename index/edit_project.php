@@ -963,8 +963,3 @@ $row = $stmt->fetch();
 </body>
 
 </html>
-<!-- SELECT development_subject.development_id, development_subject.development_name, project_roadmap.project_roadmap_name
-FROM development_subject
-LEFT JOIN project_roadmap
-ON development_subject.development_id = project_roadmap.development_id
-WHERE development_subject.development_id = 1; -->

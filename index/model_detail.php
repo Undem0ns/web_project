@@ -17,7 +17,17 @@
   }
   
 
-  $stmt = $pdo->prepare("SELECT * FROM project_draft where project_id = ?");
+  $stmt = $pdo->prepare("SELECT *
+  FROM project_draft
+  LEFT JOIN development_subject
+  ON project_draft.development_subject = development_subject.development_id
+  LEFT JOIN project_roadmap
+  ON project_draft.project_roadmap = project_roadmap.project_roadmap_id
+  LEFT JOIN project_main
+  ON project_draft.project_main = project_main.project_main_id
+  LEFT JOIN project_sub
+  ON project_draft.project_sub = project_sub.project_sub_id
+  WHERE project_id = ?");
   $stmt->bindParam(1, $_GET["project_id"]);
   $stmt->execute();
   ?>
@@ -60,7 +70,7 @@
     <div class="bd-intro ps-lg-4">
       <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
         <!-- <button type="button" class="btn btn-secondary">Secondary</button> -->
-        <a class="btn btn-danger" href="edit_project.php?project_id=<?= $row["project_id"] ?>" title="edit" rel="noopener" style="margin-right: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+        <a class="btn btn-danger" href="edit_model.php?project_id=<?= $row["project_id"] ?>" title="edit" rel="noopener" style="margin-right: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
             <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
           </svg> แก้ไข </a>
         <h2 class="bd-title" id="content" style="font-weight: bold;">รายละเอียดโครงการ</h2>
@@ -82,26 +92,26 @@
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ประเด็นการพัฒนา: </label>
           <div class="col-sm-10">
-            <?= $row["development_subject"] ?>
+            <?= $row["development_name"] ?>
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">แผนงาน</label>
           <div class="col-sm-10">
-            <?= $row["project_roadmap"] ?>
+            <?= $row["project_roadmap_name"] ?>
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">โครงการหลัก (ตามแผน)</label>
           <div class="col-sm-10">
-            <?= $row["project_main"] ?>
+            <?= $row["project_main_name"] ?>
           </div>
         </div>
       </div>
       <div class="row mb-3">
         <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
         <div class="col-sm-10">
-          <?= $row["project_sub"] ?>
+          <?= $row["project_sub_name"] ?>
         </div>
       </div>
       <div class="row mb-3">

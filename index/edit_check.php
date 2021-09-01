@@ -68,7 +68,7 @@ echo  " Swal.fire({
     timer: 1500,
   })";
 echo "</script>";
-header("refresh: 2;url=index.php");
+header("refresh: 2;url=dashboard.php");
 
 
 ?>
