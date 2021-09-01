@@ -242,16 +242,14 @@ if (!isset($_SESSION["user_email"])) {
                 <div class="row mb-3">
                   <label for="project_objective" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
                   <div class="col-sm-10">
-                    <textarea type="text" class="form-control fs-5" id="project_objective" name="project_objective" style="height: 300px">
-                    </textarea>
+                    <textarea type="text" class="form-control fs-5" id="project_objective" name="project_objective" style="height: 300px"></textarea>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
                   <div class="col-sm-10">
-                    <textarea type="text" class="form-control fs-5" id="project_result" name="project_result" style="height: 300px">
-                    </textarea></div>
+                    <textarea type="text" class="form-control fs-5" id="project_result" name="project_result" style="height: 300px"></textarea></div>
                 </div>
               </div>
             </div>
