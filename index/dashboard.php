@@ -32,32 +32,33 @@
 
   $stmt->execute();
   ?>
-  <nav class="navbar navbar-expand-lg navbar-light bg-secondary sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light t sticky-top" style="background-color:#a6a6a6;">
     <div class="container-fluid">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <!-- <span clss="marginle" style="font-size:30px;">PCP-MS</span> -->
           <a class="nav-link" href="dashboard.php" style="font-size:25px; color:black">PCP-MS</a>
         </li>
       </ul>
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class=nav-link active aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <a class=nav-link active aria-current="page" style="color:#212121"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
             </svg> <?php
                     echo $_COOKIE["user_name"]; ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../login/index.php">ออกจากระบบ</a>
+          <a class="nav-link active" aria-current="page" href="../login/index.php" style="color:#212121">ออกจากระบบ</a>
         </li>
       </ul>
     </div>
   </nav>
 
+
+        
   <div class="container-fluid">
     <div class="row">
-      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-info">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #0070c0;">
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
           <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
             <li class="nav-item">
