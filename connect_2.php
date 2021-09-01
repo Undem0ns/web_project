@@ -1,9 +1,10 @@
 <?php
+include 'config.php';
 $info = array(
-    'host' => 'localhost',
-    'user' => 'root',
-    'password' => '',
-    'dbname' => 'pcp_ms'
+    'host' => $HOST,
+    'user' => $USERNAME,
+    'password' => $PASSWORD,
+    'dbname' => $DBNAME
 );
 $conn = mysqli_connect($info['host'], $info['user'], $info['password'], $info['dbname']) or die('Error connection database!');
-mysqli_set_charset($conn, 'utf8');
+mysqli_set_charset($conn, $CHARSET);

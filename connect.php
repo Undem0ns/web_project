@@ -21,8 +21,9 @@
 
 </html>
 <?php
+include 'config.php';
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=pcp_ms;charset=utf8", "root", "");
+    $pdo = new PDO("mysql:host=$HOST;dbname=$DBNAME;charset=$CHARSET", $USERNAME, $PASSWORD);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "เกิดข้อผิดพลาด : " . $e->getMessage();
