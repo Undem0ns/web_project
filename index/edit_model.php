@@ -246,15 +246,13 @@ $row = $stmt->fetch();
                 <div class="row mb-3">
                   <label for="project_objective" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="project_objective" name="project_objective" style="height: 300px" value='<?= $row["project_objective"] ?>'>
-                  </div>
+                    <textarea type="text" class="form-control fs-5" id="project_objective" name="project_objective" style="height: 300px" value='<?= $row["project_objective"] ?>'><?= $row["project_objective"] ?></textarea></div>
                 </div>
 
                 <div class="row mb-3">
                   <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="project_result" name="project_result" style="height: 300px" value='<?= $row["project_result"] ?>'>
-                  </div>
+                    <textarea type="text" class="form-control fs-5" id="project_result" name="project_result" style="height: 300px" value='<?= $row["project_result"] ?>'><?= $row["project_result"] ?></textarea></div>
                 </div>
               </div>
             </div>
@@ -516,7 +514,7 @@ $row = $stmt->fetch();
                 </div><br>
                 <div>
                   <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
-                  <textarea class="form-control" id="project_additional" style="height: 300px" name="project_additional"><?= $row["project_additional"] ?></textarea>
+                  <textarea class="form-control fs-5" id="project_additional" style="height: 300px" name="project_additional"><?= $row["project_additional"] ?></textarea>
                 </div><br>
                 <div class="-flex p-2 bd-highlight" style="background-color: gray;">
                   <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
@@ -543,6 +541,7 @@ $row = $stmt->fetch();
       <!-- --------------------------------------------------------------------------- -->
       <script src="../assets/jquery.min.js"></script>
       <script src="../assets/script.js"></script>
+      <script src="../assets/numeric.js"></script>
       <script>
         var part = 1;
         renderPart(part);

@@ -199,25 +199,25 @@
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของจังหวัด/กลุ่มจังหวัด</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_province_plan"] ?> บาท
+          จำนวน <?= ($row["budget_province_plan"]== '') ? "0" : $row["budget_province_plan"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของกระทรวง/กรม</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_department_plan"] ?> บาท
+          จำนวน <?= ($row["budget_department_plan"]== '') ? "0" : $row["budget_department_plan"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณขององค์กรปกครองส่วนท้องถิ่น</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_local_plan"] ?> บาท
+          จำนวน <?= ($row["budget_local_plan"]== '') ? "0" : $row["budget_local_plan"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของภาคเอกชน/ชุมชน</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_private_plan"] ?> บาท
+          จำนวน <?= ($row["budget_private_plan"]== '') ? "0" : $row["budget_private_plan"] ?> บาท
           </div>
         </div>
         <div class="-flex p-2 bd-highlight" style="background-color: gray;">
@@ -226,25 +226,25 @@
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของจังหวัด/กลุ่มจังหวัด</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_province_receive"] ?> บาท
+            จำนวน <?= ($row["budget_province_receive"]== '') ? "0" : $row["budget_province_receive"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของกระทรวง/กรม</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_department_receive"] ?> บาท
+          จำนวน <?= ($row["budget_department_receive"]== '') ? "0" : $row["budget_department_receive"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณขององค์กรปกครองส่วนท้องถิ่น</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_local_receive"] ?> บาท
+          จำนวน <?= ($row["budget_local_receive"]== '') ? "0" : $row["budget_local_receive"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของภาคเอกชน/ชุมชน</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_private_receive"] ?> บาท
+          จำนวน <?= ($row["budget_private_receive"]== '') ? "0" : $row["budget_private_receive"] ?> บาท
           </div>
         </div>
         <div class="-flex p-2 bd-highlight" style="background-color: gray;">
@@ -253,25 +253,25 @@
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของจังหวัด/กลุ่มจังหวัด</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_province_use"] ?> บาท
+          จำนวน <?= ($row["budget_province_use"]== '') ? "0" : $row["budget_province_use"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของกระทรวง/กรม</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_department_use"] ?> บาท
+          จำนวน <?= ($row["budget_department_use"]== '') ? "0" : $row["budget_department_use"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณขององค์กรปกครองส่วนท้องถิ่น</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_local_use"] ?> บาท
+          จำนวน <?= ($row["budget_local_use"]== '') ? "0" : $row["budget_local_use"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
           <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของภาคเอกชน/ชุมชน</label>
           <div class="col-sm-10">
-            จำนวน <?= $row["budget_private_use"] ?> บาท
+          จำนวน <?= ($row["budget_private_use"]== '') ? "0" : $row["budget_private_use"] ?> บาท
           </div>
         </div>
         <div class="-flex p-2 bd-highlight" style="background-color: gray;">

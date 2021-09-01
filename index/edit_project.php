@@ -123,7 +123,7 @@ $row = $stmt->fetch();
                     <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
                     <div class="col-sm-10">
                       <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" required disabled>
-                        <option selected value="<?= $row["project_roadmap"] ?>">เลือก...</option>
+                        <option disabled selected value="<?= $row["project_roadmap"] ?>">เลือก...</option>
                       </select>
                     </div>
                   </div>
@@ -131,7 +131,7 @@ $row = $stmt->fetch();
                     <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
                     <div class="col-sm-10">
                       <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" required disabled>
-                        <option selected value="<?= $row["project_main"] ?>">เลือก...</option>
+                        <option disabled selected value="<?= $row["project_main"] ?>">เลือก...</option>
                       </select>
                     </div>
                   </div>
@@ -139,7 +139,7 @@ $row = $stmt->fetch();
                     <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
                     <div class="col-sm-10">
                       <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" required disabled>
-                        <option selected value="<?= $row["project_sub"] ?>">เลือก...</option>
+                        <option disabled selected value="<?= $row["project_sub"] ?>">เลือก...</option>
                       </select>
                     </div>
                   </div>
@@ -245,15 +245,13 @@ $row = $stmt->fetch();
                 <div class="row mb-3">
                   <label for="project_objective" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="project_objective" name="project_objective" style="height: 300px" value='<?= $row["project_objective"] ?>'>
-                  </div>
+                    <textarea type="text" class="form-control fs-5" id="project_objective" name="project_objective" style="height: 300px" value='<?= $row["project_objective"] ?>'><?= $row["project_objective"] ?></textarea></div>
                 </div>
 
                 <div class="row mb-3">
                   <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="project_result" name="project_result" style="height: 300px" value='<?= $row["project_result"] ?>'>
-                  </div>
+                    <textarea type="text" class="form-control fs-5" id="project_result" name="project_result" style="height: 300px" value='<?= $row["project_result"] ?>'><?= $row["project_result"] ?></textarea></div>
                 </div>
               </div>
             </div>
@@ -782,7 +780,7 @@ $row = $stmt->fetch();
         </div><br>
         <div>
           <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
-          <textarea class="form-control" id="project_additional" style="height: 300px" name="project_additional"><?= $row["project_additional"] ?></textarea>
+          <textarea class="form-control fs-5" id="project_additional" style="height: 300px" name="project_additional"><?= $row["project_additional"] ?></textarea>
         </div><br>
         <div class="-flex p-2 bd-highlight" style="background-color: gray;">
           <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
@@ -807,46 +805,10 @@ $row = $stmt->fetch();
       <!-- --------------------------------------------------------------------------- -->
       <script src="../assets/jquery.min.js"></script>
       <script src="../assets/script.js"></script>
+      <script src="../assets/numeric.js"></script>
       <script>
         var part = 1;
         renderPart(part);
-        // show_select_options();
-
-        function show_select_options() {
-          var plan = [
-            [
-              "1.แผนงานการบริหารจัดการพื้นที่เกษตรและเพิ่มประสิทธิภาพการบริหารจัดการนํ้าเพื่อการพัฒนาที่ยั่งยืน",
-              "2.แผนงานส่งเสริมการปลูกป่า เพิ่มพื้นที่สีเขียวและอุตสาหกรรมเกษตรสาขาป่าไม้ เชื่อมโยง 4 จังหวัด",
-              "3.แผนงานพัฒนาขีดความสามารถทางการแข่งขันของเกษตรกรและเพิ่มผลิตภาพแรงงานเกษตร",
-              "4.แผนงานเพิ่มประสิทธิภาพและมาตราฐานการผลิตของสินค้าเกษตร",
-              "5.แผนงานส่งเสริมอุตสาหกรรมเกษตรภายใต้แนวคิดเศรฐกิจชีวภาพ",
-              "6.แผนงานส่งเสริมและพัฒนาเกษตรยั่งยืน",
-              "7.แผนงานเพิ่มประสิทธิภาพการบริหารจัดการห่วงโช่อุปทานและการตลาดสินค้าเกษตร ครบวงจร",
-            ],
-            [
-              "1.แผนงานพัฒนาศักยภาพ SMEs เพิ่มขีดความสามารถทางการแข่งขันด้านการค้าการบริการและพัฒนาเครือข่ายผู้ประกอบการอย่างบูรณาการ",
-              "2.แผนงานพัฒนาและเชื่อมโยงโครงข่ายคมนาคมเพื่อเพิ่มประสิทธิภาพระบบโลจิสติกส์ระบบรางและอุตสาหกรรมอากาศยาน",
-              "3.แผนงานพัฒนาคุณภาพฝีมือแรงงานและเพิ่มทักษะแก่ผู้ประกอบการเพื่อเพิ่มขีดความสามารถทางการแข่งขัน",
-              "4.แผนงานพัฒนาระบบตลาดผลิตภัณฑ์กลุ่มจังหวัดเพื่อขับเคลื่อนเศรษฐกิจดิจิทัล",
-            ],
-            [
-              "1.แผนงานพัฒนาศักยภาพและยกระดับคุณภาพแหล่งท่องเทียวและกิจกรรมท่องเที่ยวกลุ่มจังหวัด",
-              "2.แผนงานพัฒนาเครือข่ายอุตสาหกรรมการท่องเที่ยวและบริการกลุ่มจังหวัด",
-              "3.แผนงานส่งเสริมกิจกรรมและประชาสัมพันธ์และการตลาดการท่องเที่ยวกลุ่มจังหวัด",
-              "4.แผนงานพัฒนาและยกระดับผลิตภัณฑ์ชุมชนให้ได้มาตราฐานและเป็นศูนย์กลางแฟชั้นผ้าไหมนานาชาติ",
-            ],
-          ];
-          var select = document.getElementById('development_subject');
-
-
-          for (var i = 0; i <= 10; i++) {
-            console.log(i);
-            var opt = document.createElement('option');
-            opt.value = i;
-            opt.innerHTML = i;
-            select.appendChild(opt);
-          }
-        }
 
         function enableInput(checkbox_id, input_id) {
           var checkBox = document.getElementById(checkbox_id);
