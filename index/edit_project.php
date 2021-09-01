@@ -549,7 +549,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_province_plan" name="budget_province_plan"  value='<?=$row["budget_province_plan"]?>'>
+              <input type="text" disabled class="form-control fs-5" id="budget_province_plan" name="budget_province_plan"  value='<?=$row["budget_province_plan"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -566,7 +566,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_department_plan" name="budget_department_plan"  value='<?=$row["budget_department_plan"]?>' >
+              <input type="text" disabled class="form-control fs-5" id="budget_department_plan" name="budget_department_plan"  value='<?=$row["budget_department_plan"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -585,7 +585,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" input type="text" disabled class="form-control fs-5" id="budget_local_plan" name="budget_local_plan" value='<?=$row["budget_local_plan"]?>' >
+              <input type="text" input type="text" disabled class="form-control fs-5" id="budget_local_plan" name="budget_local_plan" value='<?=$row["budget_local_plan"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -604,7 +604,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_private_plan" name="budget_private_plan"  value='<?=$row["budget_private_plan"]?>'>
+              <input type="text"  disabled class="form-control fs-5" id="budget_private_plan" name="budget_private_plan"  value='<?=$row["budget_private_plan"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -630,7 +630,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_province_receive" name="budget_province_receive"  value='<?=$row["budget_province_receive"]?>'>
+              <input type="text" disabled class="form-control fs-5" id="budget_province_receive" name="budget_province_receive"  value='<?=$row["budget_province_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -647,7 +647,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_department_receive" name="budget_department_receive"  value='<?=$row["budget_department_receive"]?>' >
+              <input type="text" disabled class="form-control fs-5" id="budget_department_receive" name="budget_department_receive"  value='<?=$row["budget_department_receive"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -666,7 +666,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_local_receive" name="budget_local_receive"  value='<?=$row["budget_local_receive"]?>'>
+              <input type="text" disabled class="form-control fs-5" id="budget_local_receive" name="budget_local_receive"  value='<?=$row["budget_local_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -685,7 +685,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_private_receive" name="budget_private_receive" value='<?=$row["budget_private_receive"]?>'>
+              <input type="text"  disabled class="form-control fs-5" id="budget_private_receive" name="budget_private_receive" value='<?=$row["budget_private_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -712,7 +712,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_province_use" name="budget_province_use" value='<?=$row["budget_province_use"]?>'>
+              <input type="text" disabled class="form-control fs-5" id="budget_province_use" name="budget_province_use" value='<?=$row["budget_province_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -729,7 +729,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_department_use" name="budget_department_use" value='<?=$row["budget_department_use"]?>'>
+              <input type="text" disabled class="form-control fs-5" id="budget_department_use" name="budget_department_use" value='<?=$row["budget_department_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -748,7 +748,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_local_use" name="budget_local_use" value='<?=$row["budget_local_use"]?>'>
+              <input type="text" disabled class="form-control fs-5" id="budget_local_use" name="budget_local_use" value='<?=$row["budget_local_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -767,7 +767,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" pattern="[1-9][0-9]*" disabled class="form-control fs-5" id="budget_private_use" name="budget_private_use"  value='<?=$row["budget_private_use"]?>'>
+              <input type="text" disabled class="form-control fs-5" id="budget_private_use" name="budget_private_use"  value='<?=$row["budget_private_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -801,7 +801,7 @@ $row = $stmt->fetch();
             <div class="d-md-flex flex-md-row align-items-center justify-content-end" style="margin-bottom: 100px; margin-right: 50px;">
               <div class="btn btn-primary" id="button1" onclick="previousPart()" style="margin-right: 10px;">หน้าก่อนหน้า</div>
               <div class="btn btn-primary" id="button2" onclick="nextPart()">หน้าถัดไป</div>
-              <button class="btn btn-danger" type="submit" id="button3" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
+              <button class="btn btn-danger" type="submit" id="button3" name="edit" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
             </div>
           </div>
           </form>

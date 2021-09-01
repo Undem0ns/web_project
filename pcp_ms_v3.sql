@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2021 at 10:23 AM
+-- Generation Time: Sep 01, 2021 at 04:52 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -80,25 +80,6 @@ CREATE TABLE `project` (
   `file_path` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `project`
---
-
-INSERT INTO `project` (`project_id`, `project_name`, `development_subject`, `project_roadmap`, `project_main`, `project_sub`, `operation_type`, `project_code`, `use_budget`, `budget_year`, `institution`, `province`, `target_user`, `project_objective`, `project_result`, `project_additional`, `budget_province_plan`, `budget_province_receive`, `budget_province_use`, `budget_department_plan`, `budget_department_receive`, `budget_department_use`, `budget_local_plan`, `budget_local_receive`, `budget_local_use`, `budget_private_plan`, `budget_private_receive`, `budget_private_use`, `user_id`, `file_path`) VALUES
-(18, 'adsasdf', 2, 9, 26, 76, 'โครงการ', '', 'ใช้งบประมาณ', '2345', 'สสส.', 'ร้อยเอ็ด', 'ประชาชน', 'fa', 'fa', '', '20000000000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 'file_612eee000f48c.'),
-(19, 'sdfsd', 1, 2, 3, 999, 'โครงการ', 'ergt', 'ใช้งบประมาณ', '2345', 's', 'ร้อยเอ็ด', 'ert', 'wef', 'WEF', '', '60000000000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 'file_612ef1b2b1e2f.'),
-(20, 'rthrth', 1, 2, 3, 999, 'โครงการ', 'rth', 'ใช้งบประมาณ', 'rth', 'rsths', 'มหาสารคาม', 'srth', 'srth', 'srth', '', '3000000000000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 'file_612ef1d9298e6.'),
-(21, 'arewrar', 2, 9, 26, 76, 'โครงการ', 'aerg', 'ใช้งบประมาณ', 'aerg', 'areg', 'มหาสารคาม', 'aerg', 'earg', 'aerg', '', '3000000000', '0', '0', '3378790000', '0', '0', '0', '0', '0', '0', '0', '0', 1, ''),
-(22, 'asdasdasd', 1, 2, 3, 999, 'การดำเนินงาน', 'asdf', 'ไม่ใช้งบประมาณ', 'sadf', 'sadf', 'ขอนแก่น', 'asdf', 'sadf', 'gerwgewrg', 'ergerg', '625255000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, ''),
-(23, 'ร่าง', 2, 9, 26, 76, 'โครงการ', 'aasd', 'ใช้งบประมาณ', '2345', 'สสส.', 'ขอนแก่น', 'พะั', 'พะั', 'พะั', '', '665656', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 2, ''),
-(24, 'asdasd', 1, 2, 3, 999, 'โครงการ', '', 'ใช้งบประมาณ', '2345', '2523', 'ร้อยเอ็ด', 'sad', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, ''),
-(25, 'aefa', 2, 8, 22, 999, 'โครงการ', 'wef', 'ใช้งบประมาณ', 'ewf', 'wef', 'มหาสารคาม', 'wefwef', 'wefwef', 'wefwef', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
-(26, 'ewfwefw', 1, 2, 3, 999, 'โครงการ', '', 'ใช้งบประมาณ', 'wefwef', 'wefwef', 'ร้อยเอ็ด', 'wefwef', 'wefwef', 'wefwefwe', '', '4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
-(27, 'egrrgerg', 1, 2, 3, 999, 'โครงการ', 'ergerge', 'ใช้งบประมาณ', 'erg', 'ergerg', 'มหาสารคาม', 'ergerge', 'ergerge', 'rgerg', '', '3,000,000,000,000', NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
-(28, 'awergerg', 3, 12, 32, 102, 'โครงการ', 'erg', 'ใช้งบประมาณ', 'erg', 'ergerg', 'ร้อยเอ็ด', 'ประชาชน', 'ergergerg', 'ergerg', '', NULL, NULL, '33333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
-(29, 'adsasd', 1, 2, 3, 999, 'โครงการ', '', 'ใช้งบประมาณ', 'sdf', 'สสส.', 'ร้อยเอ็ด', 's', 'sdf', 'dsfsdf', '', '34,523,452,345', NULL, NULL, '234,532,453,245', NULL, NULL, '32,453,245', NULL, NULL, '234,532,452,345,324,5', NULL, NULL, 1, ''),
-(30, 'asdasd', 2, 10, 29, 87, 'โครงการ', 'asd', 'ใช้งบประมาณ', 'sad', 'asd', 'ร้อยเอ็ด', 'asda', 'asd', 'asd', '', NULL, NULL, '987987987', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, ''),
-(31, 'thrthrthr', 1, 2, 3, 999, 'โครงการ', 'trhthwth', 'ใช้งบประมาณ', 'wh4h5', 'w45h', 'มหาสารคาม', 'w4h5', 'wefwe', 'wefwef', 'wefef', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '');
 
 -- --------------------------------------------------------
 
@@ -380,52 +361,6 @@ INSERT INTO `project_sub` (`project_sub_id`, `project_sub_name`, `project_main_i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `project_v2`
---
-
-CREATE TABLE `project_v2` (
-  `project_id` int(11) NOT NULL,
-  `project_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `development_subject` int(11) NOT NULL,
-  `project_roadmap` int(11) NOT NULL,
-  `project_main` int(11) NOT NULL,
-  `project_sub` int(11) NOT NULL,
-  `operation_type` varchar(200) NOT NULL,
-  `project_code` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `use_budget` varchar(200) NOT NULL,
-  `budget_year` varchar(200) NOT NULL,
-  `institution` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `province` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `target_user` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_objective` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_result` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_additional` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `budget_province_plan` int(11) DEFAULT NULL,
-  `budget_province_receive` int(11) DEFAULT NULL,
-  `budget_province_use` int(11) DEFAULT NULL,
-  `budget_department_plan` int(11) DEFAULT NULL,
-  `budget_department_receive` int(11) DEFAULT NULL,
-  `budget_department_use` int(11) DEFAULT NULL,
-  `budget_local_plan` int(11) DEFAULT NULL,
-  `budget_local_receive` int(11) DEFAULT NULL,
-  `budget_local_use` int(11) DEFAULT NULL,
-  `budget_private_plan` int(11) DEFAULT NULL,
-  `budget_private_receive` int(11) DEFAULT NULL,
-  `budget_private_use` int(11) DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
-  `file_path` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `project_v2`
---
-
-INSERT INTO `project_v2` (`project_id`, `project_name`, `development_subject`, `project_roadmap`, `project_main`, `project_sub`, `operation_type`, `project_code`, `use_budget`, `budget_year`, `institution`, `province`, `target_user`, `project_objective`, `project_result`, `project_additional`, `budget_province_plan`, `budget_province_receive`, `budget_province_use`, `budget_department_plan`, `budget_department_receive`, `budget_department_use`, `budget_local_plan`, `budget_local_receive`, `budget_local_use`, `budget_private_plan`, `budget_private_receive`, `budget_private_use`, `user_id`, `file_path`) VALUES
-(1, 'ergearg', 1, 1, 1, 1, 'asdf', 'asdf', 'as', 'fsadf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, '');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -486,16 +421,6 @@ ALTER TABLE `project_sub`
   ADD PRIMARY KEY (`project_sub_id`),
   ADD KEY `project_main_id` (`project_main_id`);
 
---
--- Indexes for table `project_v2`
---
-ALTER TABLE `project_v2`
-  ADD PRIMARY KEY (`project_id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `development_subject` (`development_subject`),
-  ADD KEY `project_roadmap` (`project_roadmap`),
-  ADD KEY `project_sub` (`project_sub`),
-  ADD KEY `project_main` (`project_main`);
 
 --
 -- Indexes for table `user`
@@ -503,15 +428,12 @@ ALTER TABLE `project_v2`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
 --
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `project_sub`
@@ -520,20 +442,11 @@ ALTER TABLE `project_sub`
   MODIFY `project_sub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000;
 
 --
--- AUTO_INCREMENT for table `project_v2`
---
-ALTER TABLE `project_v2`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- Constraints for dumped tables
---
 
 --
 -- Constraints for table `project`
@@ -563,16 +476,6 @@ ALTER TABLE `project_roadmap`
 ALTER TABLE `project_sub`
   ADD CONSTRAINT `project_sub_ibfk_1` FOREIGN KEY (`project_main_id`) REFERENCES `project_main` (`project_main_id`);
 
---
--- Constraints for table `project_v2`
---
-ALTER TABLE `project_v2`
-  ADD CONSTRAINT `project_v2_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
-  ADD CONSTRAINT `project_v2_ibfk_2` FOREIGN KEY (`development_subject`) REFERENCES `development_subject` (`development_id`),
-  ADD CONSTRAINT `project_v2_ibfk_3` FOREIGN KEY (`project_roadmap`) REFERENCES `project_roadmap` (`project_roadmap_id`),
-  ADD CONSTRAINT `project_v2_ibfk_4` FOREIGN KEY (`project_sub`) REFERENCES `project_sub` (`project_sub_id`),
-  ADD CONSTRAINT `project_v2_ibfk_5` FOREIGN KEY (`project_main`) REFERENCES `project_main` (`project_main_id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

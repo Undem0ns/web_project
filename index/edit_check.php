@@ -2,14 +2,14 @@
 <?php
 
 $ext = pathinfo(basename($_FILES['upload_file']['name']), PATHINFO_EXTENSION);
-$new_file_name = uniqid('file_').".".$ext;
+$new_file_name = uniqid('file_') . "." . $ext;
 $file_path = "upload_file/";
-$upload_path = $file_path.$new_file_name;
+$upload_path = $file_path . $new_file_name;
 
 $success = move_uploaded_file($_FILES['upload_file']['tmp_name'], $upload_path);
 if ($success == true) {
-    echo "upload สำเร็จ";
-} 
+  echo "upload สำเร็จ";
+}
 $file_path = $new_file_name;
 
 $TABLE_NAME = '';
@@ -20,12 +20,12 @@ if (isset($_POST['edit'])) {
   $TABLE_NAME = 'project_draft';
 }
 ?>
-<?php 
+<?php
 $stmt = $pdo->prepare("UPDATE $TABLE_NAME SET project_name=?,development_subject=?, project_roadmap=?,project_main=?, project_sub=?,operation_type=?,
 project_code=?,use_budget=?,budget_year=?,institution=?,province=?,target_user=?,project_objective=?,project_result=?,project_additional=?,
 budget_province_plan=?,budget_province_receive=?,budget_province_use=?,budget_department_plan=?,budget_department_receive=?,budget_department_use=?,
 budget_local_plan=?,budget_local_receive=?,budget_local_use=?,budget_private_plan=?,budget_private_receive=?,budget_private_use=?
- WHERE project_id=?"); 
+ WHERE project_id=?");
 $stmt->bindParam(1, $_POST["project_name"]);
 $stmt->bindParam(2, $_POST["development_subject"]);
 $stmt->bindParam(3, $_POST["project_roadmap"]);
@@ -54,23 +54,24 @@ $stmt->bindParam(25, $_POST["budget_private_plan"]);
 $stmt->bindParam(26, $_POST["budget_private_receive"]);
 $stmt->bindParam(27, $_POST["budget_private_use"]);
 $stmt->bindParam(28, $_POST["project_id"]);
-if ($stmt->execute()) 
+if ($stmt->execute()) {
 
-//  echo "แก้ไข" . $_POST["project_name"] . " สำเร็จ";
-//  header("refresh: 1;url=index.php");
 
-echo "<script>";
-echo  " Swal.fire({
+
+  //  echo "แก้ไข" . $_POST["project_name"] . " สำเร็จ";
+  //  header("refresh: 1;url=index.php");
+
+  echo "<script>";
+  echo  " Swal.fire({
     position: 'center',
     icon: 'success',
     title: 'แก้ไขสำเร็จ',
     showConfirmButton: false,
     timer: 1500,
   })";
-echo "</script>";
-header("refresh: 2;url=dashboard.php");
-
-
+  echo "</script>";
+  header("refresh: 2;url=dashboard.php");
+}
 ?>
 
 <!-- <script>
@@ -82,5 +83,3 @@ header("refresh: 2;url=dashboard.php");
   timer: 1500,
 })
 </script> -->
-
-
