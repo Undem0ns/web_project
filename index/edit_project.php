@@ -164,14 +164,14 @@ $row = $stmt->fetch();
 
                 <fieldset class="row mb-3">
                   <legend class="col-form-label col-sm-2 pt-0" for="operation_type">ลักษณะการดำเนินงาน</legend>
-                  <div class="col-sm-10">
+                  <div class="col-sm-10 d-flex">
                     <div class="form-check">
                       <input class="form-check-input input-font-size-lg" type="radio" id="gridRadios1" value="โครงการ" name="operation_type" >
                       <label class="form-check-label" for="gridRadios1">
                         โครงการ
                       </label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check" style="margin-left: 20px;">
                       <input class="form-check-input" type="radio" id="gridRadios2" value="การดำเนินงาน" name="operation_type">
                       <label class="form-check-label" for="gridRadios2">
                         การดำเนินงาน
@@ -191,14 +191,14 @@ $row = $stmt->fetch();
 
                 <fieldset class="row mb-3">
                   <legend class="col-form-label col-sm-2 pt-0" for="use_budget">การใช้งบประมาณ</legend>
-                  <div class="col-sm-10">
+                  <div class="col-sm-10 d-flex">
                     <div class="form-check">
                       <input class="form-check-input" type="radio" id="gridRadios1" value="ใช้งบประมาณ"  name="use_budget">
                       <label class="form-check-label" for="use_budget1">
                         ใช้งบประมาณ
                       </label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check" style="margin-left: 10px;">
                       <input class="form-check-input" type="radio" id="gridRadios2" value="ไม่ใช้งบประมาณ" name="use_budget">
                       <label class="form-check-label" for="use_budget2">
                         ไม่ใช้งบประมาณ
@@ -209,9 +209,17 @@ $row = $stmt->fetch();
 
                 </fieldset>
                 <div class="row mb-3">
-                  <label for="budget_year" class="col-sm-2 col-form-label ">ปีงบประมาณที่ดำเนินโครงการ</label>
+                  <label for="budget_year" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="budget_year" name="budget_year"  value='<?= $row["budget_year"] ?>'>
+                    <select class="form-select form-select-md mb-3 fs-5" id="budget_year" name="budget_year" >
+                      <option selected disabled value="<?= $row["budget_year"] ?>"><?= $row["budget_year"] ?></option>
+                      <option value="2564">2564</option>
+                      <option value="2565">2565</option>
+                      <option value="2566">2566</option>
+                      <option value="2567">2567</option>
+                      <option value="2568">2568</option>
+                      <option value="2569">2569</option>
+                    </select>
                   </div>
                 </div>
 
