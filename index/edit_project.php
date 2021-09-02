@@ -271,7 +271,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox1_1" onclick="enableInput('checkbox1_1','budget_province_plan',)">
                 <label class="form-check-label" for="checkbox1_1">
                   งบประมาณของจังหวัด/กลุ่มจังหวัด
                 </label>
@@ -290,7 +289,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox1_2" onclick="enableInput('checkbox1_2','budget_department_plan')">
                 <label class="form-check-label" for="checkbox1_2"> งบประมาณของกระทรวง/กรม </label>
               </div>
             </div>
@@ -307,7 +305,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox1_3" onclick="enableInput('checkbox1_3','budget_local_plan')">
                 <label class="form-check-label" for="checkbox1_3">
                   งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                 </label>
@@ -326,7 +323,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox1_4" onclick="enableInput('checkbox1_4','budget_private_plan')">
                 <label class="form-check-label" for="checkbox1_4">
                   งบประมาณของภาคเอกชน/ชุมชน
                 </label>
@@ -352,7 +348,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox2_1" onclick="enableInput('checkbox2_1','budget_province_receive')">
                 <label class="form-check-label" for="checkbox2_1">
                   งบประมาณของจังหวัด/กลุ่มจังหวัด
                 </label>
@@ -371,7 +366,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox2_2" onclick="enableInput('checkbox2_2','budget_department_receive')">
                 <label class="form-check-label" for="checkbox2_2"> งบประมาณของกระทรวง/กรม </label>
               </div>
             </div>
@@ -388,7 +382,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox2_3" onclick="enableInput('checkbox2_3','budget_local_receive')">
                 <label class="form-check-label" for="checkbox2_3">
                   งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                 </label>
@@ -407,7 +400,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox2_4" onclick="enableInput('checkbox2_4','budget_private_receive')">
                 <label class="form-check-label" for="checkbox2_4">
                   งบประมาณของภาคเอกชน/ชุมชน
                 </label>
@@ -434,7 +426,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox3_1" onclick="enableInput('checkbox3_1','budget_province_use')">
                 <label class="form-check-label" for="checkbox3_1">
                   งบประมาณของจังหวัด/กลุ่มจังหวัด
                 </label>
@@ -453,7 +444,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox3_2" onclick="enableInput('checkbox3_2','budget_department_use')">
                 <label class="form-check-label" for="checkbox3_2"> งบประมาณของกระทรวง/กรม </label>
               </div>
             </div>
@@ -470,7 +460,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox3_3" onclick="enableInput('checkbox3_3','budget_local_use')">
                 <label class="form-check-label" for="checkbox3_3">
                   งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                 </label>
@@ -489,7 +478,6 @@ $row = $stmt->fetch();
           <div class="row mb-3">
             <div class="col-sm-4">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkbox3_4" onclick="enableInput('checkbox3_4','budget_private_use')">
                 <label class="form-check-label" for="checkbox3_4">
                   งบประมาณของภาคเอกชน/ชุมชน
                 </label>
@@ -525,7 +513,7 @@ $row = $stmt->fetch();
         <div>
           <label>ไฟล์เดิม </label>
           <div>
-          <input type="text" class="form-control" name="old_file" value="upload_file/<?= $row['file_path']?>" hidden>
+          <input type="text" class="form-control" name="old_file" value="<?= $row['file_path']?>" hidden>
           <a class="text-primary decoration-none" href="<?= $row['file_path']?>"><?= $row['file_path']?></a>
         </div>
         </div><br>
@@ -554,17 +542,17 @@ $row = $stmt->fetch();
         var part = 1;
         renderPart(part);
 
-        function enableInput(checkbox_id, input_id) {
-          var checkBox = document.getElementById(checkbox_id);
-          var input = document.getElementById(input_id);
-          if (checkBox.checked == true) {
-            input.disabled = false;
+        // function enableInput(checkbox_id, input_id) {
+        //   var checkBox = document.getElementById(checkbox_id);
+        //   var input = document.getElementById(input_id);
+        //   if (checkBox.checked == true) {
+        //     input.disabled = false;
 
-          } else {
-            input.disabled = true;
+        //   } else {
+        //     input.disabled = true;
 
-          }
-        }
+        //   }
+        // }
 
         function initPart() {
           document.getElementById("part1").style.fontWeight = "normal";
