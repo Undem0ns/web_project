@@ -272,7 +272,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input  class="form-check-input" type="checkbox" id="checkbox1_1" onclick="enableInput('checkbox1_1','budget_province_plan',)">
                         <label class="form-check-label" for="checkbox1_1">
                           งบประมาณของจังหวัด/กลุ่มจังหวัด
                         </label>
@@ -291,7 +290,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox1_2" onclick="enableInput('checkbox1_2','budget_department_plan')">
                         <label class="form-check-label" for="checkbox1_2"> งบประมาณของกระทรวง/กรม </label>
                       </div>
                     </div>
@@ -308,7 +306,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox1_3" onclick="enableInput('checkbox1_3','budget_local_plan')">
                         <label class="form-check-label" for="checkbox1_3">
                           งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                         </label>
@@ -327,7 +324,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox1_4" onclick="enableInput('checkbox1_4','budget_private_plan')">
                         <label class="form-check-label" for="checkbox1_4">
                           งบประมาณของภาคเอกชน/ชุมชน
                         </label>
@@ -353,7 +349,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox2_1" onclick="enableInput('checkbox2_1','budget_province_receive')">
                         <label class="form-check-label" for="checkbox2_1">
                           งบประมาณของจังหวัด/กลุ่มจังหวัด
                         </label>
@@ -372,7 +367,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox2_2" onclick="enableInput('checkbox2_2','budget_department_receive')">
                         <label class="form-check-label" for="checkbox2_2"> งบประมาณของกระทรวง/กรม </label>
                       </div>
                     </div>
@@ -389,7 +383,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox2_3" onclick="enableInput('checkbox2_3','budget_local_receive')">
                         <label class="form-check-label" for="checkbox2_3">
                           งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                         </label>
@@ -408,7 +401,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox2_4" onclick="enableInput('checkbox2_4','budget_private_receive')">
                         <label class="form-check-label" for="checkbox2_4">
                           งบประมาณของภาคเอกชน/ชุมชน
                         </label>
@@ -435,7 +427,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox3_1" onclick="enableInput('checkbox3_1','budget_province_use')">
                         <label class="form-check-label" for="checkbox3_1">
                           งบประมาณของจังหวัด/กลุ่มจังหวัด
                         </label>
@@ -454,7 +445,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox3_2" onclick="enableInput('checkbox3_2','budget_department_use')">
                         <label class="form-check-label" for="checkbox3_2"> งบประมาณของกระทรวง/กรม </label>
                       </div>
                     </div>
@@ -471,7 +461,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox3_3" onclick="enableInput('checkbox3_3','budget_local_use')">
                         <label class="form-check-label" for="checkbox3_3">
                           งบประมาณขององค์กรปกครองส่วนท้องถิ่น
                         </label>
@@ -490,7 +479,6 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <div class="col-sm-4">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox3_4" onclick="enableInput('checkbox3_4','budget_private_use')">
                         <label class="form-check-label" for="checkbox3_4">
                           งบประมาณของภาคเอกชน/ชุมชน
                         </label>
