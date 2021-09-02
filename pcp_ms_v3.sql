@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2021 at 08:29 AM
+-- Generation Time: Sep 02, 2021 at 08:53 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -50,20 +50,20 @@ INSERT INTO `development_subject` (`development_id`, `development_name`) VALUES
 CREATE TABLE `project` (
   `project_id` int(11) NOT NULL,
   `project_name` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `development_subject` int(11) NOT NULL,
-  `project_roadmap` int(11) NOT NULL,
-  `project_main` int(11) NOT NULL,
-  `project_sub` int(11) NOT NULL,
-  `operation_type` varchar(200) NOT NULL,
-  `project_code` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `use_budget` varchar(200) NOT NULL,
-  `budget_year` varchar(200) NOT NULL,
-  `institution` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `province` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `target_user` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_objective` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_result` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_additional` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `development_subject` int(11) DEFAULT NULL,
+  `project_roadmap` int(11) DEFAULT NULL,
+  `project_main` int(11) DEFAULT NULL,
+  `project_sub` int(11) DEFAULT NULL,
+  `operation_type` varchar(200) DEFAULT NULL,
+  `project_code` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `use_budget` varchar(200) DEFAULT NULL,
+  `budget_year` varchar(200) DEFAULT NULL,
+  `institution` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `province` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `target_user` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `project_objective` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `project_result` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `project_additional` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `budget_province_plan` varchar(30) DEFAULT '0',
   `budget_province_receive` varchar(30) DEFAULT '0',
   `budget_province_use` varchar(30) DEFAULT '0',
@@ -77,7 +77,7 @@ CREATE TABLE `project` (
   `budget_private_receive` varchar(30) DEFAULT '0',
   `budget_private_use` varchar(30) DEFAULT '0',
   `user_id` int(11) NOT NULL,
-  `file_path` varchar(200) NOT NULL
+  `file_path` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -89,20 +89,20 @@ CREATE TABLE `project` (
 CREATE TABLE `project_draft` (
   `project_id` int(11) NOT NULL,
   `project_name` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `development_subject` int(11) NOT NULL,
-  `project_roadmap` int(11) NOT NULL,
-  `project_main` int(11) NOT NULL,
-  `project_sub` int(11) NOT NULL,
-  `operation_type` varchar(200) NOT NULL,
-  `project_code` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `use_budget` varchar(200) NOT NULL,
-  `budget_year` varchar(200) NOT NULL,
-  `institution` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `province` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `target_user` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_objective` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_result` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_additional` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `development_subject` int(11) DEFAULT NULL,
+  `project_roadmap` int(11) DEFAULT NULL,
+  `project_main` int(11) DEFAULT NULL,
+  `project_sub` int(11) DEFAULT NULL,
+  `operation_type` varchar(200) DEFAULT NULL,
+  `project_code` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `use_budget` varchar(200) DEFAULT NULL,
+  `budget_year` varchar(200) DEFAULT NULL,
+  `institution` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `province` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `target_user` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `project_objective` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `project_result` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `project_additional` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `budget_province_plan` varchar(30) DEFAULT '0',
   `budget_province_receive` varchar(30) DEFAULT '0',
   `budget_province_use` varchar(30) DEFAULT '0',
@@ -116,7 +116,7 @@ CREATE TABLE `project_draft` (
   `budget_private_receive` varchar(30) DEFAULT '0',
   `budget_private_use` varchar(30) DEFAULT '0',
   `user_id` int(11) NOT NULL,
-  `file_path` varchar(200) NOT NULL
+  `file_path` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -445,7 +445,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `project_draft`
