@@ -96,8 +96,8 @@
     <br>
     <div class="w-100 bd-highlight">
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน:</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน:</label>
+        <div class="col-sm-9">
           <?= $row["project_name"] ?>
         </div>
         <div class="row mb-3">
@@ -107,27 +107,27 @@
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ประเด็นการพัฒนา: </label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">ประเด็นการพัฒนา: </label>
+          <div class="col-sm-9">
             <?= $row["development_name"] ?>
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">แผนงาน</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">แผนงาน</label>
+          <div class="col-sm-9">
             <?= $row["project_roadmap_name"] ?>
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">โครงการหลัก (ตามแผน)</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">โครงการหลัก (ตามแผน)</label>
+          <div class="col-sm-9">
             <?= $row["project_main_name"] ?>
           </div>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
+        <div class="col-sm-9">
           <?= $row["project_sub_name"] ?>
         </div>
       </div>
@@ -137,44 +137,44 @@
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ลักษณะการดำเนินงาน</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">ลักษณะการดำเนินงาน</label>
+        <div class="col-sm-9">
           <?= $row["operation_type"] ?>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">รหัสโครงงาน (ถ้ามี)</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">รหัสโครงงาน (ถ้ามี)</label>
+        <div class="col-sm-9">
           <?= $row["project_code"] ?>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">การใช้งบประมาณ</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">การใช้งบประมาณ</label>
+        <div class="col-sm-9">
           <?= $row["use_budget"] ?>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ปีงบประมาณที่ดำเนินโครงการ</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">ปีงบประมาณที่ดำเนินโครงการ</label>
+        <div class="col-sm-9">
           <?= $row["budget_year"] ?>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">หน่วยงานที่รับผิดชอบ</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">หน่วยงานที่รับผิดชอบ</label>
+        <div class="col-sm-9">
           <?= $row["institution"] ?>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">จังหวัดที่ดำเนินโครงการ</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">จังหวัดที่ดำเนินโครงการ</label>
+        <div class="col-sm-9">
           <?= $row["province"] ?>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">กลุ่มเป้าหมายในการดำเนินงาน</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">กลุ่มเป้าหมายในการดำเนินงาน</label>
+        <div class="col-sm-9">
           <?= $row["target_user"] ?>
         </div>
       </div>
@@ -184,14 +184,14 @@
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">วัตถุประสงค์และรายละเอียดของโครงการ</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">วัตถุประสงค์และรายละเอียดของโครงการ</label>
+        <div class="col-sm-9">
           <?= $row["project_objective"] ?>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
-        <div class="col-sm-10">
+        <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
+        <div class="col-sm-9">
           <?= $row["project_result"] ?>
         </div>
       </div>
@@ -200,26 +200,26 @@
           <label>แหล่งงบประมาณตามแผน</label>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของจังหวัด/กลุ่มจังหวัด</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณของจังหวัด/กลุ่มจังหวัด</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_province_plan"]== '') ? "0" : $row["budget_province_plan"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของกระทรวง/กรม</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณของกระทรวง/กรม</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_department_plan"]== '') ? "0" : $row["budget_department_plan"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณขององค์กรปกครองส่วนท้องถิ่น</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณขององค์กรปกครองส่วนท้องถิ่น</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_local_plan"]== '') ? "0" : $row["budget_local_plan"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของภาคเอกชน/ชุมชน</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณของภาคเอกชน/ชุมชน</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_private_plan"]== '') ? "0" : $row["budget_private_plan"] ?> บาท
           </div>
         </div>
@@ -227,26 +227,26 @@
           <label>งบประมาณที่ได้รับจัดสรร</label>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของจังหวัด/กลุ่มจังหวัด</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณของจังหวัด/กลุ่มจังหวัด</label>
+          <div class="col-sm-9">
             จำนวน <?= ($row["budget_province_receive"]== '') ? "0" : $row["budget_province_receive"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของกระทรวง/กรม</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณของกระทรวง/กรม</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_department_receive"]== '') ? "0" : $row["budget_department_receive"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณขององค์กรปกครองส่วนท้องถิ่น</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณขององค์กรปกครองส่วนท้องถิ่น</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_local_receive"]== '') ? "0" : $row["budget_local_receive"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของภาคเอกชน/ชุมชน</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณของภาคเอกชน/ชุมชน</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_private_receive"]== '') ? "0" : $row["budget_private_receive"] ?> บาท
           </div>
         </div>
@@ -254,26 +254,26 @@
           <label>งบประมาณตามที่ใช้จ่ายจริง</label>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของจังหวัด/กลุ่มจังหวัด</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณของจังหวัด/กลุ่มจังหวัด</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_province_use"]== '') ? "0" : $row["budget_province_use"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของกระทรวง/กรม</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณของกระทรวง/กรม</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_department_use"]== '') ? "0" : $row["budget_department_use"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณขององค์กรปกครองส่วนท้องถิ่น</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณขององค์กรปกครองส่วนท้องถิ่น</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_local_use"]== '') ? "0" : $row["budget_local_use"] ?> บาท
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">งบประมาณของภาคเอกชน/ชุมชน</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">งบประมาณของภาคเอกชน/ชุมชน</label>
+          <div class="col-sm-9">
           จำนวน <?= ($row["budget_private_use"]== '') ? "0" : $row["budget_private_use"] ?> บาท
           </div>
         </div>
@@ -282,14 +282,14 @@
         </div><br>
 
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
+          <div class="col-sm-9">
             <?= $row["project_additional"] ?>
           </div>
         </div>
         <div class="row mb-3">
-          <label for="project_code" class="col-sm-2 col-form-label" style="font-weight: bold;">ไฟล์แนบ (ถ้ามี)</label>
-          <div class="col-sm-10">
+          <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">ไฟล์แนบ (ถ้ามี)</label>
+          <div class="col-sm-9">
             <a class="text-primary decoration-none" href= "upload_file/<?= $row["file_path"] ?>" download><?= $row["file_path"] ?></a>
           </div>
         </div>
