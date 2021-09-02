@@ -525,7 +525,7 @@ $row = $stmt->fetch();
         <div>
           <label>ไฟล์เดิม </label>
           <div>
-          <input type="text" class="form-control" name="old_file" value="upload_file/<?= $row['file_path']?>" hidden>
+          <input type="text" class="form-control" name="old_file" value="<?= $row['file_path']?>" hidden>
           <a class="text-primary decoration-none" href="<?= $row['file_path']?>"><?= $row['file_path']?></a>
         </div>
         </div><br>
@@ -554,17 +554,17 @@ $row = $stmt->fetch();
         var part = 1;
         renderPart(part);
 
-        function enableInput(checkbox_id, input_id) {
-          var checkBox = document.getElementById(checkbox_id);
-          var input = document.getElementById(input_id);
-          if (checkBox.checked == true) {
-            input.disabled = false;
+        // function enableInput(checkbox_id, input_id) {
+        //   var checkBox = document.getElementById(checkbox_id);
+        //   var input = document.getElementById(input_id);
+        //   if (checkBox.checked == true) {
+        //     input.disabled = false;
 
-          } else {
-            input.disabled = true;
+        //   } else {
+        //     input.disabled = true;
 
-          }
-        }
+        //   }
+        // }
 
         function initPart() {
           document.getElementById("part1").style.fontWeight = "normal";

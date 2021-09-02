@@ -127,7 +127,7 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" >
+                      <select disabled class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" >
                         <option selected value="<?= $row["project_roadmap"] ?>">เลือก...</option>
                       </select>
                     </div>
@@ -135,7 +135,7 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" >
+                      <select  disabled class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" >
                         <option selected value="<?= $row["project_main"] ?>">เลือก...</option>
                       </select>
                     </div>
@@ -143,7 +143,7 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" >
+                      <select disabled class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" >
                         <option selected value="<?= $row["project_sub"] ?>">เลือก...</option>
                       </select>
                     </div>
@@ -526,7 +526,7 @@ $row = $stmt->fetch();
         <div>
           <label>ไฟล์เดิม </label>
           <div>
-          <input type="text" class="form-control" name="old_file" value="upload_file/<?= $row['file_path']?>" hidden>
+          <input type="text" class="form-control" name="old_file" value="<?= $row['file_path']?>" hidden>
           <a class="text-primary decoration-none" href="<?= $row['file_path']?>"><?= $row['file_path']?></a>
         </div>
         </div><br>
@@ -558,17 +558,17 @@ $row = $stmt->fetch();
         renderPart(part);
 
 
-        function enableInput(checkbox_id, input_id) {
-          var checkBox = document.getElementById(checkbox_id);
-          var input = document.getElementById(input_id);
-          if (checkBox.checked == true) {
-            input.disabled = false;
+        // function enableInput(checkbox_id, input_id) {
+        //   var checkBox = document.getElementById(checkbox_id);
+        //   var input = document.getElementById(input_id);
+        //   if (checkBox.checked == true) {
+        //     input.disabled = false;
 
-          } else {
-            input.disabled = true;
+        //   } else {
+        //     input.disabled = true;
 
-          }
-        }
+        //   }
+        // }
 
         function initPart() {
           document.getElementById("part1").style.fontWeight = "normal";
