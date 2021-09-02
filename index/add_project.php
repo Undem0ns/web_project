@@ -103,10 +103,11 @@ if (!isset($_SESSION["user_email"])) {
                       </label></b>
                     </div>
                   </div>
-                  <div class="row mb-3">
+                  <div class="row mb-3" >
                     <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
-                    <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="development_subject" name="development_subject" >
+                    <div class="col-sm-10 was-validated"  novalidate>
+                      <select class="form-select md mb-3 fs-5" id="development_subject" name="development_subject"  required>
+                        
                         <option selected disabled value="">เลือก...</option>
 
                         <?php while ($result = mysqli_fetch_assoc($query)) : ?>
@@ -114,30 +115,42 @@ if (!isset($_SESSION["user_email"])) {
                         <?php endwhile; ?>
 
                       </select>
+                      <div  class="invalid-feedback">
+                          กรุณาเลือกประเด็น
+                        </div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
-                    <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap"  disabled>
+                    <div class="col-sm-10 was-validated">
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap"  disabled required>
                         <option selected disabled value="">เลือก...</option>
                       </select>
+                      <div  class="invalid-feedback">
+                          กรุณาเลือกประเด็น
+                        </div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
-                    <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" disabled>
+                    <div class="col-sm-10 was-validated">
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" disabled required>
                         <option selected disabled value="">เลือก...</option>
                       </select>
+                      <div  class="invalid-feedback">
+                          กรุณาเลือกประเด็น
+                        </div>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
-                    <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub"  disabled>
+                    <div class="col-sm-10 was-validated">
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub"  disabled required>
                       <option selected disabled value="">เลือก...</option>
                       </select>
+                      <div  class="invalid-feedback">
+                          กรุณาเลือกประเด็น
+                        </div>
                     </div>
                   </div>
 
@@ -156,14 +169,14 @@ if (!isset($_SESSION["user_email"])) {
 
                 <fieldset class="row mb-3">
                   <legend class="col-form-label col-sm-2 pt-0" for="operation_type">ลักษณะการดำเนินงาน</legend>
-                  <div class="col-sm-10">
+                  <div class="col-sm-10 d-flex">
                     <div class="form-check">
                       <input class="form-check-input input-font-size-lg" type="radio" id="gridRadios1" value="โครงการ" name="operation_type">
                       <label class="form-check-label" for="gridRadios1">
                         โครงการ
                       </label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check" style="margin-left: 20px;">
                       <input class="form-check-input" type="radio" id="gridRadios2" value="การดำเนินงาน" name="operation_type">
                       <label class="form-check-label" for="gridRadios2">
                         การดำเนินงาน
@@ -173,7 +186,7 @@ if (!isset($_SESSION["user_email"])) {
                 </fieldset>
 
 
-                <div class="row mb-3">
+                <div class="row mb-3 ">
                   <label for="project_code" class="col-sm-2 col-form-label">รหัสโครงงาน (ถ้ามี)</label>
                   <div class="col-sm-10">
                     <input class="form-control fs-5" id="project_code " name="project_code">
@@ -183,14 +196,14 @@ if (!isset($_SESSION["user_email"])) {
 
                 <fieldset class="row mb-3">
                   <legend class="col-form-label col-sm-2 pt-0" for="use_budget">การใช้งบประมาณ</legend>
-                  <div class="col-sm-10">
+                  <div class="col-sm-10 d-flex">
                     <div class="form-check">
                       <input class="form-check-input" type="radio" id="use_budget1" value="ใช้งบประมาณ" name="use_budget">
                       <label class="form-check-label" for="use_budget1">
                         ใช้งบประมาณ
                       </label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check" style="margin-left: 10px;">
                       <input class="form-check-input" type="radio" id="use_budget2" value="ไม่ใช้งบประมาณ" name="use_budget">
                       <label class="form-check-label" for="use_budget2">
                         ไม่ใช้งบประมาณ
@@ -200,10 +213,25 @@ if (!isset($_SESSION["user_email"])) {
 
 
                 </fieldset>
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                   <label for="budget_year" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control fs-5" id="budget_year" name="budget_year" >
+                  </div>
+                </div> -->
+                <div class="row mb-3">
+                  <label for="budget_year" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
+                  <div class="col-sm-10 was-validated">
+                    <select class="form-select form-select-md mb-3 fs-5" id="budget_year" name="budget_year" required >
+                    <option selected disabled value="">เลือก...</option>
+                      <option value="2564">2564</option>
+                      <option value="2565">2565</option>
+                      <option value="2566">2566</option>
+                      <option value="2567">2567</option>
+                      <option value="2568">2568</option>
+                      <option value="2569">2569</option>
+                    </select>
+                    <div class="invalid-feedback">กรุณาเลือกปีงบประมาณที่ดำเนินโครงการ</div>
                   </div>
                 </div>
 
@@ -216,14 +244,15 @@ if (!isset($_SESSION["user_email"])) {
 
                 <div class="row mb-3">
                   <label for="province" class="col-sm-2 col-form-label">จังหวัดที่ดำเนินโครงการ</label>
-                  <div class="col-sm-10">
-                    <select class="form-select form-select-md mb-3 fs-5" id="province" name="province" >
+                  <div class="col-sm-10 was-validated">
+                    <select class="form-select form-select-md mb-3 fs-5" id="province" name="province" required>
                       <option selected disabled value="">เลือก...</option>
                       <option value="ขอนแก่น">ขอนแก่น</option>
                       <option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
                       <option value="มหาสารคาม">มหาสารคาม</option>
                       <option value="กาฬสินธุ์">กาฬสินธุ์</option>
                     </select>
+                    <div class="invalid-feedback">กรุณาเลือกจังหวัดที่ดำเนินโครงการ</div>
                   </div>
                 </div>
 
