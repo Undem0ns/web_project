@@ -521,8 +521,15 @@ $row = $stmt->fetch();
                   <textarea class="form-control fs-5" id="project_additional" style="height: 300px" name="project_additional"><?= $row["project_additional"] ?></textarea>
                 </div><br>
                 <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                  <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
-                </div><br>
+                <label for="addition">เพิ่มไฟล์แนบใหม่</label>
+        </div><br>
+        <div>
+          <label>ไฟล์เดิม </label>
+          <div>
+          <input type="text" class="form-control" name="old_file" value="upload_file/<?= $row['file_path']?>" hidden>
+          <a class="text-primary decoration-none" href="upload_file/<?= $row['file_path']?>"><?= $row['file_path']?></a>
+        </div>
+        </div><br>
                 <div class="input-group mb-3">
                   <input type="file" class="form-control" id="upload_file" name="upload_file">
                   <label class="input-group-text" for="upload_file">Upload</label>

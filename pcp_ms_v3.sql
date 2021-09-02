@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2021 at 04:52 PM
+-- Generation Time: Sep 02, 2021 at 08:29 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -49,7 +49,7 @@ INSERT INTO `development_subject` (`development_id`, `development_name`) VALUES
 
 CREATE TABLE `project` (
   `project_id` int(11) NOT NULL,
-  `project_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `project_name` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `development_subject` int(11) NOT NULL,
   `project_roadmap` int(11) NOT NULL,
   `project_main` int(11) NOT NULL,
@@ -58,28 +58,27 @@ CREATE TABLE `project` (
   `project_code` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `use_budget` varchar(200) NOT NULL,
   `budget_year` varchar(200) NOT NULL,
-  `institution` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `institution` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `province` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `target_user` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_objective` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_result` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_additional` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `budget_province_plan` varchar(21) DEFAULT '0',
-  `budget_province_receive` varchar(21) DEFAULT '0',
-  `budget_province_use` varchar(21) DEFAULT '0',
-  `budget_department_plan` varchar(21) DEFAULT '0',
-  `budget_department_receive` varchar(21) DEFAULT '0',
-  `budget_department_use` varchar(21) DEFAULT '0',
-  `budget_local_plan` varchar(21) DEFAULT '0',
-  `budget_local_receive` varchar(21) DEFAULT '0',
-  `budget_local_use` varchar(21) DEFAULT '0',
-  `budget_private_plan` varchar(21) DEFAULT '0',
-  `budget_private_receive` varchar(21) DEFAULT '0',
-  `budget_private_use` varchar(21) DEFAULT '0',
+  `target_user` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `project_objective` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `project_result` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `project_additional` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `budget_province_plan` varchar(30) DEFAULT '0',
+  `budget_province_receive` varchar(30) DEFAULT '0',
+  `budget_province_use` varchar(30) DEFAULT '0',
+  `budget_department_plan` varchar(30) DEFAULT '0',
+  `budget_department_receive` varchar(30) DEFAULT '0',
+  `budget_department_use` varchar(30) DEFAULT '0',
+  `budget_local_plan` varchar(30) DEFAULT '0',
+  `budget_local_receive` varchar(30) DEFAULT '0',
+  `budget_local_use` varchar(30) DEFAULT '0',
+  `budget_private_plan` varchar(30) DEFAULT '0',
+  `budget_private_receive` varchar(30) DEFAULT '0',
+  `budget_private_use` varchar(30) DEFAULT '0',
   `user_id` int(11) NOT NULL,
   `file_path` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 -- --------------------------------------------------------
 
@@ -89,7 +88,7 @@ CREATE TABLE `project` (
 
 CREATE TABLE `project_draft` (
   `project_id` int(11) NOT NULL,
-  `project_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `project_name` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `development_subject` int(11) NOT NULL,
   `project_roadmap` int(11) NOT NULL,
   `project_main` int(11) NOT NULL,
@@ -98,24 +97,24 @@ CREATE TABLE `project_draft` (
   `project_code` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `use_budget` varchar(200) NOT NULL,
   `budget_year` varchar(200) NOT NULL,
-  `institution` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `institution` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `province` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `target_user` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_objective` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_result` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `project_additional` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `budget_province_plan` float DEFAULT 0,
-  `budget_province_receive` float DEFAULT 0,
-  `budget_province_use` float DEFAULT 0,
-  `budget_department_plan` float DEFAULT 0,
-  `budget_department_receive` float DEFAULT 0,
-  `budget_department_use` float DEFAULT 0,
-  `budget_local_plan` float DEFAULT 0,
-  `budget_local_receive` float DEFAULT 0,
-  `budget_local_use` float DEFAULT 0,
-  `budget_private_plan` float DEFAULT 0,
-  `budget_private_receive` float DEFAULT 0,
-  `budget_private_use` float DEFAULT 0,
+  `target_user` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `project_objective` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `project_result` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `project_additional` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `budget_province_plan` varchar(30) DEFAULT '0',
+  `budget_province_receive` varchar(30) DEFAULT '0',
+  `budget_province_use` varchar(30) DEFAULT '0',
+  `budget_department_plan` varchar(30) DEFAULT '0',
+  `budget_department_receive` varchar(30) DEFAULT '0',
+  `budget_department_use` varchar(30) DEFAULT '0',
+  `budget_local_plan` varchar(30) DEFAULT '0',
+  `budget_local_receive` varchar(30) DEFAULT '0',
+  `budget_local_use` varchar(30) DEFAULT '0',
+  `budget_private_plan` varchar(30) DEFAULT '0',
+  `budget_private_receive` varchar(30) DEFAULT '0',
+  `budget_private_use` varchar(30) DEFAULT '0',
   `user_id` int(11) NOT NULL,
   `file_path` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -401,6 +400,17 @@ ALTER TABLE `project`
   ADD KEY `project_sub` (`project_sub`);
 
 --
+-- Indexes for table `project_draft`
+--
+ALTER TABLE `project_draft`
+  ADD PRIMARY KEY (`project_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `development_subject` (`development_subject`),
+  ADD KEY `project_roadmap` (`project_roadmap`),
+  ADD KEY `project_main` (`project_main`),
+  ADD KEY `project_sub` (`project_sub`);
+
+--
 -- Indexes for table `project_main`
 --
 ALTER TABLE `project_main`
@@ -421,19 +431,27 @@ ALTER TABLE `project_sub`
   ADD PRIMARY KEY (`project_sub_id`),
   ADD KEY `project_main_id` (`project_main_id`);
 
-
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
 --
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `project_draft`
+--
+ALTER TABLE `project_draft`
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `project_sub`
@@ -447,6 +465,9 @@ ALTER TABLE `project_sub`
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
+--
+-- Constraints for dumped tables
+--
 
 --
 -- Constraints for table `project`
@@ -457,6 +478,16 @@ ALTER TABLE `project`
   ADD CONSTRAINT `project_ibfk_3` FOREIGN KEY (`project_roadmap`) REFERENCES `project_roadmap` (`project_roadmap_id`),
   ADD CONSTRAINT `project_ibfk_4` FOREIGN KEY (`project_main`) REFERENCES `project_main` (`project_main_id`),
   ADD CONSTRAINT `project_ibfk_5` FOREIGN KEY (`project_sub`) REFERENCES `project_sub` (`project_sub_id`);
+
+--
+-- Constraints for table `project_draft`
+--
+ALTER TABLE `project_draft`
+  ADD CONSTRAINT `project_draft_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
+  ADD CONSTRAINT `project_draft_ibfk_2` FOREIGN KEY (`development_subject`) REFERENCES `development_subject` (`development_id`),
+  ADD CONSTRAINT `project_draft_ibfk_3` FOREIGN KEY (`project_roadmap`) REFERENCES `project_roadmap` (`project_roadmap_id`),
+  ADD CONSTRAINT `project_draft_ibfk_4` FOREIGN KEY (`project_main`) REFERENCES `project_main` (`project_main_id`),
+  ADD CONSTRAINT `project_draft_ibfk_5` FOREIGN KEY (`project_sub`) REFERENCES `project_sub` (`project_sub_id`);
 
 --
 -- Constraints for table `project_main`
@@ -475,7 +506,7 @@ ALTER TABLE `project_roadmap`
 --
 ALTER TABLE `project_sub`
   ADD CONSTRAINT `project_sub_ibfk_1` FOREIGN KEY (`project_main_id`) REFERENCES `project_main` (`project_main_id`);
-
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
