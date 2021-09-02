@@ -1,7 +1,9 @@
 @font-face {
   font-family: myFirstFont;
-  src: url(../font/THSarabunNew.ttf);
+  src: url(../font/IBMPlexSansThai-Regular.ttf);
 }
+
+
 
 body {
   font-family: myFirstFont;
@@ -138,3 +140,4 @@ span.marginle {
 select {
   font-size: 22px;
 } */
+
