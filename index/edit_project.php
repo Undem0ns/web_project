@@ -114,7 +114,7 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="development_subject" name="development_subject" required>
+                      <select class="form-select form-select-md mb-3 fs-5" id="development_subject" name="development_subject" >
                         <option selected class="text-muted " value="<?= $row["development_subject"] ?>">เลือก...</option>
 
                         <?php while ($result = mysqli_fetch_assoc($query)) : ?>
@@ -127,7 +127,7 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap" required disabled>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap"  disabled>
                         <option disabled selected value="<?= $row["project_roadmap"] ?>">เลือก...</option>
                       </select>
                     </div>
@@ -135,7 +135,7 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main" required disabled>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main"  disabled>
                         <option disabled selected value="<?= $row["project_main"] ?>">เลือก...</option>
                       </select>
                     </div>
@@ -143,7 +143,7 @@ $row = $stmt->fetch();
                   <div class="row mb-3">
                     <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub" required disabled>
+                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub"  disabled>
                         <option disabled selected value="<?= $row["project_sub"] ?>">เลือก...</option>
                       </select>
                     </div>
@@ -211,21 +211,21 @@ $row = $stmt->fetch();
                 <div class="row mb-3">
                   <label for="budget_year" class="col-sm-2 col-form-label ">ปีงบประมาณที่ดำเนินโครงการ</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="budget_year" name="budget_year" required value='<?= $row["budget_year"] ?>'>
+                    <input type="text" class="form-control fs-5" id="budget_year" name="budget_year"  value='<?= $row["budget_year"] ?>'>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <label for="institution" class="col-sm-2 col-form-label">หน่วยงานที่รับผิดชอบ</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="institution" name="institution" required value='<?= $row["institution"] ?>'>
+                    <input type="text" class="form-control fs-5" id="institution" name="institution" value='<?= $row["institution"] ?>'>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <label for="province" class="col-sm-2 col-form-label fs-5">จังหวัดที่ดำเนินโครงการ</label>
                   <div class="col-sm-10">
-                    <select class="form-select form-select-md mb-3 fs-5" id="province" name="province" required>
+                    <select class="form-select form-select-md mb-3 fs-5" id="province" name="province" >
                       <option selected value="<?= $row["province"] ?>"><?= $row["province"] ?></option>
                       <option value="ขอนแก่น">ขอนแก่น</option>
                       <option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
@@ -238,7 +238,7 @@ $row = $stmt->fetch();
                 <div class="row mb-3">
                   <label for="target_user" class="col-sm-2 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="target_user" name="target_user" required value='<?= $row["target_user"] ?>'>
+                    <input type="text" class="form-control fs-5" id="target_user" name="target_user" value='<?= $row["target_user"] ?>'>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -261,274 +261,6 @@ $row = $stmt->fetch();
               </div>
             </div>
 
-
-            <!-- <div class="flex-md-row align-items-center justify-content-around part" id="p3">
-              <div class="w-100 bd-highlight">
-                <div>
-                  <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                    <label>แหล่งงบประมาณตามแผน</label>
-                  </div>
-                  <br>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox1_1" onclick="enableInput('checkbox1_1','budget_province_plan',)">
-                        <label class="form-check-label" for="checkbox1_1">
-                          งบประมาณของจังหวัด/กลุ่มจังหวัด
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_province_plan" name="budget_province_plan" value='<?= $row["budget_province_plan"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox1_2" onclick="enableInput('checkbox1_2','budget_department_plan')">
-                        <label class="form-check-label" for="checkbox1_2"> งบประมาณของกระทรวง/กรม </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_department_plan" name="budget_department_plan" value='<?= $row["budget_department_plan"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox1_3" onclick="enableInput('checkbox1_3','budget_local_plan')">
-                        <label class="form-check-label" for="checkbox1_3">
-                          งบประมาณขององค์กรปกครองส่วนท้องถิ่น
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" input type="text" disabled class="form-control fs-5" id="budget_local_plan" name="budget_local_plan" value='<?= $row["budget_local_plan"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox1_4" onclick="enableInput('checkbox1_4','budget_private_plan')">
-                        <label class="form-check-label" for="checkbox1_4">
-                          งบประมาณของภาคเอกชน/ชุมชน
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_private_plan" name="budget_private_plan" value='<?= $row["budget_private_plan"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                    <label>งบประมาณที่ได้รับจัดสรร</label>
-                  </div>
-                  <br>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox2_1" onclick="enableInput('checkbox2_1','budget_province_receive')">
-                        <label class="form-check-label" for="checkbox2_1">
-                          งบประมาณของจังหวัด/กลุ่มจังหวัด
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_province_receive" name="budget_province_receive" value='<?= $row["budget_province_receive"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox2_2" onclick="enableInput('checkbox2_2','budget_department_receive')">
-                        <label class="form-check-label" for="checkbox2_2"> งบประมาณของกระทรวง/กรม </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_department_receive" name="budget_department_receive" value='<?= $row["budget_department_receive"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox2_3" onclick="enableInput('checkbox2_3','budget_local_receive')">
-                        <label class="form-check-label" for="checkbox2_3">
-                          งบประมาณขององค์กรปกครองส่วนท้องถิ่น
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_local_receive" name="budget_local_receive" value='<?= $row["budget_local_receive"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox2_4" onclick="enableInput('checkbox2_4','budget_private_receive')">
-                        <label class="form-check-label" for="checkbox2_4">
-                          งบประมาณของภาคเอกชน/ชุมชน
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_private_receive" name="budget_private_receive" value='<?= $row["budget_private_receive"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                </div>
-
-
-                <div>
-                  <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                    <label>งบประมาณตามที่ใช้จ่ายจริง</label>
-                  </div>
-                  <br>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox3_1" onclick="enableInput('checkbox3_1','budget_province_use')">
-                        <label class="form-check-label" for="checkbox3_1">
-                          งบประมาณของจังหวัด/กลุ่มจังหวัด
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_province_use" name="budget_province_use" value='<?= $row["budget_province_use"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox3_2" onclick="enableInput('checkbox3_2','budget_department_use')">
-                        <label class="form-check-label" for="checkbox3_2"> งบประมาณของกระทรวง/กรม </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_department_use" name="budget_department_use" value='<?= $row["budget_department_use"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox3_3" onclick="enableInput('checkbox3_3','budget_local_use')">
-                        <label class="form-check-label" for="checkbox3_3">
-                          งบประมาณขององค์กรปกครองส่วนท้องถิ่น
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_local_use" name="budget_local_use" value='<?= $row["budget_local_use"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkbox3_4" onclick="enableInput('checkbox3_4','budget_private_use')">
-                        <label class="form-check-label" for="checkbox3_4">
-                          งบประมาณของภาคเอกชน/ชุมชน
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      จำนวน
-                    </div>
-                    <div class="col-sm-5">
-                      <input type="text" disabled class="form-control fs-5" id="budget_private_use" name="budget_private_use" value='<?= $row["budget_private_use"] ?>'>
-                    </div>
-                    <div class="col-auto">
-                      บาท
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-
-            <!-- <div class="flex-md-row align-items-center justify-content-around part" id="p4">
-              <div class="w-100 bd-highlight">
-                <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                  <label>รายละเอียดอื่น ๆ เพิ่มเติม</label>
-                </div><br>
-                <div>
-                  <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
-                  <textarea class="form-control" id="project_additional" style="height: 300px" name="project_additional"><?= $row["project_additional"] ?></textarea>
-                </div><br>
-                <div class="-flex p-2 bd-highlight" style="background-color: gray;">
-                  <label for="addition">ไฟล์แนบ (ถ้ามี)</label>
-                </div><br>
-                <div class="input-group mb-3">
-                  <input type="file" class="form-control" id="upload_file" name="upload_file">
-                  <label class="input-group-text" for="upload_file">Upload</label>
-                </div>
-              </div></div> -->
-
     <div class="flex-md-row align-items-center justify-content-around part" id="p3">
       <div class="w-100 bd-highlight">
         <div>
@@ -549,7 +281,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_province_plan" name="budget_province_plan"  value='<?=$row["budget_province_plan"]?>'>
+              <input type="text"  class="form-control fs-5" id="budget_province_plan" name="budget_province_plan"  value='<?=$row["budget_province_plan"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -566,7 +298,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_department_plan" name="budget_department_plan"  value='<?=$row["budget_department_plan"]?>' >
+              <input type="text"  class="form-control fs-5" id="budget_department_plan" name="budget_department_plan"  value='<?=$row["budget_department_plan"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -585,7 +317,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" input type="text" disabled class="form-control fs-5" id="budget_local_plan" name="budget_local_plan" value='<?=$row["budget_local_plan"]?>' >
+              <input type="text" input type="text"  class="form-control fs-5" id="budget_local_plan" name="budget_local_plan" value='<?=$row["budget_local_plan"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -604,7 +336,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  disabled class="form-control fs-5" id="budget_private_plan" name="budget_private_plan"  value='<?=$row["budget_private_plan"]?>'>
+              <input type="text"  class="form-control fs-5" id="budget_private_plan" name="budget_private_plan"  value='<?=$row["budget_private_plan"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -630,7 +362,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_province_receive" name="budget_province_receive"  value='<?=$row["budget_province_receive"]?>'>
+              <input type="text" class="form-control fs-5" id="budget_province_receive" name="budget_province_receive"  value='<?=$row["budget_province_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -647,7 +379,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_department_receive" name="budget_department_receive"  value='<?=$row["budget_department_receive"]?>' >
+              <input type="text" class="form-control fs-5" id="budget_department_receive" name="budget_department_receive"  value='<?=$row["budget_department_receive"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -666,7 +398,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_local_receive" name="budget_local_receive"  value='<?=$row["budget_local_receive"]?>'>
+              <input type="text" class="form-control fs-5" id="budget_local_receive" name="budget_local_receive"  value='<?=$row["budget_local_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -685,7 +417,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  disabled class="form-control fs-5" id="budget_private_receive" name="budget_private_receive" value='<?=$row["budget_private_receive"]?>'>
+              <input type="text"  class="form-control fs-5" id="budget_private_receive" name="budget_private_receive" value='<?=$row["budget_private_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -712,7 +444,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_province_use" name="budget_province_use" value='<?=$row["budget_province_use"]?>'>
+              <input type="text"  class="form-control fs-5" id="budget_province_use" name="budget_province_use" value='<?=$row["budget_province_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -729,7 +461,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_department_use" name="budget_department_use" value='<?=$row["budget_department_use"]?>'>
+              <input type="text" class="form-control fs-5" id="budget_department_use" name="budget_department_use" value='<?=$row["budget_department_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -748,7 +480,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_local_use" name="budget_local_use" value='<?=$row["budget_local_use"]?>'>
+              <input type="text" class="form-control fs-5" id="budget_local_use" name="budget_local_use" value='<?=$row["budget_local_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -767,7 +499,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" disabled class="form-control fs-5" id="budget_private_use" name="budget_private_use"  value='<?=$row["budget_private_use"]?>'>
+              <input type="text"  class="form-control fs-5" id="budget_private_use" name="budget_private_use"  value='<?=$row["budget_private_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -794,7 +526,7 @@ $row = $stmt->fetch();
           <label>ไฟล์เดิม </label>
           <div>
           <input type="text" class="form-control" name="old_file" value="upload_file/<?= $row['file_path']?>" hidden>
-          <a class="text-primary decoration-none" href="upload_file/<?= $row['file_path']?>"><?= $row['file_path']?></a>
+          <a class="text-primary decoration-none" href="<?= $row['file_path']?>"><?= $row['file_path']?></a>
         </div>
         </div><br>
         <div class="input-group mb-3">

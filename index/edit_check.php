@@ -6,7 +6,7 @@ $ext = pathinfo(basename($_FILES['upload_file']['name']), PATHINFO_EXTENSION);
 if ($ext == '') {
   $file_path = $_POST['old_file'];
 } else {
-  unlink($_POST['old_file']);
+  unlink('upload_file/'.$_POST['old_file']);
   $new_file_name = uniqid('file_').".".$ext;
   $file_path = "upload_file/";
   $upload_path = $file_path.$new_file_name;
