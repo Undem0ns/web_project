@@ -22,7 +22,7 @@ if (!isset($_SESSION["user_email"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>เพิ่มโครงการ</title>
-
+  
 </head>
 
 <body>
@@ -158,7 +158,7 @@ if (!isset($_SESSION["user_email"])) {
                   <legend class="col-form-label col-sm-2 pt-0" for="operation_type">ลักษณะการดำเนินงาน</legend>
                   <div class="col-sm-10">
                     <div class="form-check">
-                      <input class="form-check-input input-font-size-lg" type="radio" id="gridRadios1" value="โครงการ" name="operation_type" checked>
+                      <input class="form-check-input input-font-size-lg" type="radio" id="gridRadios1" value="โครงการ" name="operation_type">
                       <label class="form-check-label" for="gridRadios1">
                         โครงการ
                       </label>
@@ -185,7 +185,7 @@ if (!isset($_SESSION["user_email"])) {
                   <legend class="col-form-label col-sm-2 pt-0" for="use_budget">การใช้งบประมาณ</legend>
                   <div class="col-sm-10">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" id="use_budget1" value="ใช้งบประมาณ" checked name="use_budget">
+                      <input class="form-check-input" type="radio" id="use_budget1" value="ใช้งบประมาณ" name="use_budget">
                       <label class="form-check-label" for="use_budget1">
                         ใช้งบประมาณ
                       </label>
