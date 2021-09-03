@@ -32,23 +32,23 @@
 
   $stmt->execute();
   ?>
-  <nav class="navbar navbar-expand-lg navbar-light t sticky-top" style="background-color:#a6a6a6;">
-    <div class="container-fluid">
-      <ul class="nav nav-tabs">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #233a58;">
+    <div class="container-fluid" id="nav-content">
+      <ul>
         <li class="nav-item">
-          <a class="nav-link" href="dashboard.php" style="font-size:25px; color:black">PCP-MS</a>
+          <a class="nav-link" href="dashboard.php" style="font-size:25px; color:#ffffff"><span>PCP-MS</span></a>
         </li>
       </ul>
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class=nav-link active aria-current="page" style="color:#212121"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <a class="nav-link" active aria-current="page" style="color:#212121"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
             </svg> <?php
-                    echo $_COOKIE["user_name"]; ?></a>
+                    echo $_COOKIE["user_name"]; ?></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../login/index.php" style="color:#212121">ออกจากระบบ</a>
+          <a class="nav-link active" aria-current="page" href="../login/index.php" style="color:#212121"><span>ออกจากระบบ</span></a>
         </li>
       </ul>
     </div>
@@ -56,30 +56,29 @@
 
 
         
-  <div class="container-fluid">
+  <div class="container-fluid"  id="sidecontent">
     <div class="row">
-      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #0070c0;">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #003399;">
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-            <li class="nav-item">
-              <a href="add_project.php" class="nav-link align-middle px-0 text-white">
+          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start " id="menu">
+            <li >
+              <a href="add_project.php" class="nav-link align-middle px-0 text-white rounded">
                 <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">เพิ่มโครงการ</span>
               </a>
             </li>
-            <li>
-              <a href="dashboard.php" class="nav-link px-0 align-middle text-white">
+            <li >
+              <a href="dashboard.php" class="nav-link px-0 align-middle text-white rounded">
                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">รายชื่อโครงการ</span></a>
             </li>
-
             <li>
-              <a href="model.php" class="nav-link px-0 align-middle text-white">
+              <a href="model.php" class="nav-link px-0 align-middle text-white rounded">
                 <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline ">ร่างโครงการ</span> </a>
             </li>
           </ul>
           <hr>
         </div>
       </div>
-      <div class="col py-3 ">
+      <div class="col py-3" style="background-color: #eaeaea;">
         <div class="bd-intro ps-lg-4">
           <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
             <!-- <button type="button" class="btn btn-secondary">Secondary</button> -->

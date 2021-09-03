@@ -46,45 +46,30 @@ linespace{
     display: inline;
     margin: 0;
     padding: 0;
-  }
-  ul li {display: inline-block;}
-  ul li:hover {background: #555;}
-  ul li:hover ul {display: block;}
-  ul li ul {
-    position: absolute;
-    width: 200px;
-    display: none;
-  }
-  ul li ul li { 
-    background: #555; 
-    display: block; 
-  }
-  ul li ul li a {display:block !important;} 
-  ul li ul li:hover {background: #666;}
+  } 
 
-h5.nav {
-  text-align: justify;
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: white;
-  display: block;
-  transition: 0.3s;
+  .rounded {
+    border-radius: .25rem!important;
   }
-
-  .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  #nav-content li span:hover{
+    color: #fbfcf0;
   }
-  
+#sidecontent li span:hover{
+  color: #FAFF00;
+}
+#sidecontent ul li:hover{
+  background-color: #1E3163;
+  display:block;
+}
+#sidecontent a {
+  margin-right: 100px;
+}
+#nav-content li:hover{
+  background-color: #C8C6C6;
+  margin-left:5px;
+  padding-left:5px;
+  padding-right:5px;
+}
   .sidenav {
     height: 100%;
     width: 0;
@@ -102,7 +87,7 @@ h5.nav {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #818181 ;
     display: block;
     transition: 0.3s;
   }
@@ -132,9 +117,8 @@ h5.nav {
 span.marginle {
   margin-left: 20;
 }
-/* label , textarea, option, input {
-  font-size: 22px;
-}
-select {
-  font-size: 22px;
-} */
+
+/* li:hover, li:hover:active {
+  background-color: #628395;
+  font-size: 150%;
+  } */
