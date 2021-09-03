@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เพิ่มโครงการ</title>
+  
+</head>
 <?php
 include('../connect_2.php');
 $sql = "SELECT * FROM development_subject";
@@ -17,13 +24,7 @@ if (!isset($_SESSION["user_email"])) {
 // $row = $stmt->fetch(); 
 ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>เพิ่มโครงการ</title>
-  
-</head>
+
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light t sticky-top" style="background-color:#a6a6a6;">
