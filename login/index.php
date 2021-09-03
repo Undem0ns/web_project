@@ -1,8 +1,3 @@
-<?php include '../connect.php' ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,6 +6,11 @@
     <link href="css.css" rel="stylesheet">
     <title>Login</title>
 </head>
+<?php include '../connect.php' ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
 
 <body>
     <?php

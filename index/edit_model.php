@@ -1,3 +1,10 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แก้ไขโครงการ</title>
+
+</head>
 <?php include "../connect.php" ?>
 <?php
 include('../connect_2.php');
@@ -22,13 +29,7 @@ $row = $stmt->fetch();
 
 ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>แก้ไขโครงการ</title>
 
-</head>
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light t sticky-top" style="background-color:#a6a6a6;">
@@ -81,7 +82,7 @@ $row = $stmt->fetch();
       <div class="col py-3 ">
         <div class="bd-intro ps-lg-4">
           <div id="main" class="bd-main order-1">
-            <h2 class="bd-title" id="content" style="font-weight: bold; color:red">แก้ไขโครงการ</h2> <br>
+            <h2 class="bd-title" id="content" style="font-weight: bold; color:red">แก้ไขแบบร่างโครงการ</h2> <br>
             <div class="d-md-flex flex-md-row align-items-center justify-content-around">
               <span class="bd-title" id="part1">1. ความเชื่อมโยงกับแผนกลุ่มจังหวัด</span>
               <span class="bd-title" id="part2">2. รายละเอียด</span>
