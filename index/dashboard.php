@@ -36,7 +36,8 @@
     <div class="container-fluid">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link" href="dashboard.php" style="font-size:25px; color:black">PCP-MS</a>
+          <img src="../assets/P.png" width="20%">
+          <!-- <a class="nav-link" href="dashboard.php" style="font-size:25px; color:black" >PCP-MS</a> -->
         </li>
       </ul>
       <ul class="nav justify-content-end">
