@@ -32,56 +32,29 @@
   $stmt->execute();
   ?>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light t sticky-top" style="background-color:#a6a6a6;">
-    <div class="container-fluid">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link" href="dashboard.php" style="font-size:25px; color:black">PCP-MS</a>
-        </li>
-      </ul>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class=nav-link active aria-current="page" style="color:#212121"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-            </svg> <?php
-                    echo $_COOKIE["user_name"]; ?></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../login/index.php" style="color:#212121">ออกจากระบบ</a>
-        </li>
-      </ul>
+
+<body id="body-pd">
+<header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        <a class="nav-link" active aria-current="page" style="color:#212121"><span><i class='bx bx-user nav_icon'></i> <?php
+                    echo $_COOKIE["user_name"]; ?></span></a>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> <a href="dashboard.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">PCP-MS</span> </a>
+                <div class="nav_list"> 
+                <a href="dashboard.php" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">รายชื่อโครงการ</span> </a> 
+                 <a href="add_project.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">เพิ่มโครงการ</span> </a> 
+                 <a href="model.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">แบบร่างโครงการ</span> </a> 
+
+                </div>
+            </div> 
+            <a href="../login/index.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">ออกจากระบบ</span> </a>
+        </nav>
     </div>
-  </nav>
-
-
-        
-  <div class="container-fluid" id="sidecontent">
-    <div class="row">
-      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #0070c0;">
-        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-            <li class="nav-item">
-              <a href="add_project.php" class="nav-link align-middle px-0 text-white">
-                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">เพิ่มโครงการ</span>
-              </a>
-            </li>
-            <li>
-              <a href="dashboard.php" class="nav-link px-0 align-middle text-white">
-                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">รายชื่อโครงการ</span></a>
-            </li>
-
-            <li>
-              <a href="model.php" class="nav-link px-0 align-middle text-white">
-                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline ">ร่างโครงการ</span> </a>
-            </li>
-          </ul>
-          <hr>
-        </div>
-      </div>
-        <div class="col py-3 ">
-        <div class="bd-intro ps-lg-4">
+    <!--Container Main start-->
+    <div class="height-100 py-5">
+        <div class="bd-intro ps-lg-4"><br><br>
       <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
         <!-- <button type="button" class="btn btn-secondary">Secondary</button> -->
 
@@ -117,5 +90,46 @@
         </div>
     </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+
+  const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+  const toggle = document.getElementById(toggleId),
+  nav = document.getElementById(navId),
+  bodypd = document.getElementById(bodyId),
+  headerpd = document.getElementById(headerId)
+
+// Validate that all variables exist
+  if(toggle && nav && bodypd && headerpd){
+  toggle.addEventListener('click', ()=>{
+// show navbar
+  nav.classList.toggle('show')
+// change icon
+  toggle.classList.toggle('bx-x')
+// add padding to body
+  bodypd.classList.toggle('body-pd')
+// add padding to header
+  headerpd.classList.toggle('body-pd')
+})
+}
+}
+
+showNavbar('header-toggle','nav-bar','body-pd','header')
+
+/*===== LINK ACTIVE =====*/
+  const linkColor = document.querySelectorAll('.nav_link')
+
+  function colorLink(){
+  if(linkColor){
+  linkColor.forEach(l=> l.classList.remove('active'))
+  this.classList.add('active')
+}
+}
+linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+// Your code to run since DOM is loaded and ready
+});
+</script>
 </body>
 </html>
