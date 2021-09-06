@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(toggle && nav && bodypd && headerpd){
     toggle.addEventListener('click', ()=>{
   // show navbar
-    nav.classList.toggle('show')
+    nav.classList.toggle('show');
   // change icon
-    toggle.classList.toggle('bx-x')
+    toggle.classList.toggle('bx-x');
   // add padding to body
-    bodypd.classList.toggle('body-pd')
+    bodypd.classList.toggle('body-pd');
   // add padding to header
-    headerpd.classList.toggle('body-pd')
+    headerpd.classList.toggle('body-pd');
   })
   }
   }

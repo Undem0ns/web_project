@@ -82,13 +82,13 @@
           <td><?= $row["development_name"] ?></td>
           <td><?= $row["province"] ?></td>
           <td><?= $row["budget_year"] ?></td>
-
+          <td>
           <?php if ($_COOKIE['user_id'] == $row['user_id']) { ?>
-            <td>
+            
               <a class="btn btn-danger" href="edit_project.php?project_id= <?= $row["project_id"] ?>">แก้ไข</a>
-            </td>
+            
           <?php } ?>
-
+          </td>
 
         </tr>
       </tbody>

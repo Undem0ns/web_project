@@ -53,6 +53,7 @@
     </div>
     <!--Container Main start-->
     <div class="height-100 py-5">
+    <br>
   <?php $row = $stmt->fetch()  ?>
   <div id="main" class="bd-main order-1">
     <div class="bd-intro ps-lg-4">
@@ -263,7 +264,7 @@
         <div class="row mb-3">
           <label for="project_code" class="col-sm-3 col-form-label" style="font-weight: bold;">ไฟล์แนบ (ถ้ามี)</label>
           <div class="col-sm-9">
-            <a class="text-primary decoration-none" href= "upload_file/<?= $row["file_path"] ?>" download><?= $row["file_path"] ?></a>
+            <a class="text-primary decoration-none" href= "/index/upload_file/<?= $row["file_path"] ?>" download><?= $row["file_path"] ?></a>
           </div>
         </div>
 

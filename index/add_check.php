@@ -8,10 +8,12 @@ if ($ext == '') {
     $file_path = '';
 } else {
   $new_file_name = uniqid('file_').".".$ext;
-  $file_path = "upload_file/";
+  $file_path = getcwd()."/upload_file/";
   $upload_path = $file_path.$new_file_name;
-  
+
+  echo $file_path;
   $success = move_uploaded_file($_FILES['upload_file']['tmp_name'], $upload_path);
+
   $file_path = $new_file_name;
 }
 
