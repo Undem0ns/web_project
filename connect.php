@@ -17,7 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
     <title>Document</title>
  
-    <script src="../index/script.js"></script>
+    <!-- <script src="../index/script.js"></script> -->
 
     <link href="/web_project/index/StyleIndex.css" rel="stylesheet">
     <script src="/web_project/index/script.js"></script>
