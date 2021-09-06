@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(toggle && nav && bodypd && headerpd){
     toggle.addEventListener('click', ()=>{
   // show navbar
-    nav.classList.toggle('show');
+  nav.classList.toggle('show');
   // change icon
     toggle.classList.toggle('bx-x');
   // add padding to body
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     headerpd.classList.toggle('body-pd');
   })
   }
+  
   }
   
   showNavbar('header-toggle','nav-bar','body-pd','header')
@@ -37,15 +38,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Your code to run since DOM is loaded and ready
   });
 
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-  }
 
   // Example starter JavaScript for disabling form submissions if there are invalid fields
   (function() {
