@@ -34,9 +34,9 @@
   $stmt->execute();
   ?>
   <header class="header" id="header">
-    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-    <a class="nav-link" active aria-current="page" style="color:#212121"><span><i class='bx bx-user nav_icon'></i> <?php
-                                                                                                                    echo $_COOKIE["user_name"]; ?></span></a>
+    <div class="header_toggle "> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    <a class="nav-link" style="color: #F7F6FB;"><span><i class='bx bx-user nav_icon' ></i> <?php
+                                                                                                                  echo $_COOKIE["user_name"]; ?></span></a>
   </header>
   <div class="l-navbar" id="nav-bar">
     <nav class="nav">
