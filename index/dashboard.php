@@ -52,11 +52,11 @@
     </div>
     <!--Container Main start-->
     <div class="height-100  py-5">
-
-      <div class="bd-intro ps-lg-4"> -->
+    <br>
+      <div class="bd-intro ps-lg-4">
           <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
             <!-- <button type="button" class="btn btn-secondary">Secondary</button> -->
-
+            
             <a class="btn btn-secondary" href="add_project.php" title="add_project" rel="noopener" style="margin-right: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                 <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
               </svg> เพิ่มโครงการ/ดำเนินการ </a>
