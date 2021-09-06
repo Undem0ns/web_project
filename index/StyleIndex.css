@@ -7,7 +7,7 @@
 :root {
     --header-height: 3rem;
     --nav-width: 68px;
-    --first-color: #260f83;
+    --first-color: #0f2483;
     --first-color-light: #ccc3ec;
     --white-color: #F7F6FB;
     --body-font: myFirstFont;
@@ -20,8 +20,6 @@
 ::after {
     box-sizing: border-box
 }
-
-
 
 body {
     position: relative;
@@ -46,13 +44,13 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    background-color: var(--white-color);
+    background-color: var(--first-color);
     z-index: var(--z-fixed);
     transition: .5s
 }
 
 .header_toggle {
-    color: var(--first-color);
+    color: var(--white-color);
     font-size: 1.5rem;
     cursor: pointer
 }
@@ -104,7 +102,7 @@ a {
 }
 
 .nav_logo-icon {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--white-color)
 }
 
