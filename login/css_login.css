@@ -1,0 +1,24 @@
+
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body{
+    
+   
+        background-image: url('../assets/login1.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: top;
+        width: 100%;
+        height: 100%;
+        
+     
+}
+.blur{
+        opacity: 0.7;
+        backdrop-filter: blur(7px);
+}
