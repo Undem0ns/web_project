@@ -17,12 +17,12 @@
     <title>Document</title>
 
     <!-- SERVER -->
-    <link href="/index/StyleIndex.css" rel="stylesheet">
-    <script src="/index/script.js"></script>
+    <!-- <link href="/index/StyleIndex.css" rel="stylesheet">
+    <script src="/index/script.js"></script> -->
 
     <!-- DEV -->
-    <!-- <link href="/web_project/index/StyleIndex.css" rel="stylesheet">
-    <script src="/web_project/index/script.js"></script> -->
+    <link href="/web_project/index/StyleIndex.css" rel="stylesheet">
+    <script src="/web_project/index/script.js"></script>
 
 </head>
 
