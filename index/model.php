@@ -33,13 +33,13 @@
   ?>
 </head>
 
-<body id="body-pd">
-<header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+<body id="body-pd" class="body-pd">
+<header class="header body-pd" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu bx-x' id="header-toggle"></i> </div>
         <a class="nav-link" style="color: #F7F6FB;"><span><i class='bx bx-user nav_icon'></i> <?php
                     echo $_COOKIE["user_name"]; ?></span></a>
     </header>
-    <div class="l-navbar" id="nav-bar">
+    <div class="l-navbar show" id="nav-bar">
         <nav class="nav">
             <div> <a href="dashboard.php" class="nav_logo">  <img src="../assets/logo.png" height="100px" width="100px "> <span class="nav_logo-name">FPG-MIS</span> </a>
                 <div class="nav_list"> 

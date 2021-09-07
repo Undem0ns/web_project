@@ -3,7 +3,14 @@
 $HOST = 'localhost';
 $DBNAME = 'pcp_ms';
 $CHARSET ='utf8';
-$USERNAME = 'root';
-$PASSWORD = '';
+// SERVER
+$USERNAME = 'pcp';
+$PASSWORD = 'jgkhgrwlROZG9Ng5';
+
+// DEV
+// $USERNAME = 'root';
+// $PASSWORD = '';
+
+
 
 ?>
