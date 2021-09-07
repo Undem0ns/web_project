@@ -33,8 +33,8 @@
                                 
                                 <div class="row-sm">
                                     <div class="col-sm">
-                                    <h5 class="card-title fs-1" style="margin-left: 21rem;">ระบบสารสนเทศโครงการกลุ่มจังหวัดร้อยแก่นสารสินธุ์</h5>
-                                <p class="card-text fs-3" style="margin-left: 24rem;">Four Provinccial Group Maragement System (FPG-MS)</p>
+                                    <h5 class="card-title fs-1" style="text-align: center;">ระบบสารสนเทศโครงการกลุ่มจังหวัดร้อยแก่นสารสินธุ์</h5>
+                                <p class="card-text fs-1" style="text-align: center;">Four Provinccial Group Maragement System (FPG-MS)</p>
                                     <div>
                                 </div>
                             </div>
@@ -67,15 +67,15 @@
                                         <div class="mb-3">
                                             <h6 class="card-subtitle mb-2 text fs-3 ">
                                                 <b> <label>เข้าสู่ระบบ</label> </b>
-                                            </h6>
-                                            <h6 class="card-subtitle mb-2 text fs-3 ">
-                                                <b> <label>User name</label> </b>
+                                            </h6><br>
+                                            <h6 class="card-subtitle mb-2 text fs-5 ">
+                                                <label>User name</label> 
                                             </h6>
                                             <input type="email" name="user_email" class="form-control fs-5" id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                         <div class="mb-3">
-                                            <h6 class="card-subtitle mb-2 text fs-3">
-                                                <b> <label> Password </label> </b>
+                                            <h6 class="card-subtitle mb-2 text fs-5">
+                                                <label> Password </label>
                                             </h6>
 
                                             <input type="password" name="user_password" class="form-control fs-5" id="exampleInputPassword1">
