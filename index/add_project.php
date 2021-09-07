@@ -29,6 +29,8 @@ if (!isset($_SESSION["user_email"])) {
 <body id="body-pd" class="body-pd">
 <header class="header body-pd" id="header">
         <div class="header_toggle"> <i class='bx bx-menu bx-x' id="header-toggle"></i> </div>
+        <div><img src="/img/111-removebg-preview.png" width="600"></div>
+
         <a class="nav-link" style="color: #F7F6FB;"><span><i class='bx bx-user nav_icon'></i> <?php
                     echo $_COOKIE["user_name"]; ?></span></a>
     </header>
