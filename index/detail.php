@@ -53,7 +53,7 @@
     </div>
     <!--Container Main start-->
     <div class="height-100 py-5">
-    <br>
+    
   <?php $row = $stmt->fetch()  ?>
   <div id="main" class="bd-main order-1">
     <div class="bd-intro ps-lg-4">
@@ -63,7 +63,9 @@
         <a class="btn btn-danger" href="edit_project.php?project_id=<?= $row["project_id"] ?>?from=detail" title="edit" rel="noopener" style="margin-right: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
             <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
           </svg> แก้ไข </a>
-          <?php } ?>
+          <?php }else { ?>
+            <div></div>
+            <?php }?>
         <h2 class="bd-title" id="content" style="font-weight: bold;">รายละเอียดโครงการ</h2>
       </div>
     </div>

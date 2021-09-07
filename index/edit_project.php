@@ -31,13 +31,13 @@ $row = $stmt->fetch();
 
 
 
-<body id="body-pd">
-<header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+<body id="body-pd" class="body-pd">
+<header class="header body-pd" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu bx-x' id="header-toggle"></i> </div>
         <a class="nav-link" style="color: #F7F6FB;"><span><i class='bx bx-user nav_icon'></i> <?php
                     echo $_COOKIE["user_name"]; ?></span></a>
     </header>
-    <div class="l-navbar" id="nav-bar">
+    <div class="l-navbar show" id="nav-bar">
         <nav class="nav">
             <div> <a href="dashboard.php" class="nav_logo"> <img src="../assets/logo.png" height="100px" width="100px "> <span class="nav_logo-name">FPG-MIS</span> </a>
                 <div class="nav_list"> 
@@ -70,8 +70,8 @@ $row = $stmt->fetch();
                 <form action="edit_check.php" method="post" enctype="multipart/form-data">
                   <h5 class="card-title"><input type="hidden" name="project_id" value="<?= $row["project_id"] ?>"></h5>
                   <div class="mb-3 was-validated">
-                    <label for="project_name" class=" col-form-label " style="font-weight: bold;font-size:25px;">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
-                    <textarea class="form-control fs-5" name="project_name" id="project_name" style="height: 100px" required><?= $row["project_name"] ?></textarea>
+                    <label for="project_name" class=" col-form-label " style="font-weight: bold;font-size:22px;">ชื่อโครงการ/ชื่อกิจกรรม/ชื่อการดำเนินงาน</label>
+                    <textarea class="form-control fs-6" name="project_name" id="project_name" style="height: 100px" required><?= $row["project_name"] ?></textarea>
                     <div id="validationServerUsernameFeedback" class="invalid-feedback">
                           กรุณากรอกชื่อโครงการ
                         </div>
@@ -85,9 +85,9 @@ $row = $stmt->fetch();
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="development_subject" class="col col-form-label ">ประเด็นการพัฒนา</label>
-                    <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="development_subject" name="development_subject" >
+                    <label for="development_subject" class="col-sm-3 col-form-label ">ประเด็นการพัฒนา</label>
+                    <div class="col-sm-9">
+                      <select class="form-select form-select-md mb-3 fs-6" id="development_subject" name="development_subject" >
                         <option selected class="text-muted " value="<?= $row["development_subject"] ?>">เลือก...</option>
 
                         <?php while ($result = mysqli_fetch_assoc($query)) : ?>
@@ -98,25 +98,25 @@ $row = $stmt->fetch();
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="project_roadmap" class="col-sm-2 col-form-label ">แผนงาน</label>
-                    <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_roadmap" name="project_roadmap"  disabled>
+                    <label for="project_roadmap" class="col-sm-3 col-form-label ">แผนงาน</label>
+                    <div class="col-sm-9">
+                      <select class="form-select form-select-md mb-3 fs-6" id="project_roadmap" name="project_roadmap"  disabled>
                         <option disabled selected value="<?= $row["project_roadmap"] ?>">เลือก...</option>
                       </select>
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="project_main" class="col-sm-2 col-form-label ">โครงการหลัก (ตามแผน)</label>
-                    <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_main" name="project_main"  disabled>
+                    <label for="project_main" class="col-sm-3 col-form-label ">โครงการหลัก (ตามแผน)</label>
+                    <div class="col-sm-9">
+                      <select class="form-select form-select-md mb-3 fs-6" id="project_main" name="project_main"  disabled>
                         <option disabled selected value="<?= $row["project_main"] ?>">เลือก...</option>
                       </select>
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="project_sub" class="col-sm-2 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
-                    <div class="col-sm-10">
-                      <select class="form-select form-select-md mb-3 fs-5" id="project_sub" name="project_sub"  disabled>
+                    <label for="project_sub" class="col-sm-3 col-form-label ">โครงการ/กิจกรรมย่อย (ตามแผน)</label>
+                    <div class="col-sm-9">
+                      <select class="form-select form-select-md mb-3 fs-6" id="project_sub" name="project_sub"  disabled>
                         <option disabled selected value="<?= $row["project_sub"] ?>">เลือก...</option>
                       </select>
                     </div>
@@ -136,8 +136,8 @@ $row = $stmt->fetch();
                 </div>
 
                 <fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0" for="operation_type">ลักษณะการดำเนินงาน</legend>
-                  <div class="col-sm-10 d-flex">
+                  <legend class="col-form-label col-sm-3 pt-0" for="operation_type">ลักษณะการดำเนินงาน</legend>
+                  <div class="col-sm-9 d-flex">
                     <div class="form-check">
                       <input class="form-check-input input-font-size-lg" type="radio" id="gridRadios1" value="โครงการ" name="operation_type" >
                       <label class="form-check-label" for="gridRadios1">
@@ -155,16 +155,16 @@ $row = $stmt->fetch();
 
 
                 <div class="row mb-3">
-                  <label for="project_code" class="col-sm-2 col-form-label">รหัสโครงงาน (ถ้ามี)</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="project_code " name="project_code" value='<?= $row["project_code"] ?>'>
+                  <label for="project_code" class="col-sm-3 col-form-label">รหัสโครงงาน (ถ้ามี)</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control fs-6" id="project_code " name="project_code" value='<?= $row["project_code"] ?>'>
                   </div>
                 </div>
 
 
                 <fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0" for="use_budget">การใช้งบประมาณ</legend>
-                  <div class="col-sm-10 d-flex">
+                  <legend class="col-form-label col-sm-3 pt-0" for="use_budget">การใช้งบประมาณ</legend>
+                  <div class="col-sm-9 d-flex">
                     <div class="form-check">
                       <input class="form-check-input" type="radio" id="gridRadios1" value="ใช้งบประมาณ"  name="use_budget">
                       <label class="form-check-label" for="use_budget1">
@@ -182,9 +182,9 @@ $row = $stmt->fetch();
 
                 </fieldset>
                 <div class="row mb-3">
-                  <label for="budget_year" class="col-sm-2 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
-                  <div class="col-sm-10">
-                    <select class="form-select form-select-md mb-3 fs-5" id="budget_year" name="budget_year" >
+                  <label for="budget_year" class="col-sm-3 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
+                  <div class="col-sm-9">
+                    <select class="form-select form-select-md mb-3 fs-6" id="budget_year" name="budget_year" >
                       <option selected disabled value="<?= $row["budget_year"] ?>"><?= $row["budget_year"] ?></option>
                       <option value="2560">2560</option>
                       <option value="2561">2561</option>
@@ -202,16 +202,16 @@ $row = $stmt->fetch();
                 </div>
 
                 <div class="row mb-3">
-                  <label for="institution" class="col-sm-2 col-form-label">หน่วยงานที่รับผิดชอบ</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="institution" name="institution" value='<?= $row["institution"] ?>'>
+                  <label for="institution" class="col-sm-3 col-form-label">หน่วยงานที่รับผิดชอบ</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control fs-6" id="institution" name="institution" value='<?= $row["institution"] ?>'>
                   </div>
                 </div>
 
                 <div class="row mb-3">
-                  <label for="province" class="col-sm-2 col-form-label fs-5">จังหวัดที่ดำเนินโครงการ</label>
-                  <div class="col-sm-10">
-                    <select class="form-select form-select-md mb-3 fs-5" id="province" name="province" >
+                  <label for="province" class="col-sm-3 col-form-label">จังหวัดที่ดำเนินโครงการ</label>
+                  <div class="col-sm-9">
+                    <select class="form-select form-select-md mb-3 fs-6" id="province" name="province" >
                       <option selected value="<?= $row["province"] ?>"><?= $row["province"] ?></option>
                       <option value="ขอนแก่น">ขอนแก่น</option>
                       <option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
@@ -222,9 +222,9 @@ $row = $stmt->fetch();
                 </div>
 
                 <div class="row mb-3">
-                  <label for="target_user" class="col-sm-2 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control fs-5" id="target_user" name="target_user" value='<?= $row["target_user"] ?>'>
+                  <label for="target_user" class="col-sm-3 col-form-label">กลุ่มเป้าหมายในการดำเนินงาน</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control fs-6" id="target_user" name="target_user" value='<?= $row["target_user"] ?>'>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -234,15 +234,15 @@ $row = $stmt->fetch();
                 </div>
 
                 <div class="row mb-3">
-                  <label for="project_objective" class="col-sm-2 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
-                  <div class="col-sm-10">
-                    <textarea type="text" class="form-control fs-5" id="project_objective" name="project_objective" style="height: 300px" value='<?= $row["project_objective"] ?>'><?= $row["project_objective"] ?></textarea></div>
+                  <label for="project_objective" class="col-sm-3 col-form-label">วัตถุประสงค์และรายละเอียดของโครงการ</label>
+                  <div class="col-sm-9">
+                    <textarea type="text" class="form-control fs-6" id="project_objective" name="project_objective" style="height: 300px" value='<?= $row["project_objective"] ?>'><?= $row["project_objective"] ?></textarea></div>
                 </div>
 
                 <div class="row mb-3">
-                  <label for="project_result" class="col-sm-2 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
-                  <div class="col-sm-10">
-                    <textarea type="text" class="form-control fs-5" id="project_result" name="project_result" style="height: 300px" value='<?= $row["project_result"] ?>'><?= $row["project_result"] ?></textarea></div>
+                  <label for="project_result" class="col-sm-3 col-form-label">ผลผลิต/ผลลัพธ์ ตามตัวชี้วัด</label>
+                  <div class="col-sm-9">
+                    <textarea type="text" class="form-control fs-6" id="project_result" name="project_result" style="height: 300px" value='<?= $row["project_result"] ?>'><?= $row["project_result"] ?></textarea></div>
                 </div>
               </div>
             </div>
@@ -266,7 +266,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  class="form-control fs-5" id="budget_province_plan" name="budget_province_plan"  value='<?=$row["budget_province_plan"]?>'>
+              <input type="text"  class="form-control fs-6" id="budget_province_plan" name="budget_province_plan"  value='<?=$row["budget_province_plan"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -282,7 +282,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  class="form-control fs-5" id="budget_department_plan" name="budget_department_plan"  value='<?=$row["budget_department_plan"]?>' >
+              <input type="text"  class="form-control fs-6" id="budget_department_plan" name="budget_department_plan"  value='<?=$row["budget_department_plan"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -300,7 +300,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" input type="text"  class="form-control fs-5" id="budget_local_plan" name="budget_local_plan" value='<?=$row["budget_local_plan"]?>' >
+              <input type="text" input type="text"  class="form-control fs-6" id="budget_local_plan" name="budget_local_plan" value='<?=$row["budget_local_plan"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -318,7 +318,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  class="form-control fs-5" id="budget_private_plan" name="budget_private_plan"  value='<?=$row["budget_private_plan"]?>'>
+              <input type="text"  class="form-control fs-6" id="budget_private_plan" name="budget_private_plan"  value='<?=$row["budget_private_plan"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -343,7 +343,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control fs-5" id="budget_province_receive" name="budget_province_receive"  value='<?=$row["budget_province_receive"]?>'>
+              <input type="text" class="form-control fs-6" id="budget_province_receive" name="budget_province_receive"  value='<?=$row["budget_province_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -359,7 +359,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control fs-5" id="budget_department_receive" name="budget_department_receive"  value='<?=$row["budget_department_receive"]?>' >
+              <input type="text" class="form-control fs-6" id="budget_department_receive" name="budget_department_receive"  value='<?=$row["budget_department_receive"]?>' >
             </div>
             <div class="col-auto">
               บาท
@@ -377,7 +377,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control fs-5" id="budget_local_receive" name="budget_local_receive"  value='<?=$row["budget_local_receive"]?>'>
+              <input type="text" class="form-control fs-6" id="budget_local_receive" name="budget_local_receive"  value='<?=$row["budget_local_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -395,7 +395,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  class="form-control fs-5" id="budget_private_receive" name="budget_private_receive" value='<?=$row["budget_private_receive"]?>'>
+              <input type="text"  class="form-control fs-6" id="budget_private_receive" name="budget_private_receive" value='<?=$row["budget_private_receive"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -421,7 +421,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  class="form-control fs-5" id="budget_province_use" name="budget_province_use" value='<?=$row["budget_province_use"]?>'>
+              <input type="text"  class="form-control fs-6" id="budget_province_use" name="budget_province_use" value='<?=$row["budget_province_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -437,7 +437,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control fs-5" id="budget_department_use" name="budget_department_use" value='<?=$row["budget_department_use"]?>'>
+              <input type="text" class="form-control fs-6" id="budget_department_use" name="budget_department_use" value='<?=$row["budget_department_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -455,7 +455,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text" class="form-control fs-5" id="budget_local_use" name="budget_local_use" value='<?=$row["budget_local_use"]?>'>
+              <input type="text" class="form-control fs-6" id="budget_local_use" name="budget_local_use" value='<?=$row["budget_local_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -473,7 +473,7 @@ $row = $stmt->fetch();
               จำนวน
             </div>
             <div class="col-sm-5">
-              <input type="text"  class="form-control fs-5" id="budget_private_use" name="budget_private_use"  value='<?=$row["budget_private_use"]?>'>
+              <input type="text"  class="form-control fs-6" id="budget_private_use" name="budget_private_use"  value='<?=$row["budget_private_use"]?>'>
             </div>
             <div class="col-auto">
               บาท
@@ -491,18 +491,21 @@ $row = $stmt->fetch();
         </div><br>
         <div>
           <label for="addition">ลิงค์หรือรายละเอียดอื่น ๆ <br>เพิ่มเติมที่น่าจะเป็นประโยชน์</label>
-          <textarea class="form-control fs-5" id="project_additional" style="height: 300px" name="project_additional"><?= $row["project_additional"] ?></textarea>
+          <textarea class="form-control fs-6" id="project_additional" style="height: 300px" name="project_additional"><?= $row["project_additional"] ?></textarea>
         </div><br>
         <div class="-flex p-2 bd-highlight" style="background-color: gray;">
           <label for="addition">เพิ่มไฟล์แนบใหม่</label>
         </div><br>
-        <div>
+        <?php if (isset($row['file_path']) and ($row['file_path'] != '') ) { ?>
+          <div>
           <label>ไฟล์เดิม </label>
           <div>
           <input type="text" class="form-control" name="old_file" value="<?= $row['file_path']?>" hidden>
           <a class="text-primary decoration-none" href="<?= $row['file_path']?>"><?= $row['file_path']?></a>
         </div>
         </div><br>
+        <?php } ?>
+        
         <div class="input-group mb-3">
           <input type="file" class="form-control" id="upload_file" name="upload_file">
           <label class="input-group-text" for="upload_file">Upload</label>
@@ -512,9 +515,9 @@ $row = $stmt->fetch();
 
 
             <div class="d-md-flex flex-md-row align-items-center justify-content-end" style="margin-bottom: 100px; margin-right: 50px;">
-              <div class="btn btn-primary" id="button1" onclick="previousPart()" style="margin-right: 10px;">หน้าก่อนหน้า</div>
-              <div class="btn btn-primary" id="button2" onclick="nextPart()">หน้าถัดไป</div>
-              <button class="btn btn-danger" type="submit" id="button3" name="edit" onclick="saveProject()">บันทึกและยืนยันเพิ่มโครงการ</button>
+              <div class="btn btn-primary" id="button1" onclick="previousPart()" style="margin-right: 10px; margin-bottom: 50px;">หน้าก่อนหน้า</div>
+              <div class="btn btn-primary" id="button2" onclick="nextPart()" style="margin-right: 10px; margin-bottom: 50px;">หน้าถัดไป</div>
+              <button class="btn btn-danger" type="submit" id="button3" name="edit" onclick="saveProject()" style="margin-right: 10px; margin-bottom: 50px;">บันทึกและยืนยันเพิ่มโครงการ</button>
             </div>
           </div>
           </form>
