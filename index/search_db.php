@@ -62,16 +62,14 @@
 
     <div class="bd-intro ps-lg-4">
         
-      <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
+      <div class="d-md-flex align-items-center justify-content-between">
         <!-- <button type="button" class="btn btn-secondary">Secondary</button> -->
-
-    <form class="d-flex col-md-4">
+           <h2 class="bd-title" id="content" style="font-weight: bold;">รายชื่อโครงการ</h2>
+      </div>
+      <form class="d-flex col-md-11">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-  
-        <h2 class="bd-title" id="content" style="font-weight: bold;">รายชื่อโครงการ</h2>
-      </div>
     </div>
     <br>
     <table class="table table-bordered">
