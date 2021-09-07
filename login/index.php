@@ -26,10 +26,13 @@
                     <div class="card-body  btn-success">
                         <div class="row">
                             <div class="col-sm">
-                                <img src="../assets/la.png " width="100px" height="50px" class="img-fluid rounded-start"  style="margin-left: 25rem;">
-                                <img src="../assets/kn.png " width="120px" height="50px" class="img-fluid rounded-start" >
-                                <img src="../assets/sk.png " width="100px" height="50px" class="img-fluid rounded-start" style="margin-block-end: 0%;">
-                                <img src="../assets/kl.png " width="100px" height="50px" class="img-fluid rounded-start" style="margin-block-end: 0%;">
+                                <div class="row-sm" style="text-align: center;">
+                                <img src="../assets/la.png " width="100px" height="50px" class="img-fluid rounded-start">
+                                <img src="../assets/kn.png " width="120px" height="50px" class="img-fluid rounded-start">
+                                <img src="../assets/sk.png " width="100px" height="50px" class="img-fluid rounded-start">
+                                <img src="../assets/kl.png " width="100px" height="50px" class="img-fluid rounded-start">
+                                </div>
+                                
                                 
                                 <div class="row-sm">
                                     <div class="col-sm">
