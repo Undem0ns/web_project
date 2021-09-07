@@ -8,7 +8,7 @@
     --header-height: 3rem;
     --nav-width: 68px;
     --first-color: #0f2483;
-    --first-color-light: #ccc3ec;
+    --first-color-light: #d9d7dd;
     --white-color: #F7F6FB;
     --body-font: myFirstFont;
     --normal-font-size: 1rem;
@@ -44,7 +44,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    background-color: var(--first-color);
+    background-color: var(--first-color) !important;
     z-index: var(--z-fixed);
     transition: .5s
 }

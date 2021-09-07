@@ -33,16 +33,12 @@
 
   $stmt->execute();
   ?>
-  <header class="header" id="header">
-    <div class="header_toggle "> <i class='bx bx-menu' id="header-toggle"></i> </div>
-    <div class="header_img"> <img src="/web_project/img/khonkaenLogo.jpg" alt=""> </div>
-    <div class="header_img"> <img src="/web_project/img/sarakam.png" alt=""> </div>
-    <div class="header_img"> <img src="/web_project/img/img_805f7e4fbb60dbb41db58a711ef4946f.png" alt=""> </div>
-    <div class="header_img"> <img src="/web_project/img/unnamed.png" alt=""> </div>
-    <div><span class="nav_name"></span></div>
-    <a class="nav-link" style="color: #F7F6FB;"><span><i class='bx bx-user nav_icon' ></i> <?php
-                                                                                                                  echo $_COOKIE["user_name"]; ?></span></a>
-  </header>
+<header class="header body-pd" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu bx-x' id="header-toggle"></i> </div>
+        <div><img src="/web_project/img/111-removebg-preview.png" width="600"></div>
+        <a class="nav-link" style="color: #F7F6FB;"><span><i class='bx bx-user nav_icon'></i> <?php
+                    echo $_COOKIE["user_name"]; ?></span></a>
+    </header>
   <div class="l-navbar show" id="nav-bar">
     <nav class="nav">
       <div> <a href="dashboard.php" class="nav_logo"> <img src="../assets/logo.png" height="100px" width="100px "> <span class="nav_logo-name">FPG-MIS</span> </a>
