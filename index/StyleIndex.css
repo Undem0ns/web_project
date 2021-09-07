@@ -1,7 +1,12 @@
 @font-face {
-  font-family: myFirstFont;
+  font-family: THSarabunNew;
   src: url(../font/THSarabunNew.ttf);
 }
+
+@font-face {
+    font-family: IBMPlexSansThai;
+    src: url(../font/IBMPlexSansThai-Regular.ttf);
+  }
 /* @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"); */
 
 :root {
@@ -10,7 +15,7 @@
     --first-color: #0f2483;
     --first-color-light: #d9d7dd;
     --white-color: #F7F6FB;
-    --body-font: myFirstFont;
+    --body-font: IBMPlexSansThai;
     --normal-font-size: 1rem;
     --z-fixed: 100
 }
@@ -25,8 +30,8 @@ body {
     position: relative;
     margin: var(--header-height) 0 0 0;
     padding: 0 1rem;
-    font-family: myFirstFont !important;
-    font-size: 1.5rem !important;
+    font-family: IBMPlexSansThai !important;
+    font-size: 1rem !important;
     transition: .5s
 }
 
