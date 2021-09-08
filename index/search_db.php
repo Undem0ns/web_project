@@ -15,6 +15,21 @@
   if (!isset($_SESSION["user_email"])) {
     header("location:../login/index.php");
   }
+  // ---------------------------------------------------
+  $act = isset($_GET['search']) ? $_GET['search'] : '';
+ 
+  if (isset($_GET['search'])) {
+    $keyword = explode(' ',$_GET['search']);
+      if($keyword[0]=='จังหวัด'){  
+        $stmt = $pdo->prepare(" SELECT * FROM project WHERE province LIKE '%$keyword[1]%'  ");
+      
+      }else{
+        $stmt = $pdo->prepare(" SELECT * FROM project WHERE project_name LIKE '%$act%'  ");
+      }
+    
+    $stmt->execute();
+  } 
+  
   //select * from where คือส่ง id  แต่ ไม่มี where คือทั้งหมด
   // $stmt = $pdo->prepare("SELECT * FROM project");
 
