@@ -1,47 +1,19 @@
-<?php include "../connect.php" ?>
+<?php
 
-<!-- <script>
-    Swal.fire('run');
-</script> -->
+use function PHPSTORM_META\type;
 
+include "../connect.php" ?>
 
-!
+<?php
+phpinfo();
+$numtest = '100,000';
 
-<form class="was-validated">
- 
+function extract_numbers($string)
+{
+    return preg_replace("/[^0-9]/", '', $string);
+}
 
-  <div class="mb-3">
-    <select class="form-select" required aria-label="select example">
-      <option value="">Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <div class="invalid-feedback">Example invalid select feedback</div>
-  </div>
+echo (int)extract_numbers('$100,000');
+echo gettype((int)extract_numbers('$100'));
 
- 
-</form>
-
-<script>
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
-</script>
+?>

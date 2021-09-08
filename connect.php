@@ -14,15 +14,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
     <title>Document</title>
 
     <!-- SERVER -->
-    <link href="/index/StyleIndex.css" rel="stylesheet">
-    <script src="/index/script.js"></script>
+    <!-- <link href="/index/StyleIndex.css" rel="stylesheet">
+    <script src="/index/script.js"></script> -->
 
     <!-- DEV -->
-    <!-- <link href="/web_project/index/StyleIndex.css" rel="stylesheet">
-    <script src="/web_project/index/script.js"></script> -->
+    <link href="/web_project/index/StyleIndex.css" rel="stylesheet">
+    <script src="/web_project/index/script.js"></script>
 
 </head>
 

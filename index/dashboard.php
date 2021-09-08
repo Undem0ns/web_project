@@ -29,6 +29,7 @@
   ON project.project_main = project_main.project_main_id
   LEFT JOIN project_sub
   ON project.project_sub = project_sub.project_sub_id
+  ORDER BY project.project_id DESC
   ;");
 
   $stmt->execute();
