@@ -188,7 +188,7 @@ $row = $stmt->fetch();
                   <label for="budget_year" class="col-sm-3 col-form-label">ปีงบประมาณที่ดำเนินโครงการ</label>
                   <div class="col-sm-9">
                     <select class="form-select form-select-md mb-3 fs-6" id="budget_year" name="budget_year" >
-                      <option selected disabled value="<?= $row["budget_year"] ?>"><?= $row["budget_year"] ?></option>
+                      <option selected value="<?= $row["budget_year"] ?>"><?= $row["budget_year"] ?></option>
                       <option value="2560">2560</option>
                       <option value="2561">2561</option>
                       <option value="2562">2562</option>
@@ -535,19 +535,6 @@ $row = $stmt->fetch();
       <script>
         var part = 1;
         renderPart(part);
-
-
-        // function enableInput(checkbox_id, input_id) {
-        //   var checkBox = document.getElementById(checkbox_id);
-        //   var input = document.getElementById(input_id);
-        //   if (checkBox.checked == true) {
-        //     input.disabled = false;
-
-        //   } else {
-        //     input.disabled = true;
-
-        //   }
-        // }
 
         function initPart() {
           document.getElementById("part1").style.fontWeight = "normal";
