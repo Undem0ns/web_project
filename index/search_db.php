@@ -18,13 +18,13 @@
   // ---------------------------------------------------
 
   // // determine page number from $_GET
-  // $page = 1;
-  // if (!empty($_GET['page'])) {
-  //   $page = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT);
-  //   if (false === $page) {
-  //     $page = 1;
-  //   }
-  // }
+  $page = 1;
+  if (!empty($_GET['page'])) {
+    $page = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT);
+    if (false === $page) {
+      $page = 1;
+    }
+  }
 
   // // set the number of items to display per page
   // $items_per_page = 4;
@@ -161,18 +161,19 @@
           <h2 class="bd-title" id="content" style="font-weight: bold;">รายชื่อโครงการ</h2>
         </div>
       </div>
-      <table class="table table-bordered">
-      <colgroup>
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 30%;">
-       <col span="1" style="width: 5%;">
-       <col span="1" style="width: 5%;">
-       <col span="1" style="width: 15%;">
-    </colgroup>
+
+      <table class="table table-bordered py-3">
+        <colgroup>
+          <col span="1" style="width: 30%;">
+          <!-- <col span="1" style="width: 30%;"> -->
+          <col span="1" style="width: 5%;">
+          <col span="1" style="width: 5%;">
+          <col span="1" style="width: 30%;">
+        </colgroup>
         <thead>
           <tr>
             <th scope="col">ชื่อโครงการและการดำเนินงาน</th>
-            <th scope="col">ประเด็นการพัฒนาที่เกี่ยวข้อง</th>
+            <!-- <th scope="col">ประเด็นการพัฒนาที่เกี่ยวข้อง</th> -->
             <th scope="col">จังหวัด</th>
             <th scope="col">ปีงบประมาณ</th>
             <th scope="col">รวมงบประมาณตามแผน</th>
@@ -182,7 +183,7 @@
         <tbody>
           <tr>
             <td><a class="text-primary decoration-none" href="detail.php?project_id=<?= $row["project_id"] ?>" target="_blank"> <?= $row["project_name"] ?></a> </td>
-            <td><?= $row["development_name"] ?></td>
+            <!-- <td><?= $row["development_name"] ?></td> -->
             <td><?= $row["province"] ?></td>
             <td><?= $row["budget_year"] ?></td>
             <td>
