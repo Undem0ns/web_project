@@ -6,6 +6,7 @@ $CHARSET ='utf8';
 // SERVER
 $USERNAME = 'pcp';
 $PASSWORD = 'jgkhgrwlROZG9Ng5';
+$DBNAME = 'pcp';
 
 // DEV
 // $USERNAME = 'root';
