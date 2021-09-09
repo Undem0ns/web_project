@@ -39,7 +39,7 @@
 
   <header class="header body-pd" id="header">
     <div class="header_toggle"> <i class='bx bx-menu bx-x' id="header-toggle"></i> </div>
-    <div><img src="/img/111-removebg-preview.png" width="600"></div>
+    <div><img src="/img/111-removebg-preview.png" class="img-fluid" width="600"></div>
     <a class="nav-link" active aria-current="page" style="color:#212121"><span><i class='bx bx-user nav_icon'></i> <?php
                                                                                                                     echo $_COOKIE["user_name"]; ?></span></a>
   </header>
