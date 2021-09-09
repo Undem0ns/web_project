@@ -16,22 +16,6 @@
     header("location:../login/index.php");
   }
   // ---------------------------------------------------
-  $act = isset($_GET['search']) ? $_GET['search'] : '';
- 
-  if (isset($_GET['search'])) {
-    $keyword = explode(' ',$_GET['search']);
-      if($keyword[0]=='จังหวัด'){  
-        $stmt = $pdo->prepare(" SELECT * FROM project WHERE province LIKE '%$keyword[1]%'  ");
-      
-      }else{
-        $stmt = $pdo->prepare(" SELECT * FROM project WHERE project_name LIKE '%$act%'  ");
-      }
-    
-    $stmt->execute();
-  } 
-  
-  //select * from where คือส่ง id  แต่ ไม่มี where คือทั้งหมด
-  // $stmt = $pdo->prepare("SELECT * FROM project");
 
   // // determine page number from $_GET
   // $page = 1;
@@ -49,7 +33,8 @@
   // $offset = ($page - 1) * $items_per_page;
   // // $sql = "SELECT * FROM menuitem LIMIT " . $offset . "," . $items_per_page;
 
-  $stmt = $pdo->prepare("SELECT *
+  $stmt = $pdo->prepare("SELECT *,
+  budget_province_plan + budget_department_plan + budget_local_plan + budget_private_plan AS budget_plan
   FROM project
   LEFT JOIN development_subject
   ON project.development_subject = development_subject.development_id
@@ -64,6 +49,7 @@
 
   $stmt->execute();
   ?>
+
   <?php
   function ifExist($str, $search_str, $number = false)
   {
@@ -72,7 +58,13 @@
       if ($index === false) {
         return 0;
       } else {
-        return (int)$search_str[$index + 1];
+        if (count($search_str) > ($index + 2)) {
+          $arr = array((int)$search_str[$index + 1], (int)$search_str[$index + 2]);
+          return $arr;
+        } else {
+          $arr = array((int)$search_str[$index + 1], null);
+          return $arr;
+        }
       }
     } else {
       if ($index === false) {
@@ -83,30 +75,27 @@
     }
   }
   ?>
+
   <?php
   if (isset($_POST['search'])) {
 
-    $array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red');
-
-    $key = array_search('green', $array); // $key = 2;
-    $key = array_search('red', $array);   // $key = 1;
-
     $replace_str = preg_replace("/[^a-zA-Z0-9ก-๛ ]/", '', $_POST['search']);
 
-    $search_str =  explode(' ', $replace_str);
+    $search_str = explode(' ', $replace_str);
     if (count(($search_str)) > 1) {
-      $search_name =  ifExist('ชื่อ', $search_str);
-      $search_provincial =   ifExist('จังหวัด', $search_str);
-      $search_year =  ifExist('ปี', $search_str);
-      $search_budget =  ifExist('งบประมาณ', $search_str, true);
+      $search_name = ifExist('ชื่อ', $search_str);
+      $search_provincial = ifExist('จังหวัด', $search_str);
+      $search_year = ifExist('ปี', $search_str);
+      $search_budget = ifExist('งบประมาณ', $search_str, true);
+      if (is_null($search_budget[1])) {
+        $search_budget[1] = '';
+      } else {
+        $tmp = $search_budget[1];
+        $search_budget[1] = 'AND budget_province_plan + budget_department_plan + budget_local_plan + budget_private_plan <= ' . $search_budget[1];
+      }
 
-      echo '   ชื่อ   ' . $search_name;
-      echo '   จังหวัด   ' . $search_provincial;
-      echo '   ปี   ' . $search_year;
-      echo '   งบประมาน   ' . $search_budget;
-
-
-      $stmt = $pdo->prepare("SELECT *
+      $stmt = $pdo->prepare("SELECT * ,
+      budget_province_plan + budget_department_plan + budget_local_plan + budget_private_plan AS budget_plan
       FROM project
       LEFT JOIN development_subject
       ON project.development_subject = development_subject.development_id
@@ -119,7 +108,8 @@
       WHERE project_name LIKE '%$search_name%'
       AND province LIKE '%$search_provincial%'
       AND budget_year LIKE '%$search_year%'
-      AND budget_province_plan + budget_department_plan + budget_local_plan + budget_private_plan > $search_budget
+      AND budget_province_plan + budget_department_plan + budget_local_plan + budget_private_plan >= $search_budget[0]
+      $search_budget[1]
       ORDER BY project.project_id DESC
       ;");
 
@@ -152,7 +142,7 @@
   </div>
 
   <!--Container Main start-->
-  <div class="height-50  py-5">
+  <div class="height-50  pt-5">
     <form action="search_db.php" method="post">
       <div class="form-group">
         <label for="search" style="font-weight: bold;">สืบค้นข้อมูล</label>
@@ -172,13 +162,20 @@
         </div>
       </div>
       <table class="table table-bordered">
+      <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 30%;">
+       <col span="1" style="width: 5%;">
+       <col span="1" style="width: 5%;">
+       <col span="1" style="width: 15%;">
+    </colgroup>
         <thead>
           <tr>
             <th scope="col">ชื่อโครงการและการดำเนินงาน</th>
             <th scope="col">ประเด็นการพัฒนาที่เกี่ยวข้อง</th>
             <th scope="col">จังหวัด</th>
             <th scope="col">ปีงบประมาณ</th>
-            <th scope="col">การจัดการโครงการ</th>
+            <th scope="col">รวมงบประมาณตามแผน</th>
           </tr>
           <?php while ($row = $stmt->fetch()) { ?>
         </thead>
@@ -189,9 +186,9 @@
             <td><?= $row["province"] ?></td>
             <td><?= $row["budget_year"] ?></td>
             <td>
-              <?php if ($_COOKIE['user_id'] == $row['user_id']) { ?>
-                <a class="btn btn-danger" href="edit_project.php?project_id= <?= $row["project_id"] ?>" target="_blank">แก้ไข</a>
-              <?php } ?>
+              <div class="d-flex flex-row-reverse">
+                <p class="text-left text-justify"><?= number_format($row["budget_plan"]) ?> บาท</p>
+              </div>
             </td>
           </tr>
         </tbody>
