@@ -504,7 +504,7 @@ $row = $stmt->fetch();
           <label>ไฟล์เดิม </label>
           <div>
           <input type="text" class="form-control" name="old_file" value="<?= $row['file_path']?>" hidden>
-          <a class="text-primary decoration-none" href="<?= $row['file_path']?>"><?= $row['file_path']?></a>
+          <a class="text-primary decoration-none" href="/index/upload_file/<?= $row["file_path"] ?>" download><?= $row["file_path"] ?></a>
         </div>
         </div><br>
         <?php } ?>
